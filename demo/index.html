@@ -16,9 +16,6 @@
     <script type="module" src="../src/auro-checkbox.js"></script>
     <script type="module" src="../demo/events.js"></script>
     <script src="../demo/alert.js"></script>
-    <script type="module">
-      import "../node_modules/@polymer/iron-icons/hardware-icons.js";
-    </script>
     <custom-style>
       <style is="custom-style" include="demo-pages-shared-styles"></style>
     </custom-style>
@@ -40,36 +37,23 @@
         government paper form.
       </p>
 
-      <p class="ironIcons">
-        <span class="util_floatLeft util_marginRight--med"
-          >Narrow
-          <iron-icon
-            class="util_marginAuto util_displayBlock"
-            icon="hardware:phone-iphone"
-          ></iron-icon>
-        </span>
-        <span class="util_is-narrowAppears util_floatLeft util_marginRight--med"
-          >Medium
-          <iron-icon
-            class="util_marginAuto util_displayBlock"
-            icon="hardware:tablet-android"
-          ></iron-icon>
-        </span>
-        <span class="util_is-tabletAppears util_floatLeft util_marginRight--med"
-          >Wide
-          <iron-icon
-            class="util_marginAuto util_displayBlock"
-            icon="hardware:tablet"
-          ></iron-icon>
-        </span>
-        <span class="util_is-desktopOnly util_floatLeft util_marginRight--med"
-          >Max
-          <iron-icon
-            class="util_marginAuto util_displayBlock"
-            icon="hardware:tv"
-          ></iron-icon>
-        </span>
-      </p>
+      <p>HTML Only</p>
+      <demo-snippet>
+        <template>
+          <div class="cbxGroup">
+            <input class="util_displayHiddenVisually cbx--input" id="htmlExample" type="checkbox" />
+            <label class="label label--cbx" for="htmlExample">Click me</label>
+          </div>
+          <div class="cbxGroup" error>
+            <input class="util_displayHiddenVisually cbx--input" id="htmlExample--error" type="checkbox" />
+            <label class="label label--cbx errorBorder" for="htmlExample--error">Click me</label>
+          </div>
+          <div class="cbxGroup">
+            <input class="util_displayHiddenVisually cbx--input" id="htmlExample--disabled" type="checkbox" disabled />
+            <label class="label label--cbx" for="htmlExample--disabled">Click me</label>
+          </div>
+        </template>
+      </demo-snippet>
 
       <p>Group only</p>
       <demo-snippet>

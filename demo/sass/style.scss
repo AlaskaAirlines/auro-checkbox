@@ -11,6 +11,9 @@
 @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/normalize";
 @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/essentials";
 
+// for HTML version checkbox
+@import "./checkbox";
+
 // Import Utility classes (will produce CSS in output)
 $layout-properties: margin;
 $layout-extensions: Right;

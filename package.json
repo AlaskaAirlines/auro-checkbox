@@ -107,7 +107,7 @@
     "sassBuild:dev": "npm-run-all sassBuild:demo sassBuild:component postCss:component sassRender",
     "sassBuild:demo": "node-sass ./demo/sass/ --output ./demo/css/",
     "sassBuild:component": "node-sass ./src/ --output ./src/",
-    "sassBuild:watch": "nodemon -e scss --watch src --exec npm run sassBuild:dev",
+    "sassBuild:watch": "nodemon -e scss --watch ./ --exec npm run sassBuild:dev",
     "postCss:component": "node ./scripts/postCss.js",
     "serve": "polymer serve --port 3001 --hostname 0.0.0.0"
   },
