@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.1.2](https://github.com/AlaskaAirlines/auro-checkbox/compare/v1.1.1...v1.1.2) (2021-03-03)
+
+
+### Bug Fixes
+
+* remove deprecated token reference ([7c3596a](https://github.com/AlaskaAirlines/auro-checkbox/commit/7c3596a30e46fc75b07e5138d84efb0626857cc3))
+
 ## [1.1.1](https://github.com/AlaskaAirlines/auro-checkbox/compare/v1.1.0...v1.1.1) (2020-07-21)
 
 
