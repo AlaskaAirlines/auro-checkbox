@@ -38,9 +38,6 @@
     background-color: var(--auro-color-brand-atlas-400);
     padding-right: var(--auro-size-xs);
 
-    // padding-right: 10px;
-    // margin-right: -10px;
-
     .cbx--input {
       background-color: var(--auro-color-brand-atlas-400);
 
@@ -159,7 +156,7 @@ fieldset {
     left: var(--auro-size-xs);
     width: var(--auro-size-lg);
     height: var(--auro-size-lg);
-    border-width: var(--auro-border-width-thin);
+    border-width: 1px;
     border-style: solid;
     border-color: var(--auro-color-base-gray-500);
     border-radius: var(--auro-border-radius);
