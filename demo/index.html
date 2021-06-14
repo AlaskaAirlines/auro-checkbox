@@ -19,6 +19,7 @@
     <script type="module">
       import "../node_modules/@polymer/iron-icons/hardware-icons.js";
     </script>
+    <script src="https://unpkg.com/@alaskaairux/auro-hyperlink@latest/dist/auro-hyperlink__bundled.js" type="module"></script>
     <custom-style>
       <style is="custom-style" include="demo-pages-shared-styles"></style>
     </custom-style>
@@ -285,19 +286,20 @@
         </template>
       </demo-snippet>
 
-      <h2>Element &#60;auro-checkbox&#62;</h2>
-
-      <pre><code>class AuroCheckbox extends LitElement</code></pre>
-
-      <h3>Styling:</h3>
-      <p>Info ...</p>
-
-      <h3>Responsive state:</h3>
-      <p>Info ...</p>
-
-      <h3>Properties:</h3>
-      <code><strong>string:</strong> string</code>
-      <p>Info ...</p>
-    </div>
+      <p>Cert checkbox</p>
+      <demo-snippet>
+        <template>
+          <auro-checkbox
+            id="computers"
+            name="checkboxDemo6"
+            value="computers"
+            style="display: inline-block; margin-right: -5px">
+            I understand this is a non-refundable purchase and agree</auro-checkbox>
+            to the Alaska Lounge
+            <auro-hyperlink href="/" target="_blank">
+              terms and conditions
+            </auro-hyperlink>
+        </template>
+      </demo-snippet>
   </body>
 </html>
