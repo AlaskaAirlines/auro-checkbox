@@ -18,6 +18,9 @@ class AuroCheckboxGroup extends LitElement {
 
     this.index = 0;
     this.maxNumber = 3;
+    this.disabled = false;
+    this.horizontal = false;
+    this.required = false;
   }
 
   static get styles() {
@@ -28,10 +31,16 @@ class AuroCheckboxGroup extends LitElement {
 
   static get properties() {
     return {
-      disabled:   { type: Boolean },
+      disabled: {
+        type: Boolean,
+        reflect: true
+      },
       horizontal: { type: Boolean },
       required:   { type: Boolean },
-      error:      { type: String }
+      error: {
+        type: String,
+        reflect: true
+      }
     };
   }
 
