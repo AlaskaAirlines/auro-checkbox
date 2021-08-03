@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.1.3](https://github.com/AlaskaAirlines/auro-checkbox/compare/v1.1.2...v1.1.3) (2021-08-03)
+
+
+### Bug Fixes
+
+* reflect and set default boolean props [#19](https://github.com/AlaskaAirlines/auro-checkbox/issues/19) ([ecf8645](https://github.com/AlaskaAirlines/auro-checkbox/commit/ecf8645ed682b47119a3e2218b026f8e90742fd8))
+
 ## [1.1.2](https://github.com/AlaskaAirlines/auro-checkbox/compare/v1.1.1...v1.1.2) (2021-03-03)
 
 
