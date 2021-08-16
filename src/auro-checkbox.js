@@ -42,7 +42,7 @@ class AuroCheckbox extends LitElement {
         reflect: true
       },
       error: {
-        type: String,
+        type: Boolean,
         reflect: true
       },
       id:       { type: String },
@@ -85,7 +85,7 @@ class AuroCheckbox extends LitElement {
     const labelClasses = {
       'label': true,
       'label--cbx': true,
-      'errorBorder': Boolean(this.error)
+      'errorBorder': this.error
     }
 
     return html`
