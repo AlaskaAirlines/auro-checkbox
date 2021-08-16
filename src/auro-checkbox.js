@@ -18,6 +18,7 @@ class AuroCheckbox extends LitElement {
     this.checked = false;
     this.disabled = false;
     this.required = false;
+    this.error = false;
   }
 
   static get styles() {
