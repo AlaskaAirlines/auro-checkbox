@@ -97,9 +97,9 @@ describe('auro-checkbox-group', () => {
     expect(washingtonCheckbox.checked).to.be.true;
   });
 
-  it('controls disabled state after slot change', async () => {
+  it('controls child state after slot change', async () => {
     const el = await fixture(html`
-      <auro-checkbox-group disabled></auro-checkbox-group>
+      <auro-checkbox-group disabled required error="Test message"></auro-checkbox-group>
     `);
 
     // render children after the group has connected
@@ -119,10 +119,11 @@ describe('auro-checkbox-group', () => {
     const checkbox = el.querySelector('auro-checkbox');
 
     expect(checkbox.disabled).to.be.true;
+    expect(checkbox.required).to.be.true;
+    expect(checkbox.error).to.be.true;
   });
 
   it('is accessible', async () => {
-
     const el = await fixture(html`
       <auro-checkbox-group>
         <auro-checkbox
@@ -142,6 +143,38 @@ describe('auro-checkbox-group', () => {
     `);
 
     expect(el).to.be.accessible();
+  });
+
+  it('updates states on children', async () => {
+    const el = await fixture(html`
+      <auro-checkbox-group>
+        <auro-checkbox
+          id="alaska"
+          name="states"
+          value="alaska"
+          checked
+        ></auro-checkbox>
+
+        <auro-checkbox
+          id="washington"
+          name="states"
+          type="radio"
+          value="washington"
+        ></auro-checkbox>
+      </auro-checkbox-group>
+    `);
+
+    el.disabled = true;
+    el.required = true;
+    el.error = "This is an error";
+
+    await elementUpdated(el);
+
+    const checkbox = el.querySelector('auro-checkbox');
+
+    expect(checkbox.disabled, "child disabled state was not updated").to.be.true;
+    expect(checkbox.required, "child required state was not updated").to.be.true;
+    expect(checkbox.error, "child error state was not updated").to.be.true;
   });
 });
 

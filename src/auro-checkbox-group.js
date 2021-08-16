@@ -55,13 +55,31 @@ class AuroCheckboxGroup extends LitElement {
     this.items.forEach((el) => {
       el.disabled = this.disabled;
       el.required = this.required;
+      el.error = Boolean(this.error);
     });
   }
 
-  errorChange() {
-    this.items.forEach((el) => {
-      el.error = Boolean(this.error)
-    });
+  /**
+   * LitElement lifecycle method. Called after the DOM has been updated.
+   * @param {Map<string, any>} changedProperties - keys are the names of changed properties, values are the corresponding previous values.
+   * @returns {void}
+   */
+   updated(changedProperties) {
+    if (changedProperties.has('disabled')) {
+      this.items.forEach((el) => {
+        el.disabled = this.disabled
+      });
+    }
+    if (changedProperties.has('required')) {
+      this.items.forEach((el) => {
+        el.required = this.required
+      });
+    }
+    if (changedProperties.has('error')) {
+      this.items.forEach((el) => {
+        el.error = Boolean(this.error)
+      });
+    }
   }
 
   render() {
@@ -70,8 +88,6 @@ class AuroCheckboxGroup extends LitElement {
     }
 
     return html`
-      ${this.errorChange()}
-
       <fieldset class="${classMap(groupClasses)}">
         ${this.required
           ? html`<legend><slot name="legend"></slot></legend>`
