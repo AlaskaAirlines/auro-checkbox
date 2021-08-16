@@ -101,7 +101,7 @@ class AuroCheckbox extends LitElement {
           id="${ifDefined(this.id)}"
           name="${ifDefined(this.name)}"
           type="checkbox"
-          .value="${ifDefined(this.value)}"
+          .value="${this.value}"
         />
 
         <label for="${ifDefined(this.id)}" class="${classMap(labelClasses)}">
