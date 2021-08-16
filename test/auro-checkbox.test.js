@@ -133,6 +133,30 @@ describe('auro-checkbox', () => {
     expect(washingtonCheckbox.checked).to.be.true;
   });
 
+  it('controls disabled state after slot change', async () => {
+    const el = await fixture(html`
+      <auro-checkbox-group disabled></auro-checkbox-group>
+    `);
+
+    // render children after the group has connected
+    await fixture(html`
+      <auro-checkbox
+        id="alaska"
+        name="states"
+        value="alaska"
+      ></auro-checkbox>
+      <auro-checkbox
+        id="washington"
+        name="states"
+        value="washington"
+      ></auro-checkbox>
+    `, { parentNode: el });
+
+    const checkbox = el.querySelector('auro-checkbox');
+
+    expect(checkbox.disabled).to.be.true;
+  });
+
   it('is accessible', async () => {
 
     const el = await fixture(html`
