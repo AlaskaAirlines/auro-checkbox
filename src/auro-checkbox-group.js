@@ -46,14 +46,15 @@ class AuroCheckboxGroup extends LitElement {
 
   connectedCallback() {
     super.connectedCallback();
+    this.handleItems();
+  }
+
+  handleItems() {
     this.items = Array.from(this.querySelectorAll('auro-checkbox'));
 
     this.items.forEach((el) => {
-      el.disabled = this.disabled
-    });
-
-    this.items.forEach((el) => {
-      el.required = this.required
+      el.disabled = this.disabled;
+      el.required = this.required;
     });
   }
 
@@ -76,7 +77,7 @@ class AuroCheckboxGroup extends LitElement {
           ? html`<legend><slot name="legend"></slot></legend>`
           : html`<legend><slot name="legend"></slot> (optional)</legend>`
         }
-        <slot></slot>
+        <slot @slotchange=${this.handleItems}></slot>
       </fieldset>
 
       ${this.error
