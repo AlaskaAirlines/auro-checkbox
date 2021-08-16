@@ -19,7 +19,7 @@
   display: block;
 }
 
-:host([error='true']) {
+:host([error]) {
   color: var(--auro-color-text-error-on-light);
 }
 

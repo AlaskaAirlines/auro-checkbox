@@ -149,8 +149,7 @@ describe('auro-checkbox', () => {
   it('has the expected properties', async () => {
     const expectedId = "testId",
       expectedName = "testName",
-      expectedValue = "testValue",
-      expectedError = "testError";
+      expectedValue = "testValue";
 
     const el = await fixture(html`
       <auro-checkbox
@@ -160,7 +159,7 @@ describe('auro-checkbox', () => {
         checked
         disabled
         required
-        error="${expectedError}"
+        error
       >Checkbox option</auro-checkbox>
     `);
 
@@ -173,10 +172,12 @@ describe('auro-checkbox', () => {
     expect(input.value).to.equal(expectedValue);
     expect(input.name).to.equal(expectedName);
     expect(input.type).to.equal('checkbox');
+    expect(input.getAttribute('aria-invalid')).to.equal('true');
+    expect(input.getAttribute('aria-required')).to.equal('true');
     expect(errorBorder).to.not.be.undefined;
     expect(el).dom.to.equal(`
-    <auro-checkbox id="${expectedId}" name="${expectedName}" value="${expectedValue}" error="${expectedError}" checked disabled required>
-      Checkbox option
-    </auro-checkbox>`);
-  });
+      <auro-checkbox id="${expectedId}" name="${expectedName}" value="${expectedValue}" error checked disabled required>
+        Checkbox option
+      </auro-checkbox>`);
+    });
 });
