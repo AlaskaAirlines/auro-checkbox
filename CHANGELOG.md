@@ -1,5 +1,13 @@
 # Semantic Release Automated Changelog
 
+## [1.1.4](https://github.com/AlaskaAirlines/auro-checkbox/compare/v1.1.3...v1.1.4) (2021-08-16)
+
+
+### Bug Fixes
+
+* **lint:** remove unnecessary ifDefined [#28](https://github.com/AlaskaAirlines/auro-checkbox/issues/28) ([a19fe04](https://github.com/AlaskaAirlines/auro-checkbox/commit/a19fe04f3cdf79fd67074dd84de59ace29e67bf3))
+* **slots:** react to slot change [#20](https://github.com/AlaskaAirlines/auro-checkbox/issues/20) ([b99bf7f](https://github.com/AlaskaAirlines/auro-checkbox/commit/b99bf7f4a5a2421c0158997a665fa41dc84b6bbb))
+
 ## [1.1.3](https://github.com/AlaskaAirlines/auro-checkbox/compare/v1.1.2...v1.1.3) (2021-08-03)
 
 
