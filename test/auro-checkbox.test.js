@@ -31,42 +31,6 @@ describe('auro-checkbox-group', () => {
       Checkbox option
     </auro-checkbox-group>`);
   });
-});
-
-describe('auro-checkbox', () => {
-  it('has the expected properties', async () => {
-    const expectedId = "testId",
-      expectedName = "testName",
-      expectedValue = "testValue",
-      expectedError = "testError";
-
-    const el = await fixture(html`
-      <auro-checkbox
-        id="${expectedId}"
-        name="${expectedName}"
-        value="${expectedValue}"
-        checked
-        disabled
-        required
-        error="${expectedError}"
-      >Checkbox option</auro-checkbox>
-    `);
-
-    const root = el.shadowRoot;
-    const input = root.querySelector('input');
-    const errorBorder = root.querySelector('.errorBorder');
-
-    expect(input.checked).to.be.true;
-    expect(input.disabled).to.be.true;
-    expect(input.value).to.equal(expectedValue);
-    expect(input.name).to.equal(expectedName);
-    expect(input.type).to.equal('checkbox');
-    expect(errorBorder).to.not.be.undefined;
-    expect(el).dom.to.equal(`
-    <auro-checkbox id="${expectedId}" name="${expectedName}" value="${expectedValue}" error="${expectedError}" checked disabled required>
-      Checkbox option
-    </auro-checkbox>`);
-  });
 
   it('should fire a input event with correct data', async () => {
     const el = await fixture(html`
@@ -178,5 +142,41 @@ describe('auro-checkbox', () => {
     `);
 
     expect(el).to.be.accessible();
+  });
+});
+
+describe('auro-checkbox', () => {
+  it('has the expected properties', async () => {
+    const expectedId = "testId",
+      expectedName = "testName",
+      expectedValue = "testValue",
+      expectedError = "testError";
+
+    const el = await fixture(html`
+      <auro-checkbox
+        id="${expectedId}"
+        name="${expectedName}"
+        value="${expectedValue}"
+        checked
+        disabled
+        required
+        error="${expectedError}"
+      >Checkbox option</auro-checkbox>
+    `);
+
+    const root = el.shadowRoot;
+    const input = root.querySelector('input');
+    const errorBorder = root.querySelector('.errorBorder');
+
+    expect(input.checked).to.be.true;
+    expect(input.disabled).to.be.true;
+    expect(input.value).to.equal(expectedValue);
+    expect(input.name).to.equal(expectedName);
+    expect(input.type).to.equal('checkbox');
+    expect(errorBorder).to.not.be.undefined;
+    expect(el).dom.to.equal(`
+    <auro-checkbox id="${expectedId}" name="${expectedName}" value="${expectedValue}" error="${expectedError}" checked disabled required>
+      Checkbox option
+    </auro-checkbox>`);
   });
 });
