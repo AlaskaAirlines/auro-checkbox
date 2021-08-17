@@ -1,5 +1,13 @@
 # Semantic Release Automated Changelog
 
+## [1.1.5](https://github.com/AlaskaAirlines/auro-checkbox/compare/v1.1.4...v1.1.5) (2021-08-17)
+
+
+### Bug Fixes
+
+* update child state when group state changes [#31](https://github.com/AlaskaAirlines/auro-checkbox/issues/31) ([51970b0](https://github.com/AlaskaAirlines/auro-checkbox/commit/51970b0b2d9cf712b646df9590b298a8bab2a3d8))
+* **auro-checkbox:** make error a boolean [#33](https://github.com/AlaskaAirlines/auro-checkbox/issues/33) ([6e06844](https://github.com/AlaskaAirlines/auro-checkbox/commit/6e068449b1d07eaab31222e5ee3a02edd2a15618))
+
 ## [1.1.4](https://github.com/AlaskaAirlines/auro-checkbox/compare/v1.1.3...v1.1.4) (2021-08-16)
 
 
