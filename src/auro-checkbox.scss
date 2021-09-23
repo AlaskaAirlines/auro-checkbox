@@ -3,18 +3,15 @@
 
 // ---------------------------------------------------------------------
 
-// import legacy variables to support deprecated Sass in WCSS
-@import "./node_modules/@alaskaairux/orion-design-tokens/dist/tokens/TokenVariables";
-
 // Import Auro tokens
-@import "./node_modules/@alaskaairux/orion-design-tokens/dist/tokens/SCSSVariables";
-@import "./node_modules/@alaskaairux/orion-design-tokens/dist/tokens/SassCustomProperties";
+@import "./node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariables";
+@import "./node_modules/@alaskaairux/design-tokens/dist/tokens/SassCustomProperties";
 
-@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/breakpoints";
-@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/core";
-@import './node_modules/@alaskaairux/orion-web-core-style-sheets/dist/utilityClasses/displayProperties';
+@import "./node_modules/@alaskaairux/webcorestylesheets/dist/breakpoints";
+@import "./node_modules/@alaskaairux/webcorestylesheets/dist/core";
+@import './node_modules/@alaskaairux/webcorestylesheets/dist/utilityClasses/displayProperties';
 
-// container styles - defines the look of the outer custom componet
+// container styles - defines the look of the outer custom component
 :host {
   display: block;
 }
@@ -24,7 +21,7 @@
 }
 
 // layout styles - define any layout specifications for UI that is contained WITHIN the component
-// never define layout that would cause effect on element ouside the scope of this component
+// never define layout that would cause effect on element outside the scope of this component
 
 @mixin focus-visible {
   .displayFlex {
@@ -67,10 +64,9 @@ fieldset {
   all: unset;
 }
 
-// refactor
 .displayFlex {
   slot {
-    @include breakpoint-narrow {
+    @include auro_breakpoint--sm {
       display: flex;
 
       .ods-inputGroup {
