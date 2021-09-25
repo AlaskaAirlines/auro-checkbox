@@ -1,5 +1,13 @@
 # Semantic Release Automated Changelog
 
+## [1.1.6](https://github.com/AlaskaAirlines/auro-checkbox/compare/v1.1.5...v1.1.6) (2021-09-25)
+
+
+### Bug Fixes
+
+* **deps:** remove dependency on deprecated resources ([06d92a4](https://github.com/AlaskaAirlines/auro-checkbox/commit/06d92a4a40d5cac8b32bb1fef3a0138227504afe))
+* **deps:** remove unused dependency ([1aa4ec3](https://github.com/AlaskaAirlines/auro-checkbox/commit/1aa4ec31491ea228c1ceefb3857d5e460460b334))
+
 ## [1.1.5](https://github.com/AlaskaAirlines/auro-checkbox/compare/v1.1.4...v1.1.5) (2021-08-17)
 
 
