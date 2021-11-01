@@ -98,7 +98,7 @@ class AuroCheckbox extends LitElement {
           ?disabled="${this.disabled}"
           aria-invalid="${this.invalid(this.error)}"
           aria-required="${this.isRequired(this.required)}"
-          ?checked="${this.checked}"
+          .checked="${this.checked}"
           id="${ifDefined(this.id)}"
           name="${ifDefined(this.name)}"
           type="checkbox"
