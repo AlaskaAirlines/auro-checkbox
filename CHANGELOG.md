@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.1.7](https://github.com/AlaskaAirlines/auro-checkbox/compare/v1.1.6...v1.1.7) (2021-11-01)
+
+
+### Bug Fixes
+
+* use checked property instead of attribute [#42](https://github.com/AlaskaAirlines/auro-checkbox/issues/42) ([13e1fb3](https://github.com/AlaskaAirlines/auro-checkbox/commit/13e1fb35b496b6027e9d6bf5ac8d97ad84f0caa2))
+
 ## [1.1.6](https://github.com/AlaskaAirlines/auro-checkbox/compare/v1.1.5...v1.1.6) (2021-09-25)
 
 
