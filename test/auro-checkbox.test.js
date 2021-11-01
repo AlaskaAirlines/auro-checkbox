@@ -62,6 +62,27 @@ describe('auro-checkbox-group', () => {
     expect(result).to.be.true;
   });
 
+  it('can uncheck a checkbox after selection', async () => {
+    const el = await fixture(html`
+      <auro-checkbox
+        id="alaska"
+        name="states-unchecking"
+        value="alaska"
+      ></auro-checkbox>
+    `),
+    alaskaCheckbox = el,
+    alaskaCheckboxInput = alaskaCheckbox.shadowRoot.querySelector('input');
+
+    alaskaCheckboxInput.click();
+    alaskaCheckboxInput.dispatchEvent(new Event('input'));
+    await alaskaCheckbox.updateComplete;
+    expect(alaskaCheckboxInput.checked).to.be.true;
+
+    alaskaCheckbox.checked = false;
+    await alaskaCheckbox.updateComplete;
+    expect(alaskaCheckboxInput.checked, 'the shadow input was not unchecked').to.be.false;
+  });
+
   it('can select multiple checkboxes', async () => {
     const el = await fixture(html`
       <auro-checkbox-group>
