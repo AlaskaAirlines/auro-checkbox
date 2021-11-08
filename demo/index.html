@@ -80,6 +80,16 @@
         </template>
       </demo-snippet>
 
+      <p>Checkbox only</p>
+      <demo-snippet>
+        <template>
+          <auro-checkbox id="checked" name="exampleOption" value="checked option" checked>Checkbox option</auro-checkbox>
+          <auro-checkbox id="checked" name="exampleOption" value="checked option" error>Checkbox option</auro-checkbox>
+          <auro-checkbox id="checked" name="exampleOption" value="checked option" disabled>Checkbox option</auro-checkbox>
+          <auro-checkbox id="checked" name="exampleOption" value="checked option" checked disabled>Checkbox option</auro-checkbox>
+        </template>
+      </demo-snippet>
+
       <p>Default checkbox group</p>
       <demo-snippet>
         <template>
@@ -89,6 +99,7 @@
               id="computers01"
               name="checkboxDemo2"
               value="computers"
+              disabled
             >Computers</auro-checkbox>
             <auro-checkbox
               id="music01"
@@ -202,7 +213,8 @@
               id="sports"
               name="checkboxDemo3"
               value="sports"
-            >sports</auro-checkbox>
+              disabled
+            >sports disabled</auro-checkbox>
             <auro-checkbox
               id="machines"
               name="checkboxDemo3"
