@@ -97,7 +97,7 @@ fieldset {
     & + .label--cbx {
       &:before,
       &:after {
-        border-color: var(--auro-color-border-primary-on-light);
+        border-color: var(--auro-color-text-disabled-on-light);
       }
     }
   }
@@ -120,7 +120,7 @@ fieldset {
       & + .label--cbx {
         &:after {
           background-color: var(--auro-color-base-white);
-          border-color: var(--auro-color-border-primary-on-light);
+          border-color: var(--auro-color-text-disabled-on-light);
         }
       }
     }
