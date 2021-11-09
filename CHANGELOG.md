@@ -1,5 +1,13 @@
 # Semantic Release Automated Changelog
 
+## [1.1.8](https://github.com/AlaskaAirlines/auro-checkbox/compare/v1.1.7...v1.1.8) (2021-11-09)
+
+
+### Bug Fixes
+
+* **style:** add background color to checkbox [#44](https://github.com/AlaskaAirlines/auro-checkbox/issues/44) ([2b0d8fb](https://github.com/AlaskaAirlines/auro-checkbox/commit/2b0d8fb2ba4441e676bcbe27a90aae92a47c5caa))
+* **style:** update border style for disabled element [#46](https://github.com/AlaskaAirlines/auro-checkbox/issues/46) ([fc08133](https://github.com/AlaskaAirlines/auro-checkbox/commit/fc08133f0f42a516825c5758075048bcdec340c7))
+
 ## [1.1.7](https://github.com/AlaskaAirlines/auro-checkbox/compare/v1.1.6...v1.1.7) (2021-11-01)
 
 
