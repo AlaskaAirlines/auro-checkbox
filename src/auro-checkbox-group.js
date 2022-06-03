@@ -52,11 +52,13 @@ class AuroCheckboxGroup extends LitElement {
   handleItems() {
     this.items = Array.from(this.querySelectorAll('auro-checkbox'));
 
-    this.items.forEach((el) => {
-      el.disabled = this.disabled;
-      el.required = this.required;
-      el.error = Boolean(this.error);
-    });
+    if (this.disabled || this.error || this.required) {
+      this.items.forEach((el) => {
+        el.disabled = this.disabled;
+        el.required = this.required;
+        el.error = Boolean(this.error);
+      });
+    }
   }
 
   /**
@@ -65,7 +67,7 @@ class AuroCheckboxGroup extends LitElement {
    * @returns {void}
    */
    updated(changedProperties) {
-    if (changedProperties.has('disabled')) {
+    if (this.disabled && changedProperties.has('disabled')) {
       this.items.forEach((el) => {
         el.disabled = this.disabled
       });
