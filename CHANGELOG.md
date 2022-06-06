@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.1.9](https://github.com/AlaskaAirlines/auro-checkbox/compare/v1.1.8...v1.1.9) (2022-06-06)
+
+
+### Bug Fixes
+
+* **disabled:** address issue with individual support [#47](https://github.com/AlaskaAirlines/auro-checkbox/issues/47) ([558afa0](https://github.com/AlaskaAirlines/auro-checkbox/commit/558afa035a19ddd9c24bbfafdaad37a4f39359ee))
+
 ## [1.1.8](https://github.com/AlaskaAirlines/auro-checkbox/compare/v1.1.7...v1.1.8) (2021-11-09)
 
 
