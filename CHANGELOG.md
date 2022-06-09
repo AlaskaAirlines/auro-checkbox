@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.1.10](https://github.com/AlaskaAirlines/auro-checkbox/compare/v1.1.9...v1.1.10) (2022-06-09)
+
+
+### Bug Fixes
+
+* **package:** update 'engines' property to support newer versions of node [#60](https://github.com/AlaskaAirlines/auro-checkbox/issues/60) ([5721cb0](https://github.com/AlaskaAirlines/auro-checkbox/commit/5721cb0a9dae156fc75ea4c972f8d4b6ec200ce1))
+
 ## [1.1.9](https://github.com/AlaskaAirlines/auro-checkbox/compare/v1.1.8...v1.1.9) (2022-06-06)
 
 
