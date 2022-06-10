@@ -80,15 +80,28 @@
         </template>
       </demo-snippet>
 
+      <p>Disable individual checkboxes w/required</p>
+      <demo-snippet>
+        <template>
+          <auro-checkbox-group required>
+            <span slot="legend">Form label goes here</span>
+            <auro-checkbox id="listedOption" name="exampleOption" value="checked option" checked>Checkbox option</auro-checkbox>
+            <auro-checkbox id="listedOption" name="exampleOption" value="checked option" error>(error) Checkbox option</auro-checkbox>
+            <auro-checkbox id="listedOption" name="exampleOption" value="checked option" disabled>(disabled) Checkbox option</auro-checkbox>
+            <auro-checkbox id="listedOption" name="exampleOption" value="checked option" checked disabled>(disabled) Checkbox option</auro-checkbox>
+          </auro-checkbox-group>
+        </template>
+      </demo-snippet>
+
       <p>Disable individual checkboxes</p>
       <demo-snippet>
         <template>
           <auro-checkbox-group>
             <span slot="legend">Form label goes here</span>
-            <auro-checkbox id="checked" name="exampleOption" value="checked option" checked>Checkbox option</auro-checkbox>
-            <auro-checkbox id="checked" name="exampleOption" value="checked option" error>(error) Checkbox option</auro-checkbox>
-            <auro-checkbox id="checked" name="exampleOption" value="checked option" disabled>(disabled) Checkbox option</auro-checkbox>
-            <auro-checkbox id="checked" name="exampleOption" value="checked option" checked disabled>(disabled) Checkbox option</auro-checkbox>
+            <auro-checkbox id="otherListItem" name="exampleOption" value="checked option" checked>Checkbox option</auro-checkbox>
+            <auro-checkbox id="otherListItem" name="exampleOption" value="checked option" error>(error) Checkbox option</auro-checkbox>
+            <auro-checkbox id="otherListItem" name="exampleOption" value="checked option" disabled>(disabled) Checkbox option</auro-checkbox>
+            <auro-checkbox id="otherListItem" name="exampleOption" value="checked option" checked disabled>(disabled) Checkbox option</auro-checkbox>
           </auro-checkbox-group>
         </template>
       </demo-snippet>

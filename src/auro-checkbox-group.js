@@ -52,10 +52,10 @@ class AuroCheckboxGroup extends LitElement {
   handleItems() {
     this.items = Array.from(this.querySelectorAll('auro-checkbox'));
 
-    if (this.disabled || this.error || this.required) {
+    if (this.disabled || this.error) {
       this.items.forEach((el) => {
-        el.disabled = this.disabled;
-        el.required = this.required;
+        el.disabled = Boolean(this.disabled);
+        el.required = Boolean(this.required);
         el.error = Boolean(this.error);
       });
     }
