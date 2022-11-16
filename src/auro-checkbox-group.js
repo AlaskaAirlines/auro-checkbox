@@ -92,6 +92,7 @@ class AuroCheckboxGroup extends LitElement {
    * @private
    * @returns {void}
    */
+  /* eslint-disable max-statements */
   validate() {
     // Validate only if noValidate is not true and the input does not have focus
     if (this.hasAttribute('error')) {
@@ -107,7 +108,7 @@ class AuroCheckboxGroup extends LitElement {
        *
        * The validityState definitions are located at https://developer.mozilla.org/en-US/docs/Web/API/ValidityState.
        */
-      if ((!this.value || this.value.length === 0) && this.required) {
+      if ((!this.value || this.value.length === 0) && this.required) { // eslint-disable-line no-magic-numbers
         this.validity = 'valueMissing';
         this.setCustomValidity = this.setCustomValidityValueMissing;
       }
@@ -124,7 +125,7 @@ class AuroCheckboxGroup extends LitElement {
       this.isValid = true;
     }
 
-    if (this.error || (this.validity && this.validity !== 'valid')) {
+    if (this.error || (this.validity && this.validity !== 'valid')) { // eslint-disable-line  no-extra-parens
       this.items.forEach((el) => {
         el.setAttribute('error', '');
       });
@@ -134,6 +135,7 @@ class AuroCheckboxGroup extends LitElement {
       });
     }
   }
+  /* eslint-disable max-statements */
 
   handleValueUpdate(value, selected) {
     if (selected) {
@@ -141,12 +143,11 @@ class AuroCheckboxGroup extends LitElement {
       if (!this.value.includes(value)) {
         this.value.push(value);
       }
-    } else {
+    } else if (!this.value.indexOf(value) > -1) { // eslint-disable-line no-magic-numbers
       // remove if it is in the value list
-      if (!this.value.indexOf(value) > -1) {
-        const index = this.value.indexOf(value);
-        this.value.splice(index, 1);
-      }
+      const index = this.value.indexOf(value);
+
+      this.value.splice(index, 1); // eslint-disable-line no-magic-numbers
     }
 
     this.dispatchEvent(new CustomEvent('input', {
