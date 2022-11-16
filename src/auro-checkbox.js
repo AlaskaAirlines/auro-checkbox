@@ -63,6 +63,12 @@ class AuroCheckbox extends LitElement {
 
   handleInput(event) {
     this.checked = event.target.checked;
+
+    this.dispatchEvent(new CustomEvent('auroCheckbox-input', {
+      bubbles: true,
+      cancelable: false,
+      composed: true,
+    }));
   }
 
   invalid(error) {
@@ -79,6 +85,37 @@ class AuroCheckbox extends LitElement {
     }
 
     return 'false'
+  }
+
+  /**
+   * Function to support @focusin event.
+   * @private
+   * @return {void}
+   */
+  handleFocusin() {
+    this.dispatchEvent(new CustomEvent('auroCheckbox-focusin', {
+      bubbles: true,
+      cancelable: false,
+      composed: true,
+    }));
+  }
+
+  firstUpdated() {
+    this.addEventListener('click', () => {
+      this.handleFocusin();
+    });
+
+    this.addEventListener('focusin', () => {
+      this.handleFocusin();
+    })
+
+    this.addEventListener('focusout', () => {
+      this.dispatchEvent(new CustomEvent('auroCheckbox-focusout', {
+        bubbles: true,
+        cancelable: false,
+        composed: true,
+      }));
+    });
   }
 
   // function that renders the HTML and CSS into  the scope of the component

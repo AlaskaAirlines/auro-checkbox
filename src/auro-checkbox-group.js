@@ -3,6 +3,18 @@
 
 // ---------------------------------------------------------------------
 
+/**
+ * The auro-select element is a wrapper for auro-dropdown and auro-menu to create a dropdown menu control.
+ *
+ * @attr {String} validity - Specifies the `validityState` this element is in.
+ * @attr {String} setCustomValidity - Sets a custom help text message to display for all validityStates.
+ * @attr {String} setCustomValidityCustomError - Custom help text message to display when validity = `customError`.
+ * @attr {String} setCustomValidityValueMissing - Custom help text message to display when validity = `valueMissing`.
+ * @attr {String} error - When defined, sets persistent validity to `customError` and sets `setCustomValidity` = attribute value.
+ * @attr {Boolean} noValidate - If set, disables auto-validation on blur.
+ * @attr {Boolean} required - Populates the `required` attribute on the element. Used for client-side validation.
+ */
+
 import { LitElement, html, css } from "lit-element";
 import { classMap } from 'lit-html/directives/class-map';
 
@@ -15,6 +27,9 @@ import styleCss from "./auro-checkbox-group-css.js";
 class AuroCheckboxGroup extends LitElement {
   constructor() {
     super();
+
+    this.validity = undefined;
+    this.value = undefined;
 
     this.index = 0;
     this.maxNumber = 3;
@@ -36,8 +51,31 @@ class AuroCheckboxGroup extends LitElement {
         reflect: true
       },
       horizontal: { type: Boolean },
-      required:   { type: Boolean },
+      value: {
+        type: Array
+      },
+      noValidate: {
+        type: Boolean,
+        reflect: true
+      },
+      required: {
+        type: Boolean,
+        reflect: true
+      },
       error: {
+        type: String,
+        reflect: true
+      },
+      setCustomValidity: {
+        type: String
+      },
+      setCustomValidityCustomError: {
+        type: String
+      },
+      setCustomValidityValueMissing: {
+        type: String
+      },
+      validity: {
         type: String,
         reflect: true
       }
@@ -49,16 +87,130 @@ class AuroCheckboxGroup extends LitElement {
     this.handleItems();
   }
 
+  /**
+   * Determines the validity state of the element.
+   * @private
+   * @returns {void}
+   */
+  validate() {
+    // Validate only if noValidate is not true and the input does not have focus
+    if (this.hasAttribute('error')) {
+      this.validity = 'customError';
+      this.setCustomValidity = this.error;
+    } else if (this.value !== undefined && !this.noValidate) {
+      this.validity = 'valid';
+      this.setCustomValidity = '';
+
+      /**
+       * Only validate once we interact with the datepicker
+       * this.value === undefined is the initial state pre-interaction.
+       *
+       * The validityState definitions are located at https://developer.mozilla.org/en-US/docs/Web/API/ValidityState.
+       */
+      if ((!this.value || this.value.length === 0) && this.required) {
+        this.validity = 'valueMissing';
+        this.setCustomValidity = this.setCustomValidityValueMissing;
+      }
+    }
+
+    if (this.validity && this.validity !== 'valid') {
+      this.isValid = false;
+
+      // Use the validity message override if it is declared
+      if (this.ValidityMessageOverride) {
+        this.setCustomValidity = this.ValidityMessageOverride;
+      }
+    } else {
+      this.isValid = true;
+    }
+
+    if (this.error || (this.validity && this.validity !== 'valid')) {
+      this.items.forEach((el) => {
+        el.setAttribute('error', '');
+      });
+    } else {
+      this.items.forEach((el) => {
+        el.removeAttribute('error');
+      });
+    }
+  }
+
+  handleValueUpdate(value, selected) {
+    if (selected) {
+      // add if it isn't already in the value list
+      if (!this.value.includes(value)) {
+        this.value.push(value);
+      }
+    } else {
+      // remove if it is in the value list
+      if (!this.value.indexOf(value) > -1) {
+        const index = this.value.indexOf(value);
+        this.value.splice(index, 1);
+      }
+    }
+
+    this.dispatchEvent(new CustomEvent('input', {
+      bubbles: true,
+      cancelable: false,
+      composed: true,
+    }));
+
+    this.validate();
+  }
+
+  firstUpdated() {
+
+    // must declare this function as a variable to correctly pass the reference to the removeEventListener
+    const checkFocusWithin = function(evt) {
+      if (document.auroCheckboxGroupActive && !document.auroCheckboxGroupActive.contains(evt.target)) {
+        // if focus has left the group, cleanup and validate
+        document.auroCheckboxGroupActive.focusWithin = false;
+        window.removeEventListener('focusin', checkFocusWithin);
+        document.removeEventListener('click', checkFocusWithin);
+        // execute the validation
+        document.auroCheckboxGroupActive.validate();
+      }
+    }
+
+    this.addEventListener('auroCheckbox-focusin', () => {
+      if (!this.value) {
+        this.value = [];
+      }
+
+      // handle click outside the group
+      if (!this.focusWithin) {
+        document.addEventListener('click', checkFocusWithin);
+      }
+
+      this.focusWithin = true;
+    })
+
+    this.addEventListener('auroCheckbox-focusout', () => {
+      document.auroCheckboxGroupActive = this;
+
+      // Only add the focusWithin check event listener once as you move focus through the options
+      if (this.focusWithin) {
+        window.addEventListener('focusin', checkFocusWithin);
+      } else {
+        this.focusWithin = true;
+      }
+    })
+
+    this.addEventListener('auroCheckbox-input', (evt) => {
+      this.handleValueUpdate(evt.target.value, evt.target.checked);
+    })
+  }
+
   handleItems() {
     this.items = Array.from(this.querySelectorAll('auro-checkbox'));
 
-    if (this.disabled || this.error) {
+    if (this.disabled) {
       this.items.forEach((el) => {
         el.disabled = Boolean(this.disabled);
-        el.required = Boolean(this.required);
-        el.error = Boolean(this.error);
       });
     }
+
+    this.validate();
   }
 
   /**
@@ -66,21 +218,21 @@ class AuroCheckboxGroup extends LitElement {
    * @param {Map<string, any>} changedProperties - keys are the names of changed properties, values are the corresponding previous values.
    * @returns {void}
    */
-   updated(changedProperties) {
+  updated(changedProperties) {
     if (this.disabled && changedProperties.has('disabled')) {
       this.items.forEach((el) => {
         el.disabled = this.disabled
       });
     }
+
     if (changedProperties.has('required')) {
       this.items.forEach((el) => {
         el.required = this.required
       });
     }
+
     if (changedProperties.has('error')) {
-      this.items.forEach((el) => {
-        el.error = Boolean(this.error)
-      });
+      this.validate();
     }
   }
 
@@ -98,9 +250,16 @@ class AuroCheckboxGroup extends LitElement {
         <slot @slotchange=${this.handleItems}></slot>
       </fieldset>
 
-      ${this.error
-        ? html`<p role="alert" aria-live="assertive" class="errorText">${this.error}</p>`
-        : html``}
+      ${!this.validity || this.validity === undefined || this.validity === 'valid'
+        ? html`
+          <p class="selectElement-helpText" part="helpText">
+            <slot name="helpText"></slot>
+          </p>`
+        : html`
+          <p class="selectElement-helpText" role="alert" aria-live="assertive" part="helpText">
+            ${this.setCustomValidity}
+          </p>`
+      }
     `;
   }
 }
