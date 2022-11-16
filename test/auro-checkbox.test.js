@@ -25,9 +25,10 @@ describe('auro-checkbox-group', () => {
 
     expect(el.horizontal).to.be.true;
     expect(el.required).to.be.true;
-    expect(error.textContent).be.equal(expectedError);
+    expect(error.textContent).to.contain(expectedError);
+
     expect(el).dom.to.equal(`
-    <auro-checkbox-group horizontal required error="${expectedError}">
+    <auro-checkbox-group horizontal required error="${expectedError}" validity="customError">
       Checkbox option
     </auro-checkbox-group>`);
   });
@@ -140,7 +141,6 @@ describe('auro-checkbox-group', () => {
     const checkbox = el.querySelector('auro-checkbox');
 
     expect(checkbox.disabled).to.be.true;
-    expect(checkbox.required).to.be.true;
     expect(checkbox.error).to.be.true;
   });
 
@@ -233,5 +233,5 @@ describe('auro-checkbox', () => {
       <auro-checkbox id="${expectedId}" name="${expectedName}" value="${expectedValue}" error checked disabled required>
         Checkbox option
       </auro-checkbox>`);
-    });
+  });
 });
