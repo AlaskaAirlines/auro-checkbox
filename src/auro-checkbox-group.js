@@ -143,7 +143,7 @@ class AuroCheckboxGroup extends LitElement {
       if (!this.value.includes(value)) {
         this.value.push(value);
       }
-    } else if (!this.value.indexOf(value) > -1) { // eslint-disable-line no-magic-numbers
+    } else if (this.value.indexOf(value) > -1) { // eslint-disable-line no-magic-numbers
       // remove if it is in the value list
       const index = this.value.indexOf(value);
 
@@ -202,8 +202,30 @@ class AuroCheckboxGroup extends LitElement {
     })
   }
 
+  handlePreselectedItems() {
+    let preSelectedValues = false;
+
+    this.items.forEach((item) => {
+      if (item.hasAttribute('checked') && this.value === undefined) {
+        preSelectedValues = true;
+      }
+    });
+
+    if (preSelectedValues) {
+      if (!this.value) {
+        this.value = [];
+      }
+
+      this.items.forEach((item) => {
+        this.handleValueUpdate(item.getAttribute('value'), Boolean(item.hasAttribute('checked')));
+      });
+    };
+  }
+
   handleItems() {
     this.items = Array.from(this.querySelectorAll('auro-checkbox'));
+
+    this.handlePreselectedItems();
 
     if (this.disabled) {
       this.items.forEach((el) => {
