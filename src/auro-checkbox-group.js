@@ -219,7 +219,7 @@ class AuroCheckboxGroup extends LitElement {
       this.items.forEach((item) => {
         this.handleValueUpdate(item.getAttribute('value'), Boolean(item.hasAttribute('checked')));
       });
-    };
+    }
   }
 
   handleItems() {
