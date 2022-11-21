@@ -112,6 +112,9 @@ class AuroCheckboxGroup extends LitElement {
         this.validity = 'valueMissing';
         this.setCustomValidity = this.setCustomValidityValueMissing;
       }
+    } else {
+      this.validity = undefined;
+      this.removeAttribute('validity');
     }
 
     if (this.validity && this.validity !== 'valid') {
