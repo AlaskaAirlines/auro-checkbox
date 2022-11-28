@@ -278,11 +278,11 @@ class AuroCheckboxGroup extends LitElement {
 
       ${!this.validity || this.validity === undefined || this.validity === 'valid'
         ? html`
-          <p class="selectElement-helpText" part="helpText">
+          <p class="checkboxGroupElement-helpText" part="helpText">
             <slot name="helpText"></slot>
           </p>`
         : html`
-          <p class="selectElement-helpText" role="alert" aria-live="assertive" part="helpText">
+          <p class="checkboxGroupElement-helpText" role="alert" aria-live="assertive" part="helpText">
             ${this.setCustomValidity}
           </p>`
       }
