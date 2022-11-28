@@ -9,6 +9,7 @@
 :host {
   display: block;
   padding-bottom: var(--auro-size-md);
+  color: var(--auro-color-text-primary-on-light);
 }
 
 :host([disabled]) {
@@ -31,15 +32,12 @@ legend {
   margin-bottom: var(--auro-size-md);
 }
 
-.selectElement-helpText {
-  margin: var(--auro-size-50, .25rem) 0;
+.checkboxGroupElement-helpText {
   color: var(--auro-color-text-secondary-on-light);
-  font-size: var(--auro-text-body-size-xs);
-  line-height: 1rem;
 }
 
 :host([validity]:not([validity='valid'])) {
-  .selectElement-helpText {
+  .checkboxGroupElement-helpText {
     color: var(--auro-color-alert-error-on-light);
   }
 }

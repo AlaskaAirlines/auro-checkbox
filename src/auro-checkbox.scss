@@ -16,10 +16,6 @@
   display: block;
 }
 
-:host([error]) {
-  color: var(--auro-color-text-error-on-light);
-}
-
 // layout styles - define any layout specifications for UI that is contained WITHIN the component
 // never define layout that would cause effect on element outside the scope of this component
 
@@ -181,11 +177,6 @@ fieldset {
     border-left-width: 0;
     transform: rotate(45deg);
   }
-}
-
-.errorText {
-  color: var(--auro-color-text-error-on-light);
-  margin-bottom: 0;
 }
 
 .label--cbx {
