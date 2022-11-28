@@ -105,7 +105,7 @@
     "test:ci": "npm-run-all test lint",
     "ciBuild": "npm-run-all sassBuild sassRender cssLint distJS bundler postinstall",
     "sassBuild": "npm-run-all sassBuild:demo sassBuild:component postCss:component sassRender",
-    "sassBuild:dev": "npm-run-all sassBuild:demo sassBuild:component postCss:component sass:render",
+    "sassBuild:dev": "npm-run-all sassBuild:demo sassBuild:component postCss:component sassRender",
     "sassBuild:demo": "sass --no-source-map demo:demo",
     "sassBuild:component": "sass --no-source-map src:src",
     "sassBuild:watch": "nodemon -e scss --watch src --exec npm run sassBuild:dev",
