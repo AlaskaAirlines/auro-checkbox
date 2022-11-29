@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [1.2.0](https://github.com/AlaskaAirlines/auro-checkbox/compare/v1.1.11...v1.2.0) (2022-11-29)
+
+
+### Features
+
+* **validity:** add new html5 validity to component [#68](https://github.com/AlaskaAirlines/auro-checkbox/issues/68) ([a1cfa39](https://github.com/AlaskaAirlines/auro-checkbox/commit/a1cfa39c2a5a4fd1bf69e71ac2cb1b4232a801b9))
+
 ## [1.1.11](https://github.com/AlaskaAirlines/auro-checkbox/compare/v1.1.10...v1.1.11) (2022-06-10)
 
 
