@@ -29,7 +29,7 @@
   .cbxGroup {
     display: block;
     background-color: var(--auro-color-brand-atlas-400);
-    padding-right: var(--auro-size-xs);
+    padding-right: var(--auro-size-100);
 
     .cbx--input {
       background-color: var(--auro-color-brand-atlas-400);
@@ -78,9 +78,9 @@ fieldset {
 
 .cbxGroup {
   position: relative;
-  padding-left: var(--auro-size-xs);
-  padding-right: var(--auro-size-xs);
-  line-height: calc((var(--auro-size-xl)) + (var(--auro-size-xxs)))
+  padding-left: var(--auro-size-100);
+  padding-right: var(--auro-size-100);
+  line-height: calc((var(--auro-size-400)) + (var(--auro-size-50)))
 }
 
 .cbx--input {
@@ -137,7 +137,7 @@ fieldset {
 }
 
 .label {
-  margin-left: var(--auro-size-xl);
+  margin-left: var(--auro-size-400);
   display: block;
 }
 
@@ -147,10 +147,10 @@ fieldset {
     -webkit-tap-highlight-color: transparent;
     position: absolute;
     content: '';
-    top: var(--auro-size-xxs);
-    left: var(--auro-size-xs);
-    width: var(--auro-size-lg);
-    height: var(--auro-size-lg);
+    top: var(--auro-size-50);
+    left: var(--auro-size-100);
+    width: var(--auro-size-300);
+    height: var(--auro-size-300);
     border-width: 1px;
     border-style: solid;
     border-color: var(--auro-color-base-gray-500);
