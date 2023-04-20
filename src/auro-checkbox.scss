@@ -14,6 +14,7 @@
 // container styles - defines the look of the outer custom component
 :host {
   display: block;
+  --cbxLocation: var(--auro-size-50);
 }
 
 // layout styles - define any layout specifications for UI that is contained WITHIN the component
@@ -28,25 +29,37 @@
 
   .cbxGroup {
     display: block;
-    background-color: var(--auro-color-brand-atlas-400);
     padding-right: var(--auro-size-100);
-
-    .cbx--input {
-      background-color: var(--auro-color-brand-atlas-400);
-
-      & + label {
-        color: var(--auro-color-base-white);
-      }
-    }
 
     .label--cbx {
       &:before{
-        border-color: var(--auro-color-brand-atlas-400);
+        border-color: var(--auro-color-brand-atlas-400);  
       }
 
       &:after {
-        border-color: var(--auro-color-base-white);
-        background-color: var(--auro-color-base-white);
+        outline: 1px solid var(--auro-color-border-active-on-light);
+        border-color: var(--auro-color-border-active-on-light);
+      }
+    }
+
+    .cbx--input {
+      &:checked {
+        + .label {
+          &:after {
+            outline: 1px solid var(--auro-color-border-active-on-light);
+            border-color: var(--auro-color-border-focus-on-dark);;
+          }
+        }
+      }
+
+      &:disabled {
+        & + .label {
+          &:hover {
+            &:after {
+              background-color: var(--auro-color-background-lightest);
+            }
+          }
+        }
       }
     }
   }
@@ -80,7 +93,7 @@ fieldset {
   position: relative;
   padding-left: var(--auro-size-100);
   padding-right: var(--auro-size-100);
-  line-height: calc((var(--auro-size-400)) + (var(--auro-size-50)))
+  line-height: var(--auro-size-400);
 }
 
 .cbx--input {
@@ -88,6 +101,14 @@ fieldset {
 
     & + label {
       color: var(--auro-color-text-disabled-on-light);
+
+      &:hover {
+        cursor: auto;
+
+        &:after {
+          background-color: var(--auro-color-background-lightest);
+        }
+      }
     }
 
     & + .label--cbx {
@@ -103,6 +124,12 @@ fieldset {
 
   &:checked {
     & + .label--cbx {
+      &:hover {
+        &:after {
+          background-color: var(--auro-color-ui-hover-on-light);
+        }
+      }
+
       &:after {
         opacity: 1;
         background-color: var(--auro-color-ui-default-on-light);
@@ -132,13 +159,26 @@ fieldset {
         border-color: var(--auro-color-border-error-on-light);
         background-color: var(--auro-color-border-error-on-light);
       }
+      &:hover {
+        &:after {
+          background-color: var(--auro-color-alert-error-on-light);
+        }
+      }
     }
   }
 }
 
 .label {
-  margin-left: var(--auro-size-400);
+  margin-left: var(--auro-size-300);
   display: block;
+
+  &:hover {
+    cursor: pointer;
+
+    &:after {
+      background-color: var(--auro-color-ui-bkg-hover-on-light);
+    }
+  }
 }
 
 // No tokens available for values used here
@@ -148,9 +188,9 @@ fieldset {
     position: absolute;
     content: '';
     top: var(--auro-size-50);
-    left: var(--auro-size-100);
-    width: var(--auro-size-300);
-    height: var(--auro-size-300);
+    left: var(--cbxLocation);
+    width: calc(var(--auro-size-200) + var(--auro-size-50));
+    height: calc(var(--auro-size-200) + var(--auro-size-50));
     border-width: 1px;
     border-style: solid;
     border-color: var(--auro-color-base-gray-500);
@@ -166,16 +206,14 @@ fieldset {
     pointer-events: none;
     z-index: 1;
 
-    top: 6px;
-    left: 18px;
-    width: 6px;
-    height: 18px;
-    border-style: solid;
-    border-color: var(--auro-color-base-white);
-    border-width: 2px;
-    border-top-width: 0;
-    border-left-width: 0;
-    transform: rotate(45deg);
+    top: 4px;
+    left: var(--cbxLocation);
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-color: var(--auro-color-base-white);
+    -webkit-mask-image: url('https://unpkg.com/@alaskaairux/icons@latest/dist/icons/interface/check-lg.svg');
+    mask-image: url('https://unpkg.com/@alaskaairux/icons@latest/dist/icons/interface/check-lg.svg');
   }
 }
 
