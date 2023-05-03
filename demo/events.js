@@ -4,7 +4,6 @@
 /* eslint-disable id-length */
 /* eslint-disable sort-vars */
 /* eslint-disable no-console */
-console.log('Loaded events.js');
 const odsHandler = (e) => console.log(`auro ${e.type}: ${e.target.id} ${e.target.checked}`),
  checkboxHandler = (e) => console.log(`chx ${e.type}: ${e.target.id} ${e.target.checked}`),
  radioHandler = (e) => console.log(`rdo ${e.type}: ${e.target.id} ${e.target.checked}`);
