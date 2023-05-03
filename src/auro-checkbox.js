@@ -11,6 +11,8 @@ import { ifDefined } from 'lit-html/directives/if-defined';
 import "focus-visible/dist/focus-visible.min.js";
 import styleCss from "./auro-checkbox-css.js";
 
+import checkLg from '../node_modules/@alaskaairux/icons/dist/icons/interface/check-lg_es6.js';
+
 // build the component class
 class AuroCheckbox extends LitElement {
   constructor() {
@@ -100,6 +102,20 @@ class AuroCheckbox extends LitElement {
     }));
   }
 
+  /**
+   *
+   * @private
+   * @return {void} Function to generate checkmark svg
+   */
+  generateIconHtml() {
+    this.dom = new DOMParser().parseFromString(checkLg.svg, 'text/html');
+    this.svg = this.dom.body.firstChild;
+
+    this.svg.classList.add('svg--cbx');
+
+    return this.svg;
+  }
+
   firstUpdated() {
     this.addEventListener('click', () => {
       this.handleFocusin();
@@ -143,6 +159,7 @@ class AuroCheckbox extends LitElement {
         />
 
         <label for="${ifDefined(this.id)}" class="${classMap(labelClasses)}">
+          ${this.checked ? this.generateIconHtml() : undefined}
           <slot></slot>
         </label>
       </div>

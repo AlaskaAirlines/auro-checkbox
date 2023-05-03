@@ -198,23 +198,6 @@ fieldset {
     z-index: 0;
     background-color: var(--auro-color-base-white);
   }
-
-  &:before {
-    content: '';
-    position: absolute;
-    opacity: 0;
-    pointer-events: none;
-    z-index: 1;
-
-    top: 4px;
-    left: var(--cbxLocation);
-    width: 20px;
-    height: 20px;
-    background-repeat: no-repeat;
-    background-color: var(--auro-color-base-white);
-    -webkit-mask-image: url('https://unpkg.com/@alaskaairux/icons@latest/dist/icons/interface/check-lg.svg');
-    mask-image: url('https://unpkg.com/@alaskaairux/icons@latest/dist/icons/interface/check-lg.svg');
-  }
 }
 
 .label--cbx {
@@ -223,4 +206,17 @@ fieldset {
       border-color: var(--auro-color-border-error-on-light);
     }
   }
+}
+
+.svg--cbx {
+  position: absolute;
+  top: var(--auro-size-25);
+  left: var(--auro-size-25);
+
+  padding-top: 3px;
+  padding-bottom: 3px;
+
+  z-index: 1;
+
+  color: var(--auro-color-base-white);
 }
