@@ -1,5 +1,14 @@
 # Semantic Release Automated Changelog
 
+## [1.2.1](https://github.com/AlaskaAirlines/auro-checkbox/compare/v1.2.0...v1.2.1) (2023-05-09)
+
+
+### Performance Improvements
+
+* update hover and focus state [#87](https://github.com/AlaskaAirlines/auro-checkbox/issues/87) ([d6cf340](https://github.com/AlaskaAirlines/auro-checkbox/commit/d6cf340e1a10765dfaeac16dd9e680c4b905e65b))
+* update references to design tokens [#87](https://github.com/AlaskaAirlines/auro-checkbox/issues/87) ([bf76127](https://github.com/AlaskaAirlines/auro-checkbox/commit/bf76127a88a5aa7e096b1481fcaa05327d2e5807))
+* update semantic release version [#90](https://github.com/AlaskaAirlines/auro-checkbox/issues/90) ([ec6ef2d](https://github.com/AlaskaAirlines/auro-checkbox/commit/ec6ef2d31bf59935d08b7ae2233bd8db55f62a93))
+
 # [1.2.0](https://github.com/AlaskaAirlines/auro-checkbox/compare/v1.1.11...v1.2.0) (2022-11-29)
 
 
