@@ -70,7 +70,6 @@ In cases where the project is not able to process JS assets, there are pre-proce
 
 The `polyfills.js` is packaged with this component, but **IT IS NOT NEEDED** to load a polyfill per component. The `polyfills.js` will work for all additional components added to the project.
 
-
 ## Development
 
 In order to develop against this project, if you are not part of the core team, you will be required to fork the project prior to submitting a pull request.
@@ -95,7 +94,8 @@ $ npm run dev
 $ npm run serve
 ```
 
-Open [localhost:3001](http://localhost:3001/)
+Open [localhost:3002](http://localhost:3002/)
 
 ### Testing
+
 Automated tests are required for every Auro component. See `.\test\auro-checkbox.test.js` for the tests for this component. Run `npm test` to run the tests and check code coverage. Tests must pass and meet a certain coverage threshold to commit. See [the testing documentation](https://github.com/AlaskaAirlines/auro_docs/blob/master/src/TESTS.md) for more details.
