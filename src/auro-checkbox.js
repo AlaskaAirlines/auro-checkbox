@@ -11,7 +11,7 @@ import { ifDefined } from 'lit-html/directives/if-defined';
 import "focus-visible/dist/focus-visible.min.js";
 import styleCss from "./auro-checkbox-css.js";
 
-import checkLg from '../node_modules/@alaskaairux/icons/dist/icons/interface/check-lg_es6.js';
+import checkLg from '@alaskaairux/icons/dist/icons/interface/check-lg_es6.js';
 
 // build the component class
 class AuroCheckbox extends LitElement {
