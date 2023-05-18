@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.2.2](https://github.com/AlaskaAirlines/auro-checkbox/compare/v1.2.1...v1.2.2) (2023-05-18)
+
+
+### Bug Fixes
+
+* **import:** correct file path in import statement ([f2f78a0](https://github.com/AlaskaAirlines/auro-checkbox/commit/f2f78a0253d3b5d11c38d5b7ac00accca4ee4858))
+
 ## [1.2.1](https://github.com/AlaskaAirlines/auro-checkbox/compare/v1.2.0...v1.2.1) (2023-05-09)
 
 
