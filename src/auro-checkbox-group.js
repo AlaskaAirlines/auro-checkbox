@@ -13,6 +13,9 @@
  * @attr {String} error - When defined, sets persistent validity to `customError` and sets `setCustomValidity` = attribute value.
  * @attr {Boolean} noValidate - If set, disables auto-validation on blur.
  * @attr {Boolean} required - Populates the `required` attribute on the element. Used for client-side validation.
+ * @csspart checkbox - apply css to a specific checkbox
+ * @csspart - checkbox-input - apply css to a specifix checkbox's input
+ * @csspart - checkbox-label - apply css to a specifix checkbox's label
  */
 
 import { LitElement, html, css } from "lit-element";

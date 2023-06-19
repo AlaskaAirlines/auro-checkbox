@@ -143,9 +143,10 @@ class AuroCheckbox extends LitElement {
     }
 
     return html`
-      <div class="cbxGroup">
+      <div class="cbxGroup" part="checkbox">
         <input
           class="util_displayHiddenVisually cbx--input"
+          part="checkbox-input"
           @change=${this.handleChange}
           @input="${this.handleInput}"
           ?disabled="${this.disabled}"
@@ -158,7 +159,7 @@ class AuroCheckbox extends LitElement {
           .value="${this.value}"
         />
 
-        <label for="${ifDefined(this.id)}" class="${classMap(labelClasses)}">
+        <label for="${ifDefined(this.id)}" class="${classMap(labelClasses)}" part="checkbox-label">
           ${this.checked ? this.generateIconHtml() : undefined}
           <slot></slot>
         </label>
