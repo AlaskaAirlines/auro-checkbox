@@ -3,17 +3,28 @@
 
 // ---------------------------------------------------------------------
 
+/* stylelint-disable custom-property-pattern, 
+   selector-max-class, 
+   scss/selector-nest-combinators, 
+   selector-class-pattern, 
+   max-nesting-depth,
+   selector-max-compound-selectors,
+   scss/selector-no-redundant-nesting-selector,
+   selector-max-combinators,
+   no-descending-specificity */
+
 // Import Auro tokens
 @import "./../node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariables";
 @import "./../node_modules/@alaskaairux/design-tokens/dist/tokens/SassCustomProperties";
 
-@import "./../node_modules/@alaskaairux/webcorestylesheets/dist/breakpoints";
-@import "./../node_modules/@alaskaairux/webcorestylesheets/dist/core";
-@import './../node_modules/@alaskaairux/webcorestylesheets/dist/utilityClasses/displayProperties';
+@import "./../node_modules/@aurodesignsystem/webcorestylesheets/dist/breakpoints";
+@import "./../node_modules/@aurodesignsystem/webcorestylesheets/dist/core";
+@import './../node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/displayProperties';
 
 // container styles - defines the look of the outer custom component
 :host {
   display: block;
+
   --cbxLocation: var(--auro-size-50);
 }
 
@@ -37,8 +48,8 @@
       }
 
       &:after {
-        outline: 1px solid var(--auro-color-border-active-on-light);
         border-color: var(--auro-color-border-active-on-light);
+        outline: 1px solid var(--auro-color-border-active-on-light);
       }
     }
 
@@ -46,8 +57,8 @@
       &:checked {
         + .label {
           &:after {
-            outline: 1px solid var(--auro-color-border-active-on-light);
-            border-color: var(--auro-color-border-focus-on-dark);;
+            border-color: var(--auro-color-border-focus-on-dark);
+            outline: 1px solid var(--auro-color-border-active-on-light);;
           }
         }
       }
@@ -91,14 +102,13 @@ fieldset {
 
 .cbxGroup {
   position: relative;
-  padding-left: var(--auro-size-100);
   padding-right: var(--auro-size-100);
+  padding-left: var(--auro-size-100);
   line-height: var(--auro-size-400);
 }
 
 .cbx--input {
   &:disabled {
-
     & + label {
       color: var(--auro-color-text-disabled-on-light);
 
@@ -131,22 +141,22 @@ fieldset {
       }
 
       &:after {
-        opacity: 1;
-        background-color: var(--auro-color-ui-default-on-light);
         border-color: var(--auro-color-border-active-on-light);
+        background-color: var(--auro-color-ui-default-on-light);
+        opacity: 1;
       }
 
       &:before {
-        transition: background-color 0.2s cubic-bezier(.35,.9,.4,.9);
         opacity: 1;
+        transition: background-color 0.2s cubic-bezier(.35,.9,.4,.9);
       }
     }
 
     &:disabled {
       & + .label--cbx {
         &:after {
-          background-color: var(--auro-color-brand-gray-200);
           border-color: var(--auro-color-text-disabled-on-light);
+          background-color: var(--auro-color-brand-gray-200);
         }
       }
     }
@@ -155,10 +165,12 @@ fieldset {
       &:before {
         border-color: var(--auro-color-base-white);
       }
+
       &:after {
         border-color: var(--auro-color-border-error-on-light);
         background-color: var(--auro-color-border-error-on-light);
       }
+
       &:hover {
         &:after {
           background-color: var(--auro-color-alert-error-on-light);
@@ -169,8 +181,8 @@ fieldset {
 }
 
 .label {
-  margin-left: var(--auro-size-300);
   display: block;
+  margin-left: var(--auro-size-300);
 
   &:hover {
     cursor: pointer;
@@ -184,9 +196,8 @@ fieldset {
 // No tokens available for values used here
 .label--cbx {
   &:after {
-    -webkit-tap-highlight-color: transparent;
     position: absolute;
-    content: '';
+    z-index: 0;
     top: var(--auro-size-50);
     left: var(--cbxLocation);
     width: calc(var(--auro-size-200) + var(--auro-size-50));
@@ -195,12 +206,11 @@ fieldset {
     border-style: solid;
     border-color: var(--auro-color-base-gray-500);
     border-radius: var(--auro-border-radius);
-    z-index: 0;
     background-color: var(--auro-color-base-white);
+    content: '';
+    -webkit-tap-highlight-color: transparent;
   }
-}
 
-.label--cbx {
   &.errorBorder {
     &:after {
       border-color: var(--auro-color-border-error-on-light);
@@ -210,13 +220,10 @@ fieldset {
 
 .svg--cbx {
   position: absolute;
+  z-index: 1;
   top: var(--auro-size-25);
   left: var(--auro-size-25);
-
   padding-top: 3px;
   padding-bottom: 3px;
-
-  z-index: 1;
-
   color: var(--auro-color-base-white);
 }

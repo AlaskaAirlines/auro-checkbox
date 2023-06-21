@@ -18,7 +18,7 @@
  * @csspart - checkbox-label - apply css to a specifix checkbox's label
  */
 
-import { LitElement, html, css } from "lit-element";
+import { LitElement, html, css } from "lit";
 import { classMap } from 'lit-html/directives/class-map';
 
 // Import touch detection lib
