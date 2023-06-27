@@ -3,6 +3,8 @@
 
 // ---------------------------------------------------------------------
 
+/* eslint-disable max-lines */
+
 /**
  * The auro-select element is a wrapper for auro-dropdown and auro-menu to create a dropdown menu control.
  *
@@ -21,18 +23,29 @@ import { classMap } from 'lit/directives/class-map.js';
 // Import the processed CSS file into the scope of the component
 import styleCss from "./auro-checkbox-group-css.js";
 
-class AuroCheckboxGroup extends LitElement {
+export class AuroCheckboxGroup extends LitElement {
   constructor() {
     super();
 
     this.validity = undefined;
     this.value = undefined;
-
-    this.index = 0;
-    this.maxNumber = 3;
     this.disabled = false;
-    this.horizontal = false;
     this.required = false;
+
+    /**
+     * @private
+     */
+    this.index = 0;
+
+    /**
+     * @private
+     */
+    this.maxNumber = 3;
+
+    /**
+     * @private
+     */
+    this.horizontal = false;
   }
 
   static get styles() {
@@ -287,8 +300,7 @@ class AuroCheckboxGroup extends LitElement {
   }
 }
 
-/* istanbul ignore else */
-// define the name of the custom component
+// default internal definition
 if (!customElements.get("auro-checkbox-group")) {
   customElements.define("auro-checkbox-group", AuroCheckboxGroup);
 }

@@ -9,8 +9,15 @@ import { ifDefined } from 'lit/directives/if-defined.js';
 
 // Import touch detection lib
 import styleCss from "./auro-checkbox-css.js";
-
 import checkLg from '../node_modules/@alaskaairux/icons/dist/icons/interface/check-lg_es6.js';
+
+/**
+ * The auro-select element is a wrapper for auro-dropdown and auro-menu to create a dropdown menu control.
+ *
+ * @csspart checkbox - apply css to a specific checkbox
+ * @csspart checkbox-input - apply css to a specifix checkbox's input
+ * @csspart checkbox-label - apply css to a specifix checkbox's label
+ */
 
 // build the component class
 export class AuroCheckbox extends LitElement {
@@ -142,9 +149,10 @@ export class AuroCheckbox extends LitElement {
     };
 
     return html`
-      <div class="cbxGroup">
+      <div class="cbxGroup" part="checkbox">
         <input
           class="util_displayHiddenVisually cbx--input"
+          part="checkbox-input"
           @change=${this.handleChange}
           @input="${this.handleInput}"
           ?disabled="${this.disabled}"
@@ -157,7 +165,7 @@ export class AuroCheckbox extends LitElement {
           .value="${this.value}"
         />
 
-        <label for="${ifDefined(this.id)}" class="${classMap(labelClasses)}">
+        <label for="${ifDefined(this.id)}" class="${classMap(labelClasses)}" part="checkbox-label">
           ${this.checked ? this.generateIconHtml() : undefined}
           <slot></slot>
         </label>
@@ -166,8 +174,7 @@ export class AuroCheckbox extends LitElement {
   }
 }
 
-/* istanbul ignore else */
-// define the name of the custom component
+// default internal definition
 if (!customElements.get("auro-checkbox")) {
   customElements.define("auro-checkbox", AuroCheckbox);
 }
