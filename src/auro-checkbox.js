@@ -3,18 +3,17 @@
 
 // ---------------------------------------------------------------------
 
-import { LitElement, html, css } from "lit-element";
-import { classMap } from 'lit-html/directives/class-map';
-import { ifDefined } from 'lit-html/directives/if-defined';
+import { LitElement, html, css } from "lit";
+import { classMap } from 'lit/directives/class-map.js';
+import { ifDefined } from 'lit/directives/if-defined.js';
 
 // Import touch detection lib
-import "focus-visible/dist/focus-visible.min.js";
 import styleCss from "./auro-checkbox-css.js";
 
-import checkLg from '@alaskaairux/icons/dist/icons/interface/check-lg_es6.js';
+import checkLg from '../node_modules/@alaskaairux/icons/dist/icons/interface/check-lg_es6.js';
 
 // build the component class
-class AuroCheckbox extends LitElement {
+export class AuroCheckbox extends LitElement {
   constructor() {
     super();
     this.checked = false;
@@ -78,7 +77,7 @@ class AuroCheckbox extends LitElement {
       return 'true';
     }
 
-    return 'false'
+    return 'false';
   }
 
   isRequired(required) {
@@ -86,13 +85,13 @@ class AuroCheckbox extends LitElement {
       return 'true';
     }
 
-    return 'false'
+    return 'false';
   }
 
   /**
    * Function to support @focusin event.
    * @private
-   * @return {void}
+   * @returns {void}
    */
   handleFocusin() {
     this.dispatchEvent(new CustomEvent('auroCheckbox-focusin', {
@@ -103,9 +102,9 @@ class AuroCheckbox extends LitElement {
   }
 
   /**
-   *
+   * Function to generate checkmark svg.
    * @private
-   * @return {void} Function to generate checkmark svg
+   * @returns {void}
    */
   generateIconHtml() {
     this.dom = new DOMParser().parseFromString(checkLg.svg, 'text/html');
@@ -123,7 +122,7 @@ class AuroCheckbox extends LitElement {
 
     this.addEventListener('focusin', () => {
       this.handleFocusin();
-    })
+    });
 
     this.addEventListener('focusout', () => {
       this.dispatchEvent(new CustomEvent('auroCheckbox-focusout', {
@@ -140,7 +139,7 @@ class AuroCheckbox extends LitElement {
       'label': true,
       'label--cbx': true,
       'errorBorder': this.error
-    }
+    };
 
     return html`
       <div class="cbxGroup">
