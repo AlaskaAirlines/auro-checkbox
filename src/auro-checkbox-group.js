@@ -15,11 +15,8 @@
  * @attr {Boolean} required - Populates the `required` attribute on the element. Used for client-side validation.
  */
 
-import { LitElement, html, css } from "lit-element";
-import { classMap } from 'lit-html/directives/class-map';
-
-// Import touch detection lib
-import 'focus-visible/dist/focus-visible.min.js';
+import { LitElement, html, css } from "lit";
+import { classMap } from 'lit/directives/class-map.js';
 
 // Import the processed CSS file into the scope of the component
 import styleCss from "./auro-checkbox-group-css.js";
@@ -174,7 +171,7 @@ class AuroCheckboxGroup extends LitElement {
         // execute the validation
         document.auroCheckboxGroupActive.validate();
       }
-    }
+    };
 
     this.addEventListener('auroCheckbox-focusin', () => {
       if (!this.value) {
@@ -187,7 +184,7 @@ class AuroCheckboxGroup extends LitElement {
       }
 
       this.focusWithin = true;
-    })
+    });
 
     this.addEventListener('auroCheckbox-focusout', () => {
       document.auroCheckboxGroupActive = this;
@@ -198,11 +195,11 @@ class AuroCheckboxGroup extends LitElement {
       } else {
         this.focusWithin = true;
       }
-    })
+    });
 
     this.addEventListener('auroCheckbox-input', (evt) => {
       this.handleValueUpdate(evt.target.value, evt.target.checked);
-    })
+    });
   }
 
   handlePreselectedItems() {
@@ -241,19 +238,19 @@ class AuroCheckboxGroup extends LitElement {
 
   /**
    * LitElement lifecycle method. Called after the DOM has been updated.
-   * @param {Map<string, any>} changedProperties - keys are the names of changed properties, values are the corresponding previous values.
+   * @param {Map<string, any>} changedProperties - Keys are the names of changed properties, values are the corresponding previous values.
    * @returns {void}
    */
   updated(changedProperties) {
     if (this.disabled && changedProperties.has('disabled')) {
       this.items.forEach((el) => {
-        el.disabled = this.disabled
+        el.disabled = this.disabled;
       });
     }
 
     if (changedProperties.has('required')) {
       this.items.forEach((el) => {
-        el.required = this.required
+        el.required = this.required;
       });
     }
 
@@ -265,7 +262,7 @@ class AuroCheckboxGroup extends LitElement {
   render() {
     const groupClasses = {
       'displayFlex': this.horizontal && this.items.length <= this.maxNumber
-    }
+    };
 
     return html`
       <fieldset class="${classMap(groupClasses)}">
