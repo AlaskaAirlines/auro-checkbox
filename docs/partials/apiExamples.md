@@ -21,9 +21,13 @@
 
 ### Attribute Examples
 
-#### Disabled
+### Disabled
 
-Explanation and use description.
+Use the `disabled` attribute to disable singular `auro-checkbox` elements or the entire `auro-checkbox-group`.
+
+#### Group
+
+The `disabled` attribute used to disable the entire `auro-checkbox-group`.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/disabled.html) -->
@@ -37,9 +41,25 @@ Explanation and use description.
 
 </auro-accordion>
 
-#### Error
+#### Single
 
-Explanation and use description.
+The `disabled` attribute used to disable a single `auro-checkbox` element.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/singleDisabled.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion lowProfile justifyRight>
+  <span slot="trigger">See code</span>
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/singleDisabled.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+
+</auro-accordion>
+
+### Error
+
+Sets a persistent error state.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/error.html) -->
@@ -55,7 +75,7 @@ Explanation and use description.
 
 #### Required
 
-Explanation and use description.
+When present, the `required` attribute specifies that an `auro-checkbox` within the `auro-checkbox-group` must be checked.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/required.html) -->

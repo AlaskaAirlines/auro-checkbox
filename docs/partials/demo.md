@@ -18,7 +18,7 @@ This file is generated based on a template fetched from `./docs/partials/demo.md
 
 ## Example(s)
 
-#### Default
+### Default
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/basic.html) -->
@@ -33,7 +33,13 @@ This file is generated based on a template fetched from `./docs/partials/demo.md
 
 </auro-accordion>
 
-#### Disabled
+### Disabled
+
+Use the `disabled` attribute to disable singular `auro-checkbox` elements or the entire `auro-checkbox-group`.
+
+#### Group
+
+The `disabled` attribute used to disable the entire `auro-checkbox-group`.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/disabled.html) -->
@@ -44,6 +50,23 @@ This file is generated based on a template fetched from `./docs/partials/demo.md
   <span slot="trigger">See code</span>
 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/disabled.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+
+</auro-accordion>
+
+#### Single
+
+The `disabled` attribute used to disable a single `auro-checkbox` element.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/singleDisabled.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+
+<auro-accordion lowProfile justifyRight>
+  <span slot="trigger">See code</span>
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/singleDisabled.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
@@ -62,14 +85,14 @@ registerComponent('custom-checkbox');
 This will create a new custom element that you can use in your HTML that will function identically to the `auro-checkbox` element.
 
 <div class="exampleWrapper">
-  <custom-header display="display">Salutations World!</custom-header>
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/customCheckbox.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
 <auro-accordion lowProfile justifyRight>
   <span slot="trigger">See code</span>
 
-  ```html
-  <custom-header display="display">Salutations World!</custom-header>
-  ```
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/customCheckbox.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
