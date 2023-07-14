@@ -58,11 +58,11 @@ The `<auro-checkbox>` element should be used in situations where users may:
 
 ### Disabled
 
-Use the `disabled` attribute to disable singular `auro-checkbox` elements or the entire `auro-checkbox-group`.
+Use the `disabled` attribute to disable individual `<auro-checkbox>` elements or the entire `<auro-checkbox-group>`.
 
 #### Disabled Group
 
-The `disabled` attribute used to disable the entire `auro-checkbox-group`.
+The `disabled` attribute used to disable the entire `<auro-checkbox-group>`.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/disabledGroup.html) -->
@@ -95,7 +95,7 @@ The `disabled` attribute used to disable the entire `auro-checkbox-group`.
 
 #### Disabled Checkbox within Group
 
-The `disabled` attribute used to disable a single `auro-checkbox` element.
+The `disabled` attribute used to disable a single `<auro-checkbox>` element.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/disabled.html) -->
@@ -128,7 +128,7 @@ The `disabled` attribute used to disable a single `auro-checkbox` element.
 
 #### Required Group
 
-When present, the `required` attribute specifies that an `auro-checkbox` within the `auro-checkbox-group` must be checked.
+When present, the `required` attribute specifies that at least one or more `<auro-checkbox>` elements within the `<auro-checkbox-group>` must be checked.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/required.html) -->
@@ -161,11 +161,11 @@ When present, the `required` attribute specifies that an `auro-checkbox` within 
 
 ### Error
 
-Use the `disabled` attribute to disable singular `auro-checkbox` elements or the entire `auro-checkbox-group`.
+Use the `error` attribute to force an error state on the element.
 
-#### Checkbox group in error state
+#### Checkbox Group with Error
 
-The `error` attribute used to set error state on the entire `auro-checkbox-group`.
+The `error` attribute used to set error state on the entire `<auro-checkbox-group>`. If using the `error` attribute on an `<auro-checkbox-group>`, a string with the error message needs to be passed along with the attribute.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/errorGroup.html) -->
@@ -196,9 +196,11 @@ The `error` attribute used to set error state on the entire `auro-checkbox-group
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-#### Single Checkbox in error state
+#### Checkbox with Error Outside of Group
 
-The `error` attribute used to set an error state on a single `auro-checkbox` element.
+The `error` attribute used to set an error state on a single `<auro-checkbox>` element.
+
+**Note**: Error messages are not supported outside of an `<auro-checkbox-group>`.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/error.html) -->
@@ -292,7 +294,7 @@ import './node_modules/@alaskaairux/auro-checkbox';
 registerComponent('custom-checkbox');
 ```
 
-This will create a new custom element that you can use in your HTML that will function identically to the `auro-checkbox` element.
+This will create a new custom element that you can use in your HTML that will function identically to the `<auro-checkbox>` element.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/customCheckbox.html) -->
