@@ -44,7 +44,7 @@ The auro-select element is a wrapper for auro-dropdown and auro-menu to create a
 | [disabled](#disabled) | `disabled` | `Boolean` | false   | If set to true, the checkbox will be unclickable. |
 | [error](#error)    | `error`    | `Boolean` | false   | If set to true, sets an error state on the checkbox. |
 | [id](#id)       | `id`       | `String`  |         | Sets the individual `id` per element.            |
-| checkbox(#name)     | `name`     | `String`  |         | Accepts any string, `DOMString` representing the value of the input. |
+| [name](#name)     | `name`     | `String`  |         | Accepts any string, `DOMString` representing the value of the input. |
 | [required](#required) | `required` | `Boolean` | false   | Populates the `required` attribute on the checkbox. Used for client-side validation. |
 | [value](#value)    | `value`    | `String`  |         | Sets the element's input value.                  |
 
@@ -139,6 +139,7 @@ The `disabled` attribute used to disable the entire `auro-checkbox-group`.
   <span slot="legend">Form label goes here</span>
   <auro-checkbox value="disabled checkbox option" name="example1" id="checkbox-disabledGroup1">Disabled checkbox option</auro-checkbox>
   <auro-checkbox value="disabled checkbox option" name="example2" id="checkbox-disabledGroup2" checked>Disabled checkbox option</auro-checkbox>
+<<<<<<< HEAD
   <auro-checkbox value="disabled checkbox option" name="example3" id="checkbox-disabledGroup3">Disabled checkbox option</auro-checkbox>
   <auro-checkbox value="disabled checkbox option" name="example4" id="checkbox-disabledGroup4">Disabled checkbox option</auro-checkbox>
 </auro-checkbox-group>
@@ -146,6 +147,15 @@ The `disabled` attribute used to disable the entire `auro-checkbox-group`.
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
+=======
+  <auro-checkbox value="disabled checkbox option" name="example3" id="checkbox-disabledGroup3" disabled>Disabled checkbox option</auro-checkbox>
+  <auro-checkbox value="disabled checkbox option" name="example4" id="checkbox-disabledGroup4" disabled checked>Disabled checkbox option</auro-checkbox>
+</auro-checkbox-group>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
+>>>>>>> eb161a6 (fix(docs): fix rendering of name attribute in docs)
 #### Disabled Checkbox within Group
 
 The `disabled` attribute used to disable a single `auro-checkbox` element.
@@ -170,6 +180,7 @@ The `disabled` attribute used to disable a single `auro-checkbox` element.
 ```html
 <auro-checkbox-group>
   <span slot="legend">Form label goes here</span>
+<<<<<<< HEAD
   <auro-checkbox value="disabled checkbox option" name="example1" id="checkbox-disabled1">Checkbox option</auro-checkbox>
   <auro-checkbox value="disabled checkbox option" name="example2" id="checkbox-disabled2" checked disabled>Disabled checkbox option</auro-checkbox>
   <auro-checkbox value="disabled checkbox option" name="example3" id="checkbox-disabled3" disabled>Disabled checkbox option</auro-checkbox>
@@ -179,6 +190,17 @@ The `disabled` attribute used to disable a single `auro-checkbox` element.
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
+=======
+  <auro-checkbox value="disabled checkbox option" name="example1" id="checkbox-disabled1">Disabled checkbox option</auro-checkbox>
+  <auro-checkbox value="disabled checkbox option" name="example2" id="checkbox-disabled2" checked>Disabled checkbox option</auro-checkbox>
+  <auro-checkbox value="disabled checkbox option" name="example3" id="checkbox-disabled3">Disabled checkbox option</auro-checkbox>
+  <auro-checkbox value="disabled checkbox option" name="example4" id="checkbox-disabled4" checked>Disabled checkbox option</auro-checkbox>
+</auro-checkbox-group>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
+>>>>>>> eb161a6 (fix(docs): fix rendering of name attribute in docs)
 ### Error
 
 Use the `disabled` attribute to disable singular `auro-checkbox` elements or the entire `auro-checkbox-group`.
