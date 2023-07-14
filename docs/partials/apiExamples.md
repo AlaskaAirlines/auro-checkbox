@@ -19,20 +19,36 @@
 
 </auro-accordion>
 
-### Attribute Examples
-
 ### Disabled
 
 Use the `disabled` attribute to disable singular `auro-checkbox` elements or the entire `auro-checkbox-group`.
 
-#### Group
+#### Disabled Group
 
 The `disabled` attribute used to disable the entire `auro-checkbox-group`.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/disabledGroup.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+
+<auro-accordion lowProfile justifyRight>
+  <span slot="trigger">See code</span>
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/disabledGroup.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+
+</auro-accordion>
+
+#### Disabled Checkbox within Group
+
+The `disabled` attribute used to disable a single `auro-checkbox` element.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/disabled.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
+
 <auro-accordion lowProfile justifyRight>
   <span slot="trigger">See code</span>
 
@@ -41,30 +57,36 @@ The `disabled` attribute used to disable the entire `auro-checkbox-group`.
 
 </auro-accordion>
 
-#### Single
+### Error
 
-The `disabled` attribute used to disable a single `auro-checkbox` element.
+Use the `disabled` attribute to disable singular `auro-checkbox` elements or the entire `auro-checkbox-group`.
+
+#### Error Group
+
+The `error` attribute used to set error state on the entire `auro-checkbox-group`.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/singleDisabled.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/errorGroup.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
+
 <auro-accordion lowProfile justifyRight>
   <span slot="trigger">See code</span>
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/singleDisabled.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/errorGroup.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
 
-### Error
+#### Error Checkbox within Group
 
-Sets a persistent error state.
+The `disabled` attribute used to disable a single `auro-checkbox` element.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/error.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
+
 <auro-accordion lowProfile justifyRight>
   <span slot="trigger">See code</span>
 

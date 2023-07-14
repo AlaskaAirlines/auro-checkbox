@@ -109,25 +109,56 @@ The auro-select element is a wrapper for auro-dropdown and auro-menu to create a
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-### Attribute Examples
-
 ### Disabled
 
 Use the `disabled` attribute to disable singular `auro-checkbox` elements or the entire `auro-checkbox-group`.
 
-#### Group
+#### Disabled Group
 
 The `disabled` attribute used to disable the entire `auro-checkbox-group`.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/disabled.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/disabled.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/disabledGroup.html) -->
+  <!-- The below content is automatically added from ./../../apiExamples/disabledGroup.html -->
   <auro-checkbox-group disabled>
     <span slot="legend">Form label goes here</span>
-    <auro-checkbox value="disabled checkbox option" name="example1" id="checkbox-disabled1">Disabled checkbox option</auro-checkbox>
-    <auro-checkbox value="disabled checkbox option" name="example2" id="checkbox-disabled2" checked>Disabled checkbox option</auro-checkbox>
-    <auro-checkbox value="disabled checkbox option" name="example3" id="checkbox-disabled3">Disabled checkbox option</auro-checkbox>
-    <auro-checkbox value="disabled checkbox option" name="example4" id="checkbox-disabled4" checked>Disabled checkbox option</auro-checkbox>
+    <auro-checkbox value="disabled checkbox option" name="example1" id="checkbox-disabledGroup1">Disabled checkbox option</auro-checkbox>
+    <auro-checkbox value="disabled checkbox option" name="example2" id="checkbox-disabledGroup2" checked>Disabled checkbox option</auro-checkbox>
+    <auro-checkbox value="disabled checkbox option" name="example3" id="checkbox-disabledGroup3">Disabled checkbox option</auro-checkbox>
+    <auro-checkbox value="disabled checkbox option" name="example4" id="checkbox-disabledGroup4">Disabled checkbox option</auro-checkbox>
+  </auro-checkbox-group>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion lowProfile justifyRight>
+  <span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/disabledGroup.html) -->
+<!-- The below code snippet is automatically added from ./../../apiExamples/disabledGroup.html -->
+
+```html
+<auro-checkbox-group disabled>
+  <span slot="legend">Form label goes here</span>
+  <auro-checkbox value="disabled checkbox option" name="example1" id="checkbox-disabledGroup1">Disabled checkbox option</auro-checkbox>
+  <auro-checkbox value="disabled checkbox option" name="example2" id="checkbox-disabledGroup2" checked>Disabled checkbox option</auro-checkbox>
+  <auro-checkbox value="disabled checkbox option" name="example3" id="checkbox-disabledGroup3">Disabled checkbox option</auro-checkbox>
+  <auro-checkbox value="disabled checkbox option" name="example4" id="checkbox-disabledGroup4">Disabled checkbox option</auro-checkbox>
+</auro-checkbox-group>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
+#### Disabled Checkbox within Group
+
+The `disabled` attribute used to disable a single `auro-checkbox` element.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/disabled.html) -->
+  <!-- The below content is automatically added from ./../../apiExamples/disabled.html -->
+  <auro-checkbox-group>
+    <span slot="legend">Form label goes here</span>
+    <auro-checkbox value="disabled checkbox option" name="example1" id="checkbox-disabled1">Checkbox option</auro-checkbox>
+    <auro-checkbox value="disabled checkbox option" name="example2" id="checkbox-disabled2" checked disabled>Disabled checkbox option</auro-checkbox>
+    <auro-checkbox value="disabled checkbox option" name="example3" id="checkbox-disabled3" disabled>Disabled checkbox option</auro-checkbox>
+    <auro-checkbox value="disabled checkbox option" name="example4" id="checkbox-disabled4" checked>Checkbox option</auro-checkbox>
   </auro-checkbox-group>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
@@ -137,45 +168,12 @@ The `disabled` attribute used to disable the entire `auro-checkbox-group`.
 <!-- The below code snippet is automatically added from ./../../apiExamples/disabled.html -->
 
 ```html
-<auro-checkbox-group disabled>
-  <span slot="legend">Form label goes here</span>
-  <auro-checkbox value="disabled checkbox option" name="example1" id="checkbox-disabled1">Disabled checkbox option</auro-checkbox>
-  <auro-checkbox value="disabled checkbox option" name="example2" id="checkbox-disabled2" checked>Disabled checkbox option</auro-checkbox>
-  <auro-checkbox value="disabled checkbox option" name="example3" id="checkbox-disabled3">Disabled checkbox option</auro-checkbox>
-  <auro-checkbox value="disabled checkbox option" name="example4" id="checkbox-disabled4" checked>Disabled checkbox option</auro-checkbox>
-</auro-checkbox-group>
-```
-<!-- AURO-GENERATED-CONTENT:END -->
-</auro-accordion>
-
-#### Single
-
-The `disabled` attribute used to disable a single `auro-checkbox` element.
-
-<div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/singleDisabled.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/singleDisabled.html -->
-  <auro-checkbox-group>
-    <span slot="legend">Form label goes here</span>
-    <auro-checkbox value="disabled checkbox option" name="example1" id="checkbox-singleDisabled1">Disabled checkbox option</auro-checkbox>
-    <auro-checkbox value="disabled checkbox option" name="example2" id="checkbox-singleDisabled2" checked>Disabled checkbox option</auro-checkbox>
-    <auro-checkbox value="disabled checkbox option" name="example3" id="checkbox-singleDisabled3" disabled>Disabled checkbox option</auro-checkbox>
-    <auro-checkbox value="disabled checkbox option" name="example4" id="checkbox-singleDisabled4" disabled checked>Disabled checkbox option</auro-checkbox>
-  </auro-checkbox-group>
-  <!-- AURO-GENERATED-CONTENT:END -->
-</div>
-<auro-accordion lowProfile justifyRight>
-  <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/singleDisabled.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/singleDisabled.html -->
-
-```html
 <auro-checkbox-group>
   <span slot="legend">Form label goes here</span>
-  <auro-checkbox value="disabled checkbox option" name="example1" id="checkbox-singleDisabled1">Disabled checkbox option</auro-checkbox>
-  <auro-checkbox value="disabled checkbox option" name="example2" id="checkbox-singleDisabled2" checked>Disabled checkbox option</auro-checkbox>
-  <auro-checkbox value="disabled checkbox option" name="example3" id="checkbox-singleDisabled3" disabled>Disabled checkbox option</auro-checkbox>
-  <auro-checkbox value="disabled checkbox option" name="example4" id="checkbox-singleDisabled4" disabled checked>Disabled checkbox option</auro-checkbox>
+  <auro-checkbox value="disabled checkbox option" name="example1" id="checkbox-disabled1">Checkbox option</auro-checkbox>
+  <auro-checkbox value="disabled checkbox option" name="example2" id="checkbox-disabled2" checked disabled>Disabled checkbox option</auro-checkbox>
+  <auro-checkbox value="disabled checkbox option" name="example3" id="checkbox-disabled3" disabled>Disabled checkbox option</auro-checkbox>
+  <auro-checkbox value="disabled checkbox option" name="example4" id="checkbox-disabled4" checked>Checkbox option</auro-checkbox>
 </auro-checkbox-group>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
@@ -183,18 +181,49 @@ The `disabled` attribute used to disable a single `auro-checkbox` element.
 
 ### Error
 
-Sets a persistent error state.
+Use the `disabled` attribute to disable singular `auro-checkbox` elements or the entire `auro-checkbox-group`.
+
+#### Error Group
+
+The `error` attribute used to set error state on the entire `auro-checkbox-group`.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/errorGroup.html) -->
+  <!-- The below content is automatically added from ./../../apiExamples/errorGroup.html -->
+  <auro-checkbox-group error="custom error">
+    <span slot="legend">Form label goes here</span>
+    <auro-checkbox value="error checkbox option" name="example1" id="checkbox-errorGroup1">Error checkbox option</auro-checkbox>
+    <auro-checkbox value="error checkbox option" name="example2" id="checkbox-errorGroup2">Error checkbox option</auro-checkbox>
+    <auro-checkbox value="error checkbox option" name="example3" id="checkbox-errorGroup3">Error checkbox option</auro-checkbox>
+    <auro-checkbox value="error checkbox option" name="example4" id="checkbox-errorGroup4" checked>Error checkbox option</auro-checkbox>
+  </auro-checkbox-group>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion lowProfile justifyRight>
+  <span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/errorGroup.html) -->
+<!-- The below code snippet is automatically added from ./../../apiExamples/errorGroup.html -->
+
+```html
+<auro-checkbox-group error="custom error">
+  <span slot="legend">Form label goes here</span>
+  <auro-checkbox value="error checkbox option" name="example1" id="checkbox-errorGroup1">Error checkbox option</auro-checkbox>
+  <auro-checkbox value="error checkbox option" name="example2" id="checkbox-errorGroup2">Error checkbox option</auro-checkbox>
+  <auro-checkbox value="error checkbox option" name="example3" id="checkbox-errorGroup3">Error checkbox option</auro-checkbox>
+  <auro-checkbox value="error checkbox option" name="example4" id="checkbox-errorGroup4" checked>Error checkbox option</auro-checkbox>
+</auro-checkbox-group>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
+#### Error Checkbox within Group
+
+The `disabled` attribute used to disable a single `auro-checkbox` element.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/error.html) -->
   <!-- The below content is automatically added from ./../../apiExamples/error.html -->
-  <auro-checkbox-group error="custom error">
-    <span slot="legend">Form label goes here</span>
-    <auro-checkbox value="error checkbox option" name="example1" id="checkbox-error1">Error checkbox option</auro-checkbox>
-    <auro-checkbox value="error checkbox option" name="example2" id="checkbox-error2">Error checkbox option</auro-checkbox>
-    <auro-checkbox value="error checkbox option" name="example3" id="checkbox-error3">Error checkbox option</auro-checkbox>
-    <auro-checkbox value="error checkbox option" name="example4" id="checkbox-error4" checked>Error checkbox option</auro-checkbox>
-  </auro-checkbox-group>
+  <auro-checkbox value="error checkbox option" name="example3" id="checkbox-error1" error>Error checkbox option</auro-checkbox>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion lowProfile justifyRight>
@@ -203,13 +232,7 @@ Sets a persistent error state.
 <!-- The below code snippet is automatically added from ./../../apiExamples/error.html -->
 
 ```html
-<auro-checkbox-group error="custom error">
-  <span slot="legend">Form label goes here</span>
-  <auro-checkbox value="error checkbox option" name="example1" id="checkbox-error1">Error checkbox option</auro-checkbox>
-  <auro-checkbox value="error checkbox option" name="example2" id="checkbox-error2">Error checkbox option</auro-checkbox>
-  <auro-checkbox value="error checkbox option" name="example3" id="checkbox-error3">Error checkbox option</auro-checkbox>
-  <auro-checkbox value="error checkbox option" name="example4" id="checkbox-error4" checked>Error checkbox option</auro-checkbox>
-</auro-checkbox-group>
+<auro-checkbox value="error checkbox option" name="example3" id="checkbox-error1" error>Error checkbox option</auro-checkbox>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
@@ -221,7 +244,7 @@ When present, the `required` attribute specifies that an `auro-checkbox` within 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/required.html) -->
   <!-- The below content is automatically added from ./../../apiExamples/required.html -->
-  <auro-checkbox-group required>
+  <auro-checkbox-group required setCustomValidityValueMissing="Please select an option">
     <span slot="legend">Form label goes here</span>
     <auro-checkbox value="checked option" name="example1" id="checkbox-required1">Checkbox option</auro-checkbox>
     <auro-checkbox value="checkbox Option" name="example2" id="checkbox-required2">Checkbox option</auro-checkbox>
@@ -236,7 +259,7 @@ When present, the `required` attribute specifies that an `auro-checkbox` within 
 <!-- The below code snippet is automatically added from ./../../apiExamples/required.html -->
 
 ```html
-<auro-checkbox-group required>
+<auro-checkbox-group required setCustomValidityValueMissing="Please select an option">
   <span slot="legend">Form label goes here</span>
   <auro-checkbox value="checked option" name="example1" id="checkbox-required1">Checkbox option</auro-checkbox>
   <auro-checkbox value="checkbox Option" name="example2" id="checkbox-required2">Checkbox option</auro-checkbox>
