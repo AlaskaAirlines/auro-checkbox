@@ -32,10 +32,10 @@ The `<auro-checkbox>` element should be used in situations where users may:
   <!-- The below content is automatically added from ./../../apiExamples/basic.html -->
   <auro-checkbox-group>
     <span slot="legend">Form label goes here</span>
-    <auro-checkbox value="checkbox option" name="example1">Checkbox option</auro-checkbox>
-    <auro-checkbox value="checkbox option" name="example2" checked>Checkbox option</auro-checkbox>
-    <auro-checkbox value="checkbox option" name="example3">Checkbox option</auro-checkbox>
-    <auro-checkbox value="checkbox option" name="example4">Checkbox option</auro-checkbox>
+    <auro-checkbox value="checkbox option" name="example1" id="checkbox-basic1">Checkbox option</auro-checkbox>
+    <auro-checkbox value="checkbox option" name="example2" id="checkbox-basic2" checked>Checkbox option</auro-checkbox>
+    <auro-checkbox value="checkbox option" name="example3" id="checkbox-basic3">Checkbox option</auro-checkbox>
+    <auro-checkbox value="checkbox option" name="example4" id="checkbox-basic4">Checkbox option</auro-checkbox>
   </auro-checkbox-group>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
@@ -47,10 +47,10 @@ The `<auro-checkbox>` element should be used in situations where users may:
 ```html
 <auro-checkbox-group>
   <span slot="legend">Form label goes here</span>
-  <auro-checkbox value="checkbox option" name="example1">Checkbox option</auro-checkbox>
-  <auro-checkbox value="checkbox option" name="example2" checked>Checkbox option</auro-checkbox>
-  <auro-checkbox value="checkbox option" name="example3">Checkbox option</auro-checkbox>
-  <auro-checkbox value="checkbox option" name="example4">Checkbox option</auro-checkbox>
+  <auro-checkbox value="checkbox option" name="example1" id="checkbox-basic1">Checkbox option</auro-checkbox>
+  <auro-checkbox value="checkbox option" name="example2" id="checkbox-basic2" checked>Checkbox option</auro-checkbox>
+  <auro-checkbox value="checkbox option" name="example3" id="checkbox-basic3">Checkbox option</auro-checkbox>
+  <auro-checkbox value="checkbox option" name="example4" id="checkbox-basic4">Checkbox option</auro-checkbox>
 </auro-checkbox-group>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
@@ -69,10 +69,10 @@ The `disabled` attribute used to disable the entire `auro-checkbox-group`.
   <!-- The below content is automatically added from ./../../apiExamples/disabled.html -->
   <auro-checkbox-group disabled>
     <span slot="legend">Form label goes here</span>
-    <auro-checkbox value="disabled checkbox option" name="example1">Disabled checkbox option</auro-checkbox>
-    <auro-checkbox value="disabled checkbox option" name="example2" checked>Disabled checkbox option</auro-checkbox>
-    <auro-checkbox value="disabled checkbox option" name="example3">Disabled checkbox option</auro-checkbox>
-    <auro-checkbox value="disabled checkbox option" name="example4" checked>Disabled checkbox option</auro-checkbox>
+    <auro-checkbox value="disabled checkbox option" name="example1" id="checkbox-disabled1">Disabled checkbox option</auro-checkbox>
+    <auro-checkbox value="disabled checkbox option" name="example2" id="checkbox-disabled2" checked>Disabled checkbox option</auro-checkbox>
+    <auro-checkbox value="disabled checkbox option" name="example3" id="checkbox-disabled3">Disabled checkbox option</auro-checkbox>
+    <auro-checkbox value="disabled checkbox option" name="example4" id="checkbox-disabled4" checked>Disabled checkbox option</auro-checkbox>
   </auro-checkbox-group>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
@@ -84,10 +84,10 @@ The `disabled` attribute used to disable the entire `auro-checkbox-group`.
 ```html
 <auro-checkbox-group disabled>
   <span slot="legend">Form label goes here</span>
-  <auro-checkbox value="disabled checkbox option" name="example1">Disabled checkbox option</auro-checkbox>
-  <auro-checkbox value="disabled checkbox option" name="example2" checked>Disabled checkbox option</auro-checkbox>
-  <auro-checkbox value="disabled checkbox option" name="example3">Disabled checkbox option</auro-checkbox>
-  <auro-checkbox value="disabled checkbox option" name="example4" checked>Disabled checkbox option</auro-checkbox>
+  <auro-checkbox value="disabled checkbox option" name="example1" id="checkbox-disabled1">Disabled checkbox option</auro-checkbox>
+  <auro-checkbox value="disabled checkbox option" name="example2" id="checkbox-disabled2" checked>Disabled checkbox option</auro-checkbox>
+  <auro-checkbox value="disabled checkbox option" name="example3" id="checkbox-disabled3">Disabled checkbox option</auro-checkbox>
+  <auro-checkbox value="disabled checkbox option" name="example4" id="checkbox-disabled4" checked>Disabled checkbox option</auro-checkbox>
 </auro-checkbox-group>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
@@ -102,10 +102,10 @@ The `disabled` attribute used to disable a single `auro-checkbox` element.
   <!-- The below content is automatically added from ./../../apiExamples/singleDisabled.html -->
   <auro-checkbox-group>
     <span slot="legend">Form label goes here</span>
-    <auro-checkbox value="disabled checkbox option" name="example1">Disabled checkbox option</auro-checkbox>
-    <auro-checkbox value="disabled checkbox option" name="example2" checked>Disabled checkbox option</auro-checkbox>
-    <auro-checkbox value="disabled checkbox option" name="example3" disabled>Disabled checkbox option</auro-checkbox>
-    <auro-checkbox value="disabled checkbox option" name="example4" disabled checked>Disabled checkbox option</auro-checkbox>
+    <auro-checkbox value="disabled checkbox option" name="example1" id="checkbox-singleDisabled1">Disabled checkbox option</auro-checkbox>
+    <auro-checkbox value="disabled checkbox option" name="example2" id="checkbox-singleDisabled2" checked>Disabled checkbox option</auro-checkbox>
+    <auro-checkbox value="disabled checkbox option" name="example3" id="checkbox-singleDisabled3" disabled>Disabled checkbox option</auro-checkbox>
+    <auro-checkbox value="disabled checkbox option" name="example4" id="checkbox-singleDisabled4" disabled checked>Disabled checkbox option</auro-checkbox>
   </auro-checkbox-group>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
@@ -117,10 +117,10 @@ The `disabled` attribute used to disable a single `auro-checkbox` element.
 ```html
 <auro-checkbox-group>
   <span slot="legend">Form label goes here</span>
-  <auro-checkbox value="disabled checkbox option" name="example1">Disabled checkbox option</auro-checkbox>
-  <auro-checkbox value="disabled checkbox option" name="example2" checked>Disabled checkbox option</auro-checkbox>
-  <auro-checkbox value="disabled checkbox option" name="example3" disabled>Disabled checkbox option</auro-checkbox>
-  <auro-checkbox value="disabled checkbox option" name="example4" disabled checked>Disabled checkbox option</auro-checkbox>
+  <auro-checkbox value="disabled checkbox option" name="example1" id="checkbox-singleDisabled1">Disabled checkbox option</auro-checkbox>
+  <auro-checkbox value="disabled checkbox option" name="example2" id="checkbox-singleDisabled2" checked>Disabled checkbox option</auro-checkbox>
+  <auro-checkbox value="disabled checkbox option" name="example3" id="checkbox-singleDisabled3" disabled>Disabled checkbox option</auro-checkbox>
+  <auro-checkbox value="disabled checkbox option" name="example4" id="checkbox-singleDisabled4" disabled checked>Disabled checkbox option</auro-checkbox>
 </auro-checkbox-group>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
@@ -144,10 +144,10 @@ This will create a new custom element that you can use in your HTML that will fu
   <!-- The below content is automatically added from ./../../apiExamples/customCheckbox.html -->
   <custom-checkbox-group>
     <span slot="legend">Form label goes here</span>
-    <custom-checkbox value="checkbox option" name="example1">Checkbox option</custom-checkbox>
-    <custom-checkbox value="checkbox option" name="example2" checked>Checkbox option</custom-checkbox>
-    <custom-checkbox value="checkbox option" name="example3">Checkbox option</custom-checkbox>
-    <custom-checkbox value="checkbox option" name="example4">Checkbox option</custom-checkbox>
+    <custom-checkbox value="checkbox option" name="example1" id="checkbox-custom1">Checkbox option</custom-checkbox>
+    <custom-checkbox value="checkbox option" name="example2" id="checkbox-custom2" checked>Checkbox option</custom-checkbox>
+    <custom-checkbox value="checkbox option" name="example3" id="checkbox-custom3">Checkbox option</custom-checkbox>
+    <custom-checkbox value="checkbox option" name="example4" id="checkbox-custom4">Checkbox option</custom-checkbox>
   </custom-checkbox-group>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
@@ -159,10 +159,10 @@ This will create a new custom element that you can use in your HTML that will fu
 ```html
 <custom-checkbox-group>
   <span slot="legend">Form label goes here</span>
-  <custom-checkbox value="checkbox option" name="example1">Checkbox option</custom-checkbox>
-  <custom-checkbox value="checkbox option" name="example2" checked>Checkbox option</custom-checkbox>
-  <custom-checkbox value="checkbox option" name="example3">Checkbox option</custom-checkbox>
-  <custom-checkbox value="checkbox option" name="example4">Checkbox option</custom-checkbox>
+  <custom-checkbox value="checkbox option" name="example1" id="checkbox-custom1">Checkbox option</custom-checkbox>
+  <custom-checkbox value="checkbox option" name="example2" id="checkbox-custom2" checked>Checkbox option</custom-checkbox>
+  <custom-checkbox value="checkbox option" name="example3" id="checkbox-custom3">Checkbox option</custom-checkbox>
+  <custom-checkbox value="checkbox option" name="example4" id="checkbox-custom4">Checkbox option</custom-checkbox>
 </custom-checkbox-group>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
