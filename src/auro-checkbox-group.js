@@ -15,6 +15,7 @@
  * @attr {String} error - When defined, sets persistent validity to `customError` and sets `setCustomValidity` = attribute value.
  * @attr {Boolean} noValidate - If set, disables auto-validation on blur.
  * @attr {Boolean} required - Populates the `required` attribute on the element. Used for client-side validation.
+ * @attr {Boolean} horizontal - If set, checkboxes will be aligned horizontally.
  */
 
 import { LitElement, html, css } from "lit";
@@ -31,6 +32,7 @@ export class AuroCheckboxGroup extends LitElement {
     this.value = undefined;
     this.disabled = false;
     this.required = false;
+    this.horizontal = false;
 
     /**
      * @private
@@ -41,11 +43,6 @@ export class AuroCheckboxGroup extends LitElement {
      * @private
      */
     this.maxNumber = 3;
-
-    /**
-     * @private
-     */
-    this.horizontal = false;
   }
 
   static get styles() {
@@ -60,7 +57,10 @@ export class AuroCheckboxGroup extends LitElement {
         type: Boolean,
         reflect: true
       },
-      horizontal: { type: Boolean },
+      horizontal: {
+        type: Boolean,
+        reflect: true
+      },
       value: {
         type: Array
       },

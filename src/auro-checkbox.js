@@ -14,9 +14,16 @@ import checkLg from '../node_modules/@alaskaairux/icons/dist/icons/interface/che
 /**
  * The auro-select element is a wrapper for auro-dropdown and auro-menu to create a dropdown menu control.
  *
- * @csspart checkbox - apply css to a specific checkbox
- * @csspart checkbox-input - apply css to a specifix checkbox's input
- * @csspart checkbox-label - apply css to a specifix checkbox's label
+ * @attr {Boolean} checked - If set to true, the checkbox will be filled with a checkmark.
+ * @attr {Boolean} disabled - If set to true, the checkbox will be unclickable.
+ * @attr {Boolean} required - Populates the `required` attribute on the checkbox. Used for client-side validation.
+ * @attr {Boolean} error - If set to true, sets an error state on the checkbox.
+ * @attr {String} id - Sets the individual `id` per element.
+ * @attr {String} name - Accepts any string, `DOMString` representing the value of the input.
+ * @attr {String} value - Sets the element's input value.
+ * @csspart checkbox - apply css to a specific checkbox.
+ * @csspart checkbox-input - apply css to a specifix checkbox's input.
+ * @csspart checkbox-label - apply css to a specifix checkbox's label.
  */
 
 // build the component class

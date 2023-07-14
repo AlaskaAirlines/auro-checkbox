@@ -6,6 +6,7 @@
 |---------------------------------|---------------------------------|-----------|-------------|
 | `disabled`                      | `disabled`                      | `boolean` | false       |
 | `error`                         | `error`                         | `string`  |             |
+| `horizontal`                    | `horizontal`                    | `boolean` | false       |
 | `noValidate`                    | `noValidate`                    | `boolean` |             |
 | `required`                      | `required`                      | `boolean` | false       |
 | `setCustomValidity`             | `setCustomValidity`             | `string`  |             |
@@ -35,15 +36,15 @@ The auro-select element is a wrapper for auro-dropdown and auro-menu to create a
 
 ## Properties
 
-| Property   | Attribute  | Type      | Default |
-|------------|------------|-----------|---------|
-| `checked`  | `checked`  | `boolean` | false   |
-| `disabled` | `disabled` | `boolean` | false   |
-| `error`    | `error`    | `boolean` | false   |
-| `id`       | `id`       | `string`  |         |
-| `name`     | `name`     | `string`  |         |
-| `required` | `required` | `boolean` | false   |
-| `value`    | `value`    | `string`  |         |
+| Property   | Attribute  | Type      | Default | Description                                      |
+|------------|------------|-----------|---------|--------------------------------------------------|
+| `checked`  | `checked`  | `Boolean` | false   | If set to true, the checkbox will be filled with a checkmark. |
+| `disabled` | `disabled` | `Boolean` | false   | If set to true, the checkbox will be unclickable. |
+| `error`    | `error`    | `Boolean` | false   | If set to true, sets an error state on the checkbox. |
+| `id`       | `id`       | `String`  |         | Sets the individual `id` per element.            |
+| `name`     | `name`     | `String`  |         | Accepts any string, `DOMString` representing the value of the input. |
+| `required` | `required` | `Boolean` | false   | Populates the `required` attribute on the checkbox. Used for client-side validation. |
+| `value`    | `value`    | `String`  |         | Sets the element's input value.                  |
 
 ## Methods
 
@@ -64,8 +65,8 @@ The auro-select element is a wrapper for auro-dropdown and auro-menu to create a
 
 ## CSS Shadow Parts
 
-| Part             | Description                              |
-|------------------|------------------------------------------|
-| `checkbox`       | apply css to a specific checkbox         |
-| `checkbox-input` | apply css to a specifix checkbox's input |
-| `checkbox-label` | apply css to a specifix checkbox's label |
+| Part             | Description                               |
+|------------------|-------------------------------------------|
+| `checkbox`       | apply css to a specific checkbox.         |
+| `checkbox-input` | apply css to a specifix checkbox's input. |
+| `checkbox-label` | apply css to a specifix checkbox's label. |
