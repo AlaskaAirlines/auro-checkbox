@@ -13,7 +13,7 @@ The auro-select element is a wrapper for auro-dropdown and auro-menu to create a
 | [disabled](#disabled) | `disabled` | `Boolean` | false   | If set to true, the checkbox will be unclickable. |
 | [error](#error)    | `error`    | `Boolean` | false   | If set to true, sets an error state on the checkbox. |
 | [id](#id)       | `id`       | `String`  |         | Sets the individual `id` per element.            |
-| checkbox(#name)     | `name`     | `String`  |         | Accepts any string, `DOMString` representing the value of the input. |
+| [name](#name)     | `name`     | `String`  |         | Accepts any string, `DOMString` representing the value of the input. |
 | [required](#required) | `required` | `Boolean` | false   | Populates the `required` attribute on the checkbox. Used for client-side validation. |
 | [value](#value)    | `value`    | `String`  |         | Sets the element's input value.                  |
 
