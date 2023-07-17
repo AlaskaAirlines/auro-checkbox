@@ -3,6 +3,8 @@
 
 // ---------------------------------------------------------------------
 
+/* eslint-disable max-lines */
+
 /**
  * The auro-select element is a wrapper for auro-dropdown and auro-menu to create a dropdown menu control.
  *
@@ -13,29 +15,34 @@
  * @attr {String} error - When defined, sets persistent validity to `customError` and sets `setCustomValidity` = attribute value.
  * @attr {Boolean} noValidate - If set, disables auto-validation on blur.
  * @attr {Boolean} required - Populates the `required` attribute on the element. Used for client-side validation.
+ * @attr {Boolean} horizontal - If set, checkboxes will be aligned horizontally.
  */
 
-import { LitElement, html, css } from "lit-element";
-import { classMap } from 'lit-html/directives/class-map';
-
-// Import touch detection lib
-import 'focus-visible/dist/focus-visible.min.js';
+import { LitElement, html, css } from "lit";
+import { classMap } from 'lit/directives/class-map.js';
 
 // Import the processed CSS file into the scope of the component
 import styleCss from "./auro-checkbox-group-css.js";
 
-class AuroCheckboxGroup extends LitElement {
+export class AuroCheckboxGroup extends LitElement {
   constructor() {
     super();
 
     this.validity = undefined;
     this.value = undefined;
-
-    this.index = 0;
-    this.maxNumber = 3;
     this.disabled = false;
-    this.horizontal = false;
     this.required = false;
+    this.horizontal = false;
+
+    /**
+     * @private
+     */
+    this.index = 0;
+
+    /**
+     * @private
+     */
+    this.maxNumber = 3;
   }
 
   static get styles() {
@@ -50,7 +57,10 @@ class AuroCheckboxGroup extends LitElement {
         type: Boolean,
         reflect: true
       },
-      horizontal: { type: Boolean },
+      horizontal: {
+        type: Boolean,
+        reflect: true
+      },
       value: {
         type: Array
       },
@@ -163,7 +173,6 @@ class AuroCheckboxGroup extends LitElement {
   }
 
   firstUpdated() {
-
     // must declare this function as a variable to correctly pass the reference to the removeEventListener
     const checkFocusWithin = function(evt) {
       if (document.auroCheckboxGroupActive && !document.auroCheckboxGroupActive.contains(evt.target)) {
@@ -174,7 +183,7 @@ class AuroCheckboxGroup extends LitElement {
         // execute the validation
         document.auroCheckboxGroupActive.validate();
       }
-    }
+    };
 
     this.addEventListener('auroCheckbox-focusin', () => {
       if (!this.value) {
@@ -187,7 +196,7 @@ class AuroCheckboxGroup extends LitElement {
       }
 
       this.focusWithin = true;
-    })
+    });
 
     this.addEventListener('auroCheckbox-focusout', () => {
       document.auroCheckboxGroupActive = this;
@@ -198,11 +207,11 @@ class AuroCheckboxGroup extends LitElement {
       } else {
         this.focusWithin = true;
       }
-    })
+    });
 
     this.addEventListener('auroCheckbox-input', (evt) => {
       this.handleValueUpdate(evt.target.value, evt.target.checked);
-    })
+    });
   }
 
   handlePreselectedItems() {
@@ -226,7 +235,10 @@ class AuroCheckboxGroup extends LitElement {
   }
 
   handleItems() {
-    this.items = Array.from(this.querySelectorAll('auro-checkbox'));
+    const groupTagName = this.tagName.toLowerCase();
+    const checkboxTagName = groupTagName.substring(0, groupTagName.indexOf('-group'));
+
+    this.items = Array.from(this.querySelectorAll(checkboxTagName));
 
     this.handlePreselectedItems();
 
@@ -241,19 +253,19 @@ class AuroCheckboxGroup extends LitElement {
 
   /**
    * LitElement lifecycle method. Called after the DOM has been updated.
-   * @param {Map<string, any>} changedProperties - keys are the names of changed properties, values are the corresponding previous values.
+   * @param {Map<string, any>} changedProperties - Keys are the names of changed properties, values are the corresponding previous values.
    * @returns {void}
    */
   updated(changedProperties) {
     if (this.disabled && changedProperties.has('disabled')) {
       this.items.forEach((el) => {
-        el.disabled = this.disabled
+        el.disabled = this.disabled;
       });
     }
 
     if (changedProperties.has('required')) {
       this.items.forEach((el) => {
-        el.required = this.required
+        el.required = this.required;
       });
     }
 
@@ -265,7 +277,7 @@ class AuroCheckboxGroup extends LitElement {
   render() {
     const groupClasses = {
       'displayFlex': this.horizontal && this.items.length <= this.maxNumber
-    }
+    };
 
     return html`
       <fieldset class="${classMap(groupClasses)}">
@@ -290,8 +302,7 @@ class AuroCheckboxGroup extends LitElement {
   }
 }
 
-/* istanbul ignore else */
-// define the name of the custom component
+// default internal definition
 if (!customElements.get("auro-checkbox-group")) {
   customElements.define("auro-checkbox-group", AuroCheckboxGroup);
 }
