@@ -3,18 +3,31 @@
 
 // ---------------------------------------------------------------------
 
-import { LitElement, html, css } from "lit-element";
-import { classMap } from 'lit-html/directives/class-map';
-import { ifDefined } from 'lit-html/directives/if-defined';
+import { LitElement, html, css } from "lit";
+import { classMap } from 'lit/directives/class-map.js';
+import { ifDefined } from 'lit/directives/if-defined.js';
 
 // Import touch detection lib
-import "focus-visible/dist/focus-visible.min.js";
 import styleCss from "./auro-checkbox-css.js";
+import checkLg from '../node_modules/@alaskaairux/icons/dist/icons/interface/check-lg_es6.js';
 
-import checkLg from '@alaskaairux/icons/dist/icons/interface/check-lg_es6.js';
+/**
+ * The auro-select element is a wrapper for auro-dropdown and auro-menu to create a dropdown menu control.
+ *
+ * @attr {Boolean} checked - If set to true, the checkbox will be filled with a checkmark.
+ * @attr {Boolean} disabled - If set to true, the checkbox will be unclickable.
+ * @attr {Boolean} required - Populates the `required` attribute on the checkbox. Used for client-side validation.
+ * @attr {Boolean} error - If set to true, sets an error state on the checkbox.
+ * @attr {String} id - Sets the individual `id` per element.
+ * @attr {String} name - Accepts any string, `DOMString` representing the value of the input.
+ * @attr {String} value - Sets the element's input value.
+ * @csspart checkbox - apply css to a specific checkbox.
+ * @csspart checkbox-input - apply css to a specifix checkbox's input.
+ * @csspart checkbox-label - apply css to a specifix checkbox's label.
+ */
 
 // build the component class
-class AuroCheckbox extends LitElement {
+export class AuroCheckbox extends LitElement {
   constructor() {
     super();
     this.checked = false;
@@ -78,7 +91,7 @@ class AuroCheckbox extends LitElement {
       return 'true';
     }
 
-    return 'false'
+    return 'false';
   }
 
   isRequired(required) {
@@ -86,13 +99,13 @@ class AuroCheckbox extends LitElement {
       return 'true';
     }
 
-    return 'false'
+    return 'false';
   }
 
   /**
    * Function to support @focusin event.
    * @private
-   * @return {void}
+   * @returns {void}
    */
   handleFocusin() {
     this.dispatchEvent(new CustomEvent('auroCheckbox-focusin', {
@@ -103,9 +116,9 @@ class AuroCheckbox extends LitElement {
   }
 
   /**
-   *
+   * Function to generate checkmark svg.
    * @private
-   * @return {void} Function to generate checkmark svg
+   * @returns {void}
    */
   generateIconHtml() {
     this.dom = new DOMParser().parseFromString(checkLg.svg, 'text/html');
@@ -123,7 +136,7 @@ class AuroCheckbox extends LitElement {
 
     this.addEventListener('focusin', () => {
       this.handleFocusin();
-    })
+    });
 
     this.addEventListener('focusout', () => {
       this.dispatchEvent(new CustomEvent('auroCheckbox-focusout', {
@@ -140,12 +153,13 @@ class AuroCheckbox extends LitElement {
       'label': true,
       'label--cbx': true,
       'errorBorder': this.error
-    }
+    };
 
     return html`
-      <div class="cbxGroup">
+      <div class="cbxGroup" part="checkbox">
         <input
           class="util_displayHiddenVisually cbx--input"
+          part="checkbox-input"
           @change=${this.handleChange}
           @input="${this.handleInput}"
           ?disabled="${this.disabled}"
@@ -158,7 +172,7 @@ class AuroCheckbox extends LitElement {
           .value="${this.value}"
         />
 
-        <label for="${ifDefined(this.id)}" class="${classMap(labelClasses)}">
+        <label for="${ifDefined(this.id)}" class="${classMap(labelClasses)}" part="checkbox-label">
           ${this.checked ? this.generateIconHtml() : undefined}
           <slot></slot>
         </label>
@@ -167,8 +181,7 @@ class AuroCheckbox extends LitElement {
   }
 }
 
-/* istanbul ignore else */
-// define the name of the custom component
+// default internal definition
 if (!customElements.get("auro-checkbox")) {
   customElements.define("auro-checkbox", AuroCheckbox);
 }
