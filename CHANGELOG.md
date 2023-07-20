@@ -1,5 +1,17 @@
 # Semantic Release Automated Changelog
 
+## [2.0.1](https://github.com/AlaskaAirlines/auro-checkbox/compare/v2.0.0...v2.0.1) (2023-07-20)
+
+
+### Bug Fixes
+
+* **docs:** fix generateDocs for name attr and restore script to build [#105](https://github.com/AlaskaAirlines/auro-checkbox/issues/105) ([e3167b2](https://github.com/AlaskaAirlines/auro-checkbox/commit/e3167b27ed56d05808ca61b77ce5c8d2d587c3fb))
+
+
+### Performance Improvements
+
+* **deps:** update to latest dependencies ([45a171c](https://github.com/AlaskaAirlines/auro-checkbox/commit/45a171c448e6ad5a330a041d7f23446fb2ea5631))
+
 # [2.0.0](https://github.com/AlaskaAirlines/auro-checkbox/compare/v1.2.3...v2.0.0) (2023-07-17)
 
 
