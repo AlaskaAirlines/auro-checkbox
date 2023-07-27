@@ -1,5 +1,13 @@
 # Semantic Release Automated Changelog
 
+## [2.0.3](https://github.com/AlaskaAirlines/auro-checkbox/compare/v2.0.2...v2.0.3) (2023-07-27)
+
+
+### Bug Fixes
+
+* **lint:** correct lint issue breaking semantic release ([0f303d3](https://github.com/AlaskaAirlines/auro-checkbox/commit/0f303d3cb1581188e48e910d1fdaf548feb90dae))
+* **styles:** update css import to modern notation [#109](https://github.com/AlaskaAirlines/auro-checkbox/issues/109) ([9e275b0](https://github.com/AlaskaAirlines/auro-checkbox/commit/9e275b05818d25a3a4cdb0e3a61d437f0f7611da))
+
 ## [2.0.2](https://github.com/AlaskaAirlines/auro-checkbox/compare/v2.0.1...v2.0.2) (2023-07-27)
 
 
