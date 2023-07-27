@@ -9,7 +9,7 @@ import { ifDefined } from 'lit/directives/if-defined.js';
 
 // Import touch detection lib
 import styleCss from "./auro-checkbox-css.js";
-import checkLg from '../node_modules/@alaskaairux/icons/dist/icons/interface/check-lg_es6.js';
+import checkLg from '@alaskaairux/icons/dist/icons/interface/check-lg_es6.js';
 
 /**
  * The auro-select element is a wrapper for auro-dropdown and auro-menu to create a dropdown menu control.
