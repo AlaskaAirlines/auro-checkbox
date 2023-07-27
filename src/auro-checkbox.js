@@ -37,9 +37,7 @@ export class AuroCheckbox extends LitElement {
   }
 
   static get styles() {
-    return css`
-      ${styleCss}
-    `;
+    return [styleCss];
   }
 
   // function to define props used within the scope of thie component
