@@ -15,15 +15,15 @@ import checkLg from '@alaskaairux/icons/dist/icons/interface/check-lg_es6.js';
  * The auro-select element is a wrapper for auro-dropdown and auro-menu to create a dropdown menu control.
  *
  * @attr {Boolean} checked - If set to true, the checkbox will be filled with a checkmark.
- * @attr {Boolean} disabled - If set to true, the checkbox will be unclickable.
+ * @attr {Boolean} disabled - If set to true, the checkbox will not be clickable.
  * @attr {Boolean} required - Populates the `required` attribute on the checkbox. Used for client-side validation.
  * @attr {Boolean} error - If set to true, sets an error state on the checkbox.
  * @attr {String} id - Sets the individual `id` per element.
  * @attr {String} name - Accepts any string, `DOMString` representing the value of the input.
  * @attr {String} value - Sets the element's input value.
  * @csspart checkbox - apply css to a specific checkbox.
- * @csspart checkbox-input - apply css to a specifix checkbox's input.
- * @csspart checkbox-label - apply css to a specifix checkbox's label.
+ * @csspart checkbox-input - apply css to a specific checkbox's input.
+ * @csspart checkbox-label - apply css to a specific checkbox's label.
  */
 
 // build the component class
@@ -40,7 +40,7 @@ export class AuroCheckbox extends LitElement {
     return [styleCss];
   }
 
-  // function to define props used within the scope of thie component
+  // function to define props used within the scope of this component
   static get properties() {
     return {
       checked: {
