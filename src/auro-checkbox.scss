@@ -91,14 +91,6 @@ fieldset {
   slot {
     @include auro_breakpoint--sm {
       display: flex;
-
-      .ods-inputGroup {
-        margin-left: 10px;
-
-        &:first-child {
-          margin-left: 0;
-        }
-      }
     }
   }
 }
