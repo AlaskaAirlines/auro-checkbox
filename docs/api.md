@@ -7,7 +7,7 @@ The auro-select element is a wrapper for auro-dropdown and auro-menu to create a
 | Property   | Attribute  | Type      | Default | Description                                      |
 |------------|------------|-----------|---------|--------------------------------------------------|
 | `checked`  | `checked`  | `Boolean` | false   | If set to true, the checkbox will be filled with a checkmark. |
-| `disabled` | `disabled` | `Boolean` | false   | If set to true, the checkbox will be unclickable. |
+| `disabled` | `disabled` | `Boolean` | false   | If set to true, the checkbox will not be clickable. |
 | `error`    | `error`    | `Boolean` | false   | If set to true, sets an error state on the checkbox. |
 | `id`       | `id`       | `String`  |         | Sets the individual `id` per element.            |
 | `name`     | `name`     | `String`  |         | Accepts any string, `DOMString` representing the value of the input. |
@@ -36,5 +36,5 @@ The auro-select element is a wrapper for auro-dropdown and auro-menu to create a
 | Part             | Description                               |
 |------------------|-------------------------------------------|
 | `checkbox`       | apply css to a specific checkbox.         |
-| `checkbox-input` | apply css to a specifix checkbox's input. |
-| `checkbox-label` | apply css to a specifix checkbox's label. |
+| `checkbox-input` | apply css to a specific checkbox's input. |
+| `checkbox-label` | apply css to a specific checkbox's label. |
