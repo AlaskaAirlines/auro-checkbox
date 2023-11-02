@@ -19,16 +19,19 @@
    declaration-empty-line-before */
 
 // Import Auro tokens
-@import "./../node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariables";
+@import "./../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables";
 
-@import "./../node_modules/@aurodesignsystem/webcorestylesheets/dist/breakpoints";
-@import "./../node_modules/@aurodesignsystem/webcorestylesheets/dist/core";
-@import './../node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/displayProperties';
+@import "./../node_modules/@aurodesignsystem/webcorestylesheets/src/breakpoints";
+@import "./../node_modules/@aurodesignsystem/webcorestylesheets/src/core";
+@import './../node_modules/@aurodesignsystem/webcorestylesheets/src/utilityClasses/displayProperties';
+
+// Support for fallback values
+@import './../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables.scss';
 
 // container styles - defines the look of the outer custom component
 :host {
   display: block;
-  --cbxLocation: var(--auro-size-50);
+  --cbxLocation: var(--ds-size-50, $ds-size-50);
 }
 
 // layout styles - define any layout specifications for UI that is contained WITHIN the component
@@ -43,16 +46,16 @@
 
   .cbxGroup {
     display: block;
-    padding-right: var(--auro-size-100);
+    padding-right: var(--ds-size-100, $ds-size-100);
 
     .label--cbx {
       &:before{
-        border-color: var(--auro-color-brand-atlas-400);  
+        border-color: var(--ds-color-brand-atlas-400, $ds-color-brand-atlas-400);  
       }
 
       &:after {
-        outline: 1px solid var(--auro-color-border-active-on-light);
-        border-color: var(--auro-color-border-active-on-light);
+        outline: 1px solid var(--ds-color-border-active-default, $ds-color-border-active-default);
+        border-color: var(--ds-color-border-active-default, $ds-color-border-active-default);
       }
     }
 
@@ -60,8 +63,10 @@
       &:checked {
         + .label {
           &:after {
-            outline: 1px solid var(--auro-color-border-active-on-light);
-            border-color: var(--auro-color-border-focus-on-dark);;
+            outline: 1px solid var(--ds-color-border-active-default, $ds-color-border-active-default);
+
+            // There is no token for this value: --ds-color-border-focus-inverse
+            border-color: var(--auro-color-border-focus-on-dark);
           }
         }
       }
@@ -70,7 +75,7 @@
         & + .label {
           &:hover {
             &:after {
-              background-color: var(--auro-color-background-lightest);
+              background-color: var(--ds-color-background-lightest, $ds-color-background-lightest);
             }
           }
         }
@@ -105,33 +110,33 @@ fieldset {
 
 .cbxGroup {
   position: relative;
-  padding-left: var(--auro-size-100);
-  padding-right: var(--auro-size-100);
-  line-height: var(--auro-size-400);
+  padding-left: var(--ds-size-100, $ds-size-100);
+  padding-right: var(--ds-size-100, $ds-size-100);
+  line-height: var(--ds-size-400, $ds-size-400);
 }
 
 .cbx--input {
   &:disabled {
 
     & + label {
-      color: var(--auro-color-text-disabled-on-light);
+      color: var(--ds-color-text-disabled-default, $ds-color-text-disabled-default);
 
       &:hover {
         cursor: auto;
 
         &:after {
-          background-color: var(--auro-color-background-lightest);
+          background-color: var(--ds-color-background-lightest, $ds-color-background-lightest);
         }
       }
     }
 
     & + .label--cbx {
       &:before {
-        border-color: var(--auro-color-base-white);
+        border-color: var(--ds-color-base-white, $ds-color-base-white);
       }
 
       &:after {
-        border-color: var(--auro-color-text-disabled-on-light);
+        border-color: var(--ds-color-text-disabled-default, $ds-color-text-disabled-default);
       }
     }
   }
@@ -140,14 +145,14 @@ fieldset {
     & + .label--cbx {
       &:hover {
         &:after {
-          background-color: var(--auro-color-ui-hover-on-light);
+          background-color: var(--ds-color-ui-hover-default, $ds-color-ui-hover-default);
         }
       }
 
       &:after {
         opacity: 1;
-        background-color: var(--auro-color-ui-default-on-light);
-        border-color: var(--auro-color-border-active-on-light);
+        background-color: var(--ds-color-ui-default-default, $ds-color-ui-default-default);
+        border-color: var(--ds-color-border-active-default, $ds-color-border-active-default);
       }
 
       &:before {
@@ -159,23 +164,23 @@ fieldset {
     &:disabled {
       & + .label--cbx {
         &:after {
-          background-color: var(--auro-color-brand-gray-200);
-          border-color: var(--auro-color-text-disabled-on-light);
+          background-color: var(--ds-color-brand-gray-200, $ds-color-brand-gray-200);
+          border-color: var(--ds-color-text-disabled-default, $ds-color-text-disabled-default);
         }
       }
     }
 
     & + .errorBorder {
       &:before {
-        border-color: var(--auro-color-base-white);
+        border-color: var(--ds-color-base-white, $ds-color-base-white);
       }
       &:after {
-        border-color: var(--auro-color-border-error-on-light);
-        background-color: var(--auro-color-border-error-on-light);
+        border-color: var(--ds-color-border-error-default, $ds-color-border-error-default);
+        background-color: var(--ds-color-border-error-default, $ds-color-border-error-default);
       }
       &:hover {
         &:after {
-          background-color: var(--auro-color-alert-error-on-light);
+          background-color: var(--ds-color-alert-error-default, $ds-color-alert-error-default);
         }
       }
     }
@@ -183,14 +188,14 @@ fieldset {
 }
 
 .label {
-  margin-left: var(--auro-size-300);
+  margin-left: var(--ds-size-300, $ds-size-300);
   display: block;
 
   &:hover {
     cursor: pointer;
 
     &:after {
-      background-color: var(--auro-color-ui-bkg-hover-on-light);
+      background-color: var(--ds-color-ui-bkg-hover-default, $ds-color-ui-bkg-hover-default);
     }
   }
 }
@@ -201,36 +206,36 @@ fieldset {
     -webkit-tap-highlight-color: transparent;
     position: absolute;
     content: '';
-    top: var(--auro-size-50);
+    top: var(--ds-size-50, $ds-size-50);
     left: var(--cbxLocation);
-    width: calc(var(--auro-size-200) + var(--auro-size-50));
-    height: calc(var(--auro-size-200) + var(--auro-size-50));
+    width: calc(var(--ds-size-200, $ds-size-200) + var(--ds-size-50, $ds-size-50));
+    height: calc(var(--ds-size-200, $ds-size-200) + var(--ds-size-50, $ds-size-50));
     border-width: 1px;
     border-style: solid;
-    border-color: var(--auro-color-base-gray-500);
-    border-radius: var(--auro-border-radius);
+    border-color: var(--ds-color-brand-gray-500, $ds-color-brand-gray-500);
+    border-radius: var(--ds-border-radius, $ds-border-radius);
     z-index: 0;
-    background-color: var(--auro-color-base-white);
+    background-color: var(--ds-color-base-white, $ds-color-base-white);
   }
 }
 
 .label--cbx {
   &.errorBorder {
     &:after {
-      border-color: var(--auro-color-border-error-on-light);
+      border-color: var(--ds-color-border-error-default, $ds-color-border-error-default);
     }
   }
 }
 
 .svg--cbx {
   position: absolute;
-  top: var(--auro-size-25);
-  left: var(--auro-size-25);
+  top: var(--ds-size-25, $ds-size-25);
+  left: var(--ds-size-25, $ds-size-25);
 
   padding-top: 3px;
   padding-bottom: 3px;
 
   z-index: 1;
 
-  color: var(--auro-color-base-white);
+  color: var(--ds-color-base-white, $ds-color-base-white);
 }

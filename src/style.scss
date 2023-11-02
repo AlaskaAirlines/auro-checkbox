@@ -4,11 +4,14 @@
 // ---------------------------------------------------------------------
 
 // Import Auro tokens
-@import './../node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariables';
-@import './../node_modules/@alaskaairux/design-tokens/dist/tokens/SassCustomProperties';
+@import './../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables';
+@import './../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SassCustomProperties';
 
-@import './../node_modules/@aurodesignsystem/webcorestylesheets/dist/breakpoints';
-@import './../node_modules/@aurodesignsystem/webcorestylesheets/dist/core';
+@import './../node_modules/@aurodesignsystem/webcorestylesheets/src/breakpoints';
+@import './../node_modules/@aurodesignsystem/webcorestylesheets/src/core';
+
+// Support for fallback values
+@import './../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables.scss';
 
 // Support for auroElement styles
 // @import './node_modules/@aurodesignsystem/webcorestylesheets/dist/auroElement/auroElement';
@@ -23,13 +26,13 @@
 // delete when building new custom element
 .testClass {
   display: inline-block;
-  padding: var(--auro-text-body-size-default);
-  border: 1px solid var(--auro-color-border-error-on-light);
-  color:  var(--auro-color-border-error-on-light);
+  padding: var(--ds-text-body-size-default, $ds-text-body-size-default);
+  border: 1px solid var(--ds-color-border-error-default, $ds-color-border-error-default);
+  color:  var(--ds-color-border-error-default, $ds-color-border-error-default);
 }
 
 // Selector for native :focus-visible support
 :focus-visible {
-  background-color: var(--auro-color-border-error-on-light);
-  color: var(--auro-color-base-white);
+  background-color: var(--ds-color-border-error-default, $ds-color-border-error-default);
+  color: var(--ds-color-base-white, $ds-color-base-white);
 }
