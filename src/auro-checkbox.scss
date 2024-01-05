@@ -34,55 +34,6 @@
 // layout styles - define any layout specifications for UI that is contained WITHIN the component
 // never define layout that would cause effect on element outside the scope of this component
 
-@mixin focus-visible {
-  .displayFlex {
-    .inputGroup:focus-within {
-      width: auto;
-    }
-  }
-
-  .cbxGroup {
-    display: block;
-    padding-right: var(--ds-size-100, $ds-size-100);
-
-    .label--cbx {
-      &:before{
-        border-color: var(--ds-color-brand-atlas-400, $ds-color-brand-atlas-400);
-      }
-
-      &:after {
-        outline: 1px solid var(--ds-color-border-active-default, $ds-color-border-active-default);
-        border-color: var(--ds-color-border-active-default, $ds-color-border-active-default);
-      }
-    }
-
-    .cbx--input {
-      &:checked {
-        + .label {
-          &:after {
-            outline: 1px solid var(--ds-color-border-active-default, $ds-color-border-active-default);
-            border-color: var(--ds-color-border-focus-inverse, $ds-color-border-focus-inverse);
-          }
-        }
-      }
-
-      &:disabled {
-        & + .label {
-          &:hover {
-            &:after {
-              background-color: var(--ds-color-background-lightest, $ds-color-background-lightest);
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-:host(.focus-visible) {
-  @include focus-visible;
-}
-
 fieldset {
   all: unset;
 }
