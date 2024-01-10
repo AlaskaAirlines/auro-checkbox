@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.0.5](https://github.com/AlaskaAirlines/auro-checkbox/compare/v2.0.4...v2.0.5) (2024-01-10)
+
+
+### Bug Fixes
+
+* **deps:** make peer dep of wcss match dev dep ([052ffe8](https://github.com/AlaskaAirlines/auro-checkbox/commit/052ffe8dffb8963c580b36867df4a341731f54c6))
+
 ## [2.0.4](https://github.com/AlaskaAirlines/auro-checkbox/compare/v2.0.3...v2.0.4) (2024-01-10)
 
 
