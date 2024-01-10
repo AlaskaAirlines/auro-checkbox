@@ -25,7 +25,7 @@
   },
   "peerDependencies": {
     "@aurodesignsystem/design-tokens": "^4.1.1",
-    "@aurodesignsystem/webcorestylesheets": "^4.6.1"
+    "@aurodesignsystem/webcorestylesheets": "^5.0.5"
   },
   "devDependencies": {
     "@aurodesignsystem/design-tokens": "^4.3.0",
