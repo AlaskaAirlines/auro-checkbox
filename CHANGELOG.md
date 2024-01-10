@@ -1,5 +1,15 @@
 # Semantic Release Automated Changelog
 
+## [2.0.4](https://github.com/AlaskaAirlines/auro-checkbox/compare/v2.0.3...v2.0.4) (2024-01-10)
+
+
+### Performance Improvements
+
+* **node:** update dependencies and repo to support node 20 ([f804a3e](https://github.com/AlaskaAirlines/auro-checkbox/commit/f804a3e43eab1ebf80d1b78a2be588a3c5cf0bb0))
+* remove unused Sass code [#40](https://github.com/AlaskaAirlines/auro-checkbox/issues/40) ([d73659c](https://github.com/AlaskaAirlines/auro-checkbox/commit/d73659c66e1087cb7ebc3ea2d8b42759ced2831e))
+* **styles:** remove focus-visible support ([1f4bdf8](https://github.com/AlaskaAirlines/auro-checkbox/commit/1f4bdf81dc628cbe547a762c978592c2f2f50b73))
+* update major versions of UI dependencies [#113](https://github.com/AlaskaAirlines/auro-checkbox/issues/113) ([c462730](https://github.com/AlaskaAirlines/auro-checkbox/commit/c462730d37e4ec5ad14052e7471ad8a9dd6df8c9))
+
 ## [2.0.3](https://github.com/AlaskaAirlines/auro-checkbox/compare/v2.0.2...v2.0.3) (2023-07-27)
 
 
