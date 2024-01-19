@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [2.1.0](https://github.com/AlaskaAirlines/auro-checkbox/compare/v2.0.5...v2.1.0) (2024-01-19)
+
+
+### Features
+
+* add suport for SSR projects ([fe2d4ce](https://github.com/AlaskaAirlines/auro-checkbox/commit/fe2d4cea13a933342a7870df313501f879c8b1d6))
+
 ## [2.0.5](https://github.com/AlaskaAirlines/auro-checkbox/compare/v2.0.4...v2.0.5) (2024-01-10)
 
 
