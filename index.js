@@ -1,5 +1,5 @@
-import { AuroCheckbox } from './src/auro-checkbox';
-import { AuroCheckboxGroup } from './src/auro-checkbox-group';
+import { AuroCheckbox } from './src/auro-checkbox.js';
+import { AuroCheckboxGroup } from './src/auro-checkbox-group.js';
 
 /**
  * Register Custom Element.
@@ -8,7 +8,7 @@ import { AuroCheckboxGroup } from './src/auro-checkbox-group';
  */
  const registerComponent = (name = 'custom-checkbox') => {
   const groupName = name + '-group';
-  
+
   // alias definition
   if (!customElements.get(name)) {
     customElements.define(name, class extends AuroCheckbox {});
