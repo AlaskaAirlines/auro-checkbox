@@ -1,6 +1,6 @@
 # auro-checkbox
 
-The auro-select element is a wrapper for auro-dropdown and auro-menu to create a dropdown menu control.
+Custom element for the purpose of allowing users to select one or more options of a limited number of choices.
 
 ## Properties
 

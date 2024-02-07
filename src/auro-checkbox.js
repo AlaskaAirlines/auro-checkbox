@@ -3,7 +3,7 @@
 
 // ---------------------------------------------------------------------
 
-import { LitElement, html } from "lit";
+import { LitElement, css, html } from "lit";
 import { classMap } from 'lit/directives/class-map.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
 
@@ -12,7 +12,7 @@ import styleCss from "./auro-checkbox-css.js";
 import checkLg from '@alaskaairux/icons/dist/icons/interface/check-lg_es6.js';
 
 /**
- * The auro-select element is a wrapper for auro-dropdown and auro-menu to create a dropdown menu control.
+ * Custom element for the purpose of allowing users to select one or more options of a limited number of choices.
  *
  * @attr {Boolean} checked - If set to true, the checkbox will be filled with a checkmark.
  * @attr {Boolean} disabled - If set to true, the checkbox will not be clickable.
@@ -37,7 +37,9 @@ export class AuroCheckbox extends LitElement {
   }
 
   static get styles() {
-    return [styleCss];
+    return css`
+      ${styleCss}
+    `;
   }
 
   // function to define props used within the scope of this component
