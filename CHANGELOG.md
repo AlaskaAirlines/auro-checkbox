@@ -1,5 +1,13 @@
 # Semantic Release Automated Changelog
 
+## [2.1.5](https://github.com/AlaskaAirlines/auro-checkbox/compare/v2.1.4...v2.1.5) (2024-02-07)
+
+
+### Bug Fixes
+
+* **docs:** change demo.md to index.md ([d27bbcc](https://github.com/AlaskaAirlines/auro-checkbox/commit/d27bbcc9d8c656a1a3e7d26a3abb05562764f23c))
+* **styles:** correctly import styles [#121](https://github.com/AlaskaAirlines/auro-checkbox/issues/121) ([969b344](https://github.com/AlaskaAirlines/auro-checkbox/commit/969b344bd4efa41d077e586eaba3d79d3f927d82))
+
 ## [2.1.4](https://github.com/AlaskaAirlines/auro-checkbox/compare/v2.1.3...v2.1.4) (2024-02-07)
 
 
