@@ -3,7 +3,7 @@ repository:
   # See https://github.com/apps/settings for app settings
 
   # A short description of the repository that will show up on GitHub
-  description: Custom element that ....
+  description: Custom element for the purpose of allowing users to select one or more options of a limited number of choices.
 
   # A URL with more information about the repository
   homepage: https://auro.alaskaair.com/components/auro/checkbox
