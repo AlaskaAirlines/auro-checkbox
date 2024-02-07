@@ -18,7 +18,7 @@
  * @attr {Boolean} horizontal - If set, checkboxes will be aligned horizontally.
  */
 
-import { LitElement, html, css } from "lit";
+import { LitElement, html } from "lit";
 import { classMap } from 'lit/directives/class-map.js';
 
 // Import the processed CSS file into the scope of the component
@@ -46,9 +46,7 @@ export class AuroCheckboxGroup extends LitElement {
   }
 
   static get styles() {
-    return css`
-      ${styleCss}
-    `;
+    return [styleCss];
   }
 
   static get properties() {
