@@ -9,7 +9,7 @@ import { ifDefined } from 'lit/directives/if-defined.js';
 
 // Import touch detection lib
 import styleCss from "./auro-checkbox-css.js";
-import checkLg from '@alaskaairux/icons/dist/icons/interface/check-lg_es6.js';
+import checkLg from '@alaskaairux/icons/dist/icons/interface/check-lg.mjs';
 
 /**
  * Custom element for the purpose of allowing users to select one or more options of a limited number of choices.
