@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.1.7](https://github.com/AlaskaAirlines/auro-checkbox/compare/v2.1.6...v2.1.7) (2024-02-13)
+
+
+### Performance Improvements
+
+* update auro dependencies ([2b870f9](https://github.com/AlaskaAirlines/auro-checkbox/commit/2b870f9d2eccb35c66acc41df3c59be73abd429d))
+
 ## [2.1.6](https://github.com/AlaskaAirlines/auro-checkbox/compare/v2.1.5...v2.1.6) (2024-02-11)
 
 
