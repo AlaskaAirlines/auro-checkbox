@@ -16,8 +16,9 @@
  * @attr {Boolean} noValidate - If set, disables auto-validation on blur.
  * @attr {Boolean} required - Populates the `required` attribute on the element. Used for client-side validation.
  * @attr {Boolean} horizontal - If set, checkboxes will be aligned horizontally.
- * @event auroCheckboxGroup-validated - Notifies that the `validity` value has changed.
- * @event auroCheckboxGroup-helpText - Notifies that the `setCustomValidity` value has changed.
+ * @slot {HTMLSlotElement} legend - Allows for the legend to be overridden.
+ * @slot {HTMLSlotElement} optionalLabel - Allows for the optional label to be overridden.
+ * @slot {HTMLSlotElement} helpText - Allows for the helper text to be overridden.
  */
 
 import { LitElement, html } from "lit";
@@ -104,6 +105,13 @@ export class AuroCheckboxGroup extends LitElement {
     this.handleItems();
   }
 
+  /**
+   * Helper method to handle checkbox value changing.
+   * @private
+   * @param {String} value - The value of the checkbox.
+   * @param {Boolean} selected - The checked state of the checkbox.
+   * @returns {void}
+   */
   handleValueUpdate(value, selected) {
     if (selected) {
       // add if it isn't already in the value list
@@ -168,6 +176,11 @@ export class AuroCheckboxGroup extends LitElement {
     });
   }
 
+  /**
+   * Helper method that handles the state of preselected checkboxes.
+   * @private
+   * @returns {void}
+   */
   handlePreselectedItems() {
     let preSelectedValues = false;
 
@@ -188,6 +201,11 @@ export class AuroCheckboxGroup extends LitElement {
     }
   }
 
+  /**
+   * Helper method that handles the state of checkboxes.
+   * @private
+   * @returns {void}
+   */
   handleItems() {
     const groupTagName = this.tagName.toLowerCase();
     const checkboxTagName = groupTagName.substring(0, groupTagName.indexOf('-group'));
@@ -200,6 +218,11 @@ export class AuroCheckboxGroup extends LitElement {
     this.validation.validate(this);
   }
 
+  /**
+   * Helper method that handles attributes of checkboxes.
+   * @private
+   * @returns {void}
+   */
   handleCheckboxAttributes() {
     this.items.forEach((el) => {
       if (this.error) {
