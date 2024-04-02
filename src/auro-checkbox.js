@@ -16,7 +16,6 @@ import checkLg from '@alaskaairux/icons/dist/icons/interface/check-lg.mjs';
  *
  * @attr {Boolean} checked - If set to true, the checkbox will be filled with a checkmark.
  * @attr {Boolean} disabled - If set to true, the checkbox will not be clickable.
- * @attr {Boolean} required - Populates the `required` attribute on the checkbox. Used for client-side validation.
  * @attr {Boolean} error - If set to true, sets an error state on the checkbox.
  * @attr {String} id - Sets the individual `id` per element.
  * @attr {String} name - Accepts any string, `DOMString` representing the value of the input.
@@ -92,14 +91,6 @@ export class AuroCheckbox extends LitElement {
     return 'false';
   }
 
-  isRequired(required) {
-    if (required) {
-      return 'true';
-    }
-
-    return 'false';
-  }
-
   /**
    * Function to support @focusin event.
    * @private
@@ -154,15 +145,13 @@ export class AuroCheckbox extends LitElement {
     };
 
     return html`
-      <div class="cbxGroup" part="checkbox">
+      <div class="cbxContainer" part="checkbox">
         <input
           class="util_displayHiddenVisually cbx--input"
           part="checkbox-input"
           @change=${this.handleChange}
           @input="${this.handleInput}"
           ?disabled="${this.disabled}"
-          aria-invalid="${this.invalid(this.error)}"
-          aria-required="${this.isRequired(this.required)}"
           .checked="${this.checked}"
           id="${ifDefined(this.id)}"
           name="${ifDefined(this.name)}"

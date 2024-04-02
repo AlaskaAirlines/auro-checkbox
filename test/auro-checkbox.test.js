@@ -211,7 +211,6 @@ describe('auro-checkbox', () => {
         value="${expectedValue}"
         checked
         disabled
-        required
         error
       >Checkbox option</auro-checkbox>
     `);
@@ -225,11 +224,9 @@ describe('auro-checkbox', () => {
     expect(input.value).to.equal(expectedValue);
     expect(input.name).to.equal(expectedName);
     expect(input.type).to.equal('checkbox');
-    expect(input.getAttribute('aria-invalid')).to.equal('true');
-    expect(input.getAttribute('aria-required')).to.equal('true');
     expect(errorBorder).to.not.be.undefined;
     expect(el).dom.to.equal(`
-      <auro-checkbox id="${expectedId}" name="${expectedName}" value="${expectedValue}" error checked disabled required>
+      <auro-checkbox id="${expectedId}" name="${expectedName}" value="${expectedValue}" error checked disabled>
         Checkbox option
       </auro-checkbox>`);
   });
