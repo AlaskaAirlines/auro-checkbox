@@ -16,10 +16,14 @@
  * @attr {Boolean} noValidate - If set, disables auto-validation on blur.
  * @attr {Boolean} required - Populates the `required` attribute on the element. Used for client-side validation.
  * @attr {Boolean} horizontal - If set, checkboxes will be aligned horizontally.
+ * @event auroCheckboxGroup-validated - Notifies that the `validity` value has changed.
+ * @event auroCheckboxGroup-helpText - Notifies that the `setCustomValidity` value has changed.
  */
 
 import { LitElement, html } from "lit";
 import { classMap } from 'lit/directives/class-map.js';
+
+import AuroFormValidation from '@aurodesignsystem/auro-formvalidation/src/validation.js';
 
 // Import the processed CSS file into the scope of the component
 import styleCss from "./auro-checkbox-group-css.js";
@@ -43,6 +47,11 @@ export class AuroCheckboxGroup extends LitElement {
      * @private
      */
     this.maxNumber = 3;
+
+    /**
+     * @private
+     */
+    this.validation = new AuroFormValidation();
   }
 
   static get styles() {
@@ -95,59 +104,6 @@ export class AuroCheckboxGroup extends LitElement {
     this.handleItems();
   }
 
-  /**
-   * Determines the validity state of the element.
-   * @private
-   * @returns {void}
-   */
-  /* eslint-disable max-statements */
-  validate() {
-    // Validate only if noValidate is not true and the input does not have focus
-    if (this.hasAttribute('error')) {
-      this.validity = 'customError';
-      this.setCustomValidity = this.error;
-    } else if (this.value !== undefined && !this.noValidate) {
-      this.validity = 'valid';
-      this.setCustomValidity = '';
-
-      /**
-       * Only validate once we interact with the datepicker
-       * this.value === undefined is the initial state pre-interaction.
-       *
-       * The validityState definitions are located at https://developer.mozilla.org/en-US/docs/Web/API/ValidityState.
-       */
-      if ((!this.value || this.value.length === 0) && this.required) { // eslint-disable-line no-magic-numbers
-        this.validity = 'valueMissing';
-        this.setCustomValidity = this.setCustomValidityValueMissing;
-      }
-    } else {
-      this.validity = undefined;
-      this.removeAttribute('validity');
-    }
-
-    if (this.validity && this.validity !== 'valid') {
-      this.isValid = false;
-
-      // Use the validity message override if it is declared
-      if (this.ValidityMessageOverride) {
-        this.setCustomValidity = this.ValidityMessageOverride;
-      }
-    } else {
-      this.isValid = true;
-    }
-
-    if (this.error || (this.validity && this.validity !== 'valid')) { // eslint-disable-line  no-extra-parens
-      this.items.forEach((el) => {
-        el.setAttribute('error', '');
-      });
-    } else {
-      this.items.forEach((el) => {
-        el.removeAttribute('error');
-      });
-    }
-  }
-  /* eslint-disable max-statements */
-
   handleValueUpdate(value, selected) {
     if (selected) {
       // add if it isn't already in the value list
@@ -167,7 +123,7 @@ export class AuroCheckboxGroup extends LitElement {
       composed: true,
     }));
 
-    this.validate();
+    this.validation.validate(this, true);
   }
 
   firstUpdated() {
@@ -179,7 +135,7 @@ export class AuroCheckboxGroup extends LitElement {
         window.removeEventListener('focusin', checkFocusWithin);
         document.removeEventListener('click', checkFocusWithin);
         // execute the validation
-        document.auroCheckboxGroupActive.validate();
+        document.auroCheckboxGroupActive.validation.validate(document.auroCheckboxGroupActive);
       }
     };
 
@@ -239,14 +195,22 @@ export class AuroCheckboxGroup extends LitElement {
     this.items = Array.from(this.querySelectorAll(checkboxTagName));
 
     this.handlePreselectedItems();
+    this.handleCheckboxAttributes();
 
-    if (this.disabled) {
-      this.items.forEach((el) => {
-        el.disabled = Boolean(this.disabled);
-      });
-    }
+    this.validation.validate(this);
+  }
 
-    this.validate();
+  handleCheckboxAttributes() {
+    this.items.forEach((el) => {
+      if (this.error) {
+        el.setAttribute('error', '');
+      } else {
+        el.removeAttribute('error');
+      }
+
+      el.disabled = this.disabled;
+      el.required = this.required;
+    });
   }
 
   /**
@@ -255,20 +219,12 @@ export class AuroCheckboxGroup extends LitElement {
    * @returns {void}
    */
   updated(changedProperties) {
-    if (this.disabled && changedProperties.has('disabled')) {
-      this.items.forEach((el) => {
-        el.disabled = this.disabled;
-      });
-    }
-
-    if (changedProperties.has('required')) {
-      this.items.forEach((el) => {
-        el.required = this.required;
-      });
+    if (changedProperties.has('disabled') || changedProperties.has('required')) {
+      this.handleCheckboxAttributes();
     }
 
     if (changedProperties.has('error')) {
-      this.validate();
+      this.validation.validate(this);
     }
   }
 
