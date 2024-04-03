@@ -1,25 +1,35 @@
 # auro-checkbox-group
 
+The auro-checkbox-group element is a wrapper for auro-checkbox element.
+
 ## Properties
 
-| Property                        | Attribute                       | Type      | Default     |
-|---------------------------------|---------------------------------|-----------|-------------|
-| `disabled`                      | `disabled`                      | `boolean` | false       |
-| `error`                         | `error`                         | `string`  |             |
-| `horizontal`                    | `horizontal`                    | `boolean` | false       |
-| `noValidate`                    | `noValidate`                    | `boolean` |             |
-| `required`                      | `required`                      | `boolean` | false       |
-| `setCustomValidity`             | `setCustomValidity`             | `string`  |             |
-| `setCustomValidityCustomError`  | `setCustomValidityCustomError`  | `string`  |             |
-| `setCustomValidityValueMissing` | `setCustomValidityValueMissing` | `string`  |             |
-| `validity`                      | `validity`                      | `string`  | "undefined" |
-| `value`                         | `value`                         | `array`   | "undefined" |
+| Property                        | Attribute                       | Type      | Default     | Description                                      |
+|---------------------------------|---------------------------------|-----------|-------------|--------------------------------------------------|
+| `disabled`                      | `disabled`                      | `boolean` | false       |                                                  |
+| `error`                         | `error`                         | `String`  |             | When defined, sets persistent validity to `customError` and sets `setCustomValidity` = attribute value. |
+| `horizontal`                    | `horizontal`                    | `Boolean` | false       | If set, checkboxes will be aligned horizontally. |
+| `noValidate`                    | `noValidate`                    | `Boolean` |             | If set, disables auto-validation on blur.        |
+| `required`                      | `required`                      | `Boolean` | false       | Populates the `required` attribute on the element. Used for client-side validation. |
+| `setCustomValidity`             | `setCustomValidity`             | `String`  |             | Sets a custom help text message to display for all validityStates. |
+| `setCustomValidityCustomError`  | `setCustomValidityCustomError`  | `String`  |             | Custom help text message to display when validity = `customError`. |
+| `setCustomValidityValueMissing` | `setCustomValidityValueMissing` | `String`  |             | Custom help text message to display when validity = `valueMissing`. |
+| `validity`                      | `validity`                      | `String`  | "undefined" | Specifies the `validityState` this element is in. |
+| `value`                         | `value`                         | `array`   | "undefined" |                                                  |
 
 ## Events
 
 | Event   | Type               |
 |---------|--------------------|
 | `input` | `CustomEvent<any>` |
+
+## Slots
+
+| Name            | Description                                     |
+|-----------------|-------------------------------------------------|
+| `helpText`      | Allows for the helper text to be overridden.    |
+| `legend`        | Allows for the legend to be overridden.         |
+| `optionalLabel` | Allows for the optional label to be overridden. |
 
 
 # auro-checkbox
