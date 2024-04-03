@@ -5,8 +5,16 @@
 
 /* eslint-disable max-lines */
 
+import { LitElement, html } from "lit";
+import { classMap } from 'lit/directives/class-map.js';
+
+import AuroFormValidation from '@aurodesignsystem/auro-formvalidation/src/validation.js';
+
+// Import the processed CSS file into the scope of the component
+import styleCss from "./auro-checkbox-group-css.js";
+
 /**
- * The auro-select element is a wrapper for auro-dropdown and auro-menu to create a dropdown menu control.
+ * The auro-checkbox-group element is a wrapper for auro-checkbox element.
  *
  * @attr {String} validity - Specifies the `validityState` this element is in.
  * @attr {String} setCustomValidity - Sets a custom help text message to display for all validityStates.
@@ -20,14 +28,6 @@
  * @slot {HTMLSlotElement} optionalLabel - Allows for the optional label to be overridden.
  * @slot {HTMLSlotElement} helpText - Allows for the helper text to be overridden.
  */
-
-import { LitElement, html } from "lit";
-import { classMap } from 'lit/directives/class-map.js';
-
-import AuroFormValidation from '@aurodesignsystem/auro-formvalidation/src/validation.js';
-
-// Import the processed CSS file into the scope of the component
-import styleCss from "./auro-checkbox-group-css.js";
 
 export class AuroCheckboxGroup extends LitElement {
   constructor() {
