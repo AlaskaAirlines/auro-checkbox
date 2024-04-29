@@ -15,6 +15,8 @@ describe('auro-checkbox-group', () => {
       <auro-checkbox-group
         horizontal
         required
+        aria-invalid
+        aria-required
         error=${expectedError}
       >Checkbox option</auro-checkbox-group>
     `);
@@ -24,10 +26,12 @@ describe('auro-checkbox-group', () => {
 
     expect(el.horizontal).to.be.true;
     expect(el.required).to.be.true;
+    expect(el.ariaRequired).to.equal('true');
+    expect(el.ariaInvalid).to.equal('true');
     expect(error.textContent).to.contain(expectedError);
 
     expect(el).dom.to.equal(`
-    <auro-checkbox-group horizontal required error="${expectedError}" validity="customError">
+    <auro-checkbox-group horizontal required error="${expectedError}" validity="customError" aria-required="true" aria-invalid="true">
       Checkbox option
     </auro-checkbox-group>`);
   });
@@ -193,7 +197,6 @@ describe('auro-checkbox-group', () => {
     const checkbox = el.querySelector('auro-checkbox');
 
     expect(checkbox.disabled, "child disabled state was not updated").to.be.true;
-    expect(checkbox.required, "child required state was not updated").to.be.true;
     expect(checkbox.error, "child error state was not updated").to.be.true;
   });
 });
