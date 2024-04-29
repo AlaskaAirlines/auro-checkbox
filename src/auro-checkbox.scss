@@ -31,6 +31,23 @@
   --cbxLocation: var(--ds-size-50, $ds-size-50);
 }
 
+:host(:focus-within) {
+  .label--cbx {
+    &:after {
+      border-color: var(--ds-color-border-active-default, $ds-color-border-active-default);
+      outline: var(--ds-color-border-active-default, $ds-color-border-active-default) solid 1px;
+    }
+  }
+}
+
+:host([checked]:focus-within) {
+  .label--cbx {
+    &:after {
+      border-color: var(--ds-color-base-white, $ds-color-base-white);
+    }
+  }
+}
+
 // layout styles - define any layout specifications for UI that is contained WITHIN the component
 // never define layout that would cause effect on element outside the scope of this component
 
@@ -55,7 +72,6 @@ fieldset {
 
 .cbx--input {
   &:disabled {
-
     & + label {
       color: var(--ds-color-text-disabled-default, $ds-color-text-disabled-default);
 
