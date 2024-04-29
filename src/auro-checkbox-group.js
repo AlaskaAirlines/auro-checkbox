@@ -225,14 +225,13 @@ export class AuroCheckboxGroup extends LitElement {
    */
   handleCheckboxAttributes() {
     this.items.forEach((el) => {
-      if (this.error) {
+      if (this.validity && this.validity !== 'valid') {
         el.setAttribute('error', '');
       } else {
         el.removeAttribute('error');
       }
 
       el.disabled = this.disabled;
-      el.required = this.required;
     });
   }
 
@@ -242,11 +241,25 @@ export class AuroCheckboxGroup extends LitElement {
    * @returns {void}
    */
   updated(changedProperties) {
-    if (changedProperties.has('disabled') || changedProperties.has('required')) {
+    if (changedProperties.has('disabled') || changedProperties.has('validity')) {
       this.handleCheckboxAttributes();
     }
 
+    if (changedProperties.has('required')) {
+      if (this.required) {
+        this.setAttribute('aria-required', true);
+      } else {
+        this.removeAttribute('aria-required');
+      }
+    }
+
     if (changedProperties.has('error')) {
+      if (this.error) {
+        this.setAttribute('aria-invalid', true);
+      } else {
+        this.removeAttribute('aria-invalid');
+      }
+
       this.validation.validate(this);
     }
   }
