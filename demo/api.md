@@ -176,65 +176,11 @@ The `disabled` attribute used to disable a single `<auro-checkbox>` element.
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-### Error
+### Form Validation
 
-Use the `error` attribute to force an error state on the element.
+In the `auro-checkbox-group` element, the `required` and `error` states are the tqo possible validation states.
 
-#### Checkbox Group with Error
-
-The `error` attribute used to set error state on the entire `<auro-checkbox-group>`. If using the `error` attribute on an `<auro-checkbox-group>`, a string with the error message needs to be passed along with the attribute.
-
-<div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/errorGroup.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/errorGroup.html -->
-  <auro-checkbox-group error="custom error">
-    <span slot="legend">Form label goes here</span>
-    <auro-checkbox value="error checkbox option" name="example1" id="checkbox-errorGroup1">Error checkbox option</auro-checkbox>
-    <auro-checkbox value="error checkbox option" name="example2" id="checkbox-errorGroup2">Error checkbox option</auro-checkbox>
-    <auro-checkbox value="error checkbox option" name="example3" id="checkbox-errorGroup3">Error checkbox option</auro-checkbox>
-    <auro-checkbox value="error checkbox option" name="example4" id="checkbox-errorGroup4" checked>Error checkbox option</auro-checkbox>
-  </auro-checkbox-group>
-  <!-- AURO-GENERATED-CONTENT:END -->
-</div>
-<auro-accordion alignRight>
-  <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/errorGroup.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/errorGroup.html -->
-
-```html
-<auro-checkbox-group error="custom error">
-  <span slot="legend">Form label goes here</span>
-  <auro-checkbox value="error checkbox option" name="example1" id="checkbox-errorGroup1">Error checkbox option</auro-checkbox>
-  <auro-checkbox value="error checkbox option" name="example2" id="checkbox-errorGroup2">Error checkbox option</auro-checkbox>
-  <auro-checkbox value="error checkbox option" name="example3" id="checkbox-errorGroup3">Error checkbox option</auro-checkbox>
-  <auro-checkbox value="error checkbox option" name="example4" id="checkbox-errorGroup4" checked>Error checkbox option</auro-checkbox>
-</auro-checkbox-group>
-```
-<!-- AURO-GENERATED-CONTENT:END -->
-</auro-accordion>
-
-#### Checkbox with Error Outside of Group
-
-The `error` attribute used to set an error state on a single `<auro-checkbox>` element.
-
-**Note**: Error messages are not supported outside of an `<auro-checkbox-group>`.
-
-<div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/error.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/error.html -->
-  <auro-checkbox value="error checkbox option" name="example3" id="checkbox-error1" error>Error checkbox option</auro-checkbox>
-  <!-- AURO-GENERATED-CONTENT:END -->
-</div>
-<auro-accordion alignRight>
-  <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/error.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/error.html -->
-
-```html
-<auro-checkbox value="error checkbox option" name="example3" id="checkbox-error1" error>Error checkbox option</auro-checkbox>
-```
-<!-- AURO-GENERATED-CONTENT:END -->
-</auro-accordion>
+It should be noted that form validation is only supported within an `auro-checkbox-group` element. In order to support validation on a single `auro-checkbox` element, it must be wrapped in an `auro-checkbox-group`.
 
 #### Required
 
@@ -264,6 +210,39 @@ When present, the `required` attribute specifies that at least one or more `<aur
   <auro-checkbox value="checkbox Option" name="example2" id="checkbox-required2">Checkbox option</auro-checkbox>
   <auro-checkbox value="checkbox Option" name="example3" id="checkbox-required3">Checkbox option</auro-checkbox>
   <auro-checkbox value="checkbox Option" name="example4" id="checkbox-required4">Checkbox option</auro-checkbox>
+</auro-checkbox-group>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
+#### Error
+
+The `error` attribute used to set error state on the entire `<auro-checkbox-group>`. If using the `error` attribute on an `<auro-checkbox-group>`, a string with the error message needs to be passed along with the attribute.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/errorGroup.html) -->
+  <!-- The below content is automatically added from ./../../apiExamples/errorGroup.html -->
+  <auro-checkbox-group error="custom error">
+    <span slot="legend">Form label goes here</span>
+    <auro-checkbox value="error checkbox option" name="example1" id="checkbox-errorGroup1">Error checkbox option</auro-checkbox>
+    <auro-checkbox value="error checkbox option" name="example2" id="checkbox-errorGroup2">Error checkbox option</auro-checkbox>
+    <auro-checkbox value="error checkbox option" name="example3" id="checkbox-errorGroup3">Error checkbox option</auro-checkbox>
+    <auro-checkbox value="error checkbox option" name="example4" id="checkbox-errorGroup4" checked>Error checkbox option</auro-checkbox>
+  </auro-checkbox-group>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/errorGroup.html) -->
+<!-- The below code snippet is automatically added from ./../../apiExamples/errorGroup.html -->
+
+```html
+<auro-checkbox-group error="custom error">
+  <span slot="legend">Form label goes here</span>
+  <auro-checkbox value="error checkbox option" name="example1" id="checkbox-errorGroup1">Error checkbox option</auro-checkbox>
+  <auro-checkbox value="error checkbox option" name="example2" id="checkbox-errorGroup2">Error checkbox option</auro-checkbox>
+  <auro-checkbox value="error checkbox option" name="example3" id="checkbox-errorGroup3">Error checkbox option</auro-checkbox>
+  <auro-checkbox value="error checkbox option" name="example4" id="checkbox-errorGroup4" checked>Error checkbox option</auro-checkbox>
 </auro-checkbox-group>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->

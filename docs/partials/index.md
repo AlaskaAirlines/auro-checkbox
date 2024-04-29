@@ -108,24 +108,6 @@ The `error` attribute used to set error state on the entire `<auro-checkbox-grou
 
 </auro-accordion>
 
-#### Checkbox with Error Outside of Group
-
-The `error` attribute used to set an error state on a single `<auro-checkbox>` element.
-
-**Note**: Error messages are not supported outside of an `<auro-checkbox-group>`.
-
-<div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/error.html) -->
-  <!-- AURO-GENERATED-CONTENT:END -->
-</div>
-
-<auro-accordion alignRight>
-  <span slot="trigger">See code</span>
-
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/error.html) -->
-<!-- AURO-GENERATED-CONTENT:END -->
-
-</auro-accordion>
 ### Horizontal Group
 
 Using the `horizontal` attribute will render the checkbox options on a horizontal line.
