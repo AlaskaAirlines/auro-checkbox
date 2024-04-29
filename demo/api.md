@@ -47,16 +47,14 @@ Custom element for the purpose of allowing users to select one or more options o
 | [error](#error)    | `error`    | `Boolean` | false   | If set to true, sets an error state on the checkbox. |
 | [id](#id)       | `id`       | `String`  |         | Sets the individual `id` per element.            |
 | [name](#name)     | `name`     | `String`  |         | Accepts any string, `DOMString` representing the value of the input. |
-| [required](#required) | `required` | `boolean` | false   |                                                  |
 | [value](#value)    | `value`    | `String`  |         | Sets the element's input value.                  |
 
 ## Methods
 
-| Method         | Type                              |
-|----------------|-----------------------------------|
-| [handleChange](#handleChange) | `(event: any): void`              |
-| [handleInput](#handleInput)  | `(event: any): void`              |
-| [invalid](#invalid)      | `(error: any): "true" \| "false"` |
+| Method         | Type                 |
+|----------------|----------------------|
+| [handleChange](#handleChange) | `(event: any): void` |
+| [handleInput](#handleInput)  | `(event: any): void` |
 
 ## Events
 

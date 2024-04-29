@@ -219,7 +219,8 @@ export class AuroCheckboxGroup extends LitElement {
   }
 
   /**
-   * Helper method that handles attributes of checkboxes.
+   * Updates checkbox attributes for each item (private method).
+   * Sets the 'error' attribute if there is an error, and adjusts 'disabled' property.
    * @private
    * @returns {void}
    */
