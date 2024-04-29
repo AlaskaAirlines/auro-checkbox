@@ -9,6 +9,7 @@ import { LitElement, html } from "lit";
 import { classMap } from 'lit/directives/class-map.js';
 
 import AuroFormValidation from '@aurodesignsystem/auro-formvalidation/src/validation.js';
+import AuroLibraryRuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
 
 // Import the processed CSS file into the scope of the component
 import styleCss from "./auro-checkbox-group-css.js";
@@ -53,6 +54,11 @@ export class AuroCheckboxGroup extends LitElement {
      * @private
      */
     this.validation = new AuroFormValidation();
+
+    /**
+     * @private
+     */
+    this.runtimeUtils = new AuroLibraryRuntimeUtils();
   }
 
   static get styles() {
@@ -135,6 +141,9 @@ export class AuroCheckboxGroup extends LitElement {
   }
 
   firstUpdated() {
+    // Add the tag name as an attribute if it is different than the component name
+    this.runtimeUtils.handleComponentTagRename(this, 'auro-checkbox-group');
+
     // must declare this function as a variable to correctly pass the reference to the removeEventListener
     const checkFocusWithin = function(evt) {
       if (document.auroCheckboxGroupActive && !document.auroCheckboxGroupActive.contains(evt.target)) {

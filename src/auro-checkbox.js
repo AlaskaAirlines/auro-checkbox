@@ -11,6 +11,8 @@ import { ifDefined } from 'lit/directives/if-defined.js';
 import styleCss from "./auro-checkbox-css.js";
 import checkLg from '@alaskaairux/icons/dist/icons/interface/check-lg.mjs';
 
+import AuroLibraryRuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
+
 /**
  * Custom element for the purpose of allowing users to select one or more options of a limited number of choices.
  *
@@ -32,6 +34,11 @@ export class AuroCheckbox extends LitElement {
     this.checked = false;
     this.disabled = false;
     this.error = false;
+
+    /**
+     * @private
+     */
+    this.runtimeUtils = new AuroLibraryRuntimeUtils();
   }
 
   static get styles() {
@@ -106,6 +113,9 @@ export class AuroCheckbox extends LitElement {
   }
 
   firstUpdated() {
+    // Add the tag name as an attribute if it is different than the component name
+    this.runtimeUtils.handleComponentTagRename(this, 'auro-checkbox');
+
     this.addEventListener('click', () => {
       this.handleFocusin();
     });
