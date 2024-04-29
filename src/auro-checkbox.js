@@ -31,7 +31,6 @@ export class AuroCheckbox extends LitElement {
     super();
     this.checked = false;
     this.disabled = false;
-    this.required = false;
     this.error = false;
   }
 
@@ -47,10 +46,6 @@ export class AuroCheckbox extends LitElement {
         reflect: true
       },
       disabled: {
-        type: Boolean,
-        reflect: true
-      },
-      required: {
         type: Boolean,
         reflect: true
       },
@@ -81,14 +76,6 @@ export class AuroCheckbox extends LitElement {
       cancelable: false,
       composed: true,
     }));
-  }
-
-  invalid(error) {
-    if (error) {
-      return 'true';
-    }
-
-    return 'false';
   }
 
   /**
