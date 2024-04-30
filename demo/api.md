@@ -22,9 +22,10 @@ The auro-checkbox-group element is a wrapper for auro-checkbox element.
 
 ## Events
 
-| Event   | Type               |
-|---------|--------------------|
-| [input](#input) | `CustomEvent<any>` |
+| Event                       | Type               | Description                                      |
+|-----------------------------|--------------------|--------------------------------------------------|
+| `auroFormElement-validated` |                    | Notifies that the `validity` and `errorMessage` values have changed. |
+| [input](#input)                     | `CustomEvent<any>` |                                                  |
 
 ## Slots
 

@@ -28,6 +28,7 @@ import styleCss from "./auro-checkbox-group-css.js";
  * @slot {HTMLSlotElement} legend - Allows for the legend to be overridden.
  * @slot {HTMLSlotElement} optionalLabel - Allows for the optional label to be overridden.
  * @slot {HTMLSlotElement} helpText - Allows for the helper text to be overridden.
+ * @event auroFormElement-validated - Notifies that the `validity` and `errorMessage` values have changed.
  */
 
 export class AuroCheckboxGroup extends LitElement {
