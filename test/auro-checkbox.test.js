@@ -8,32 +8,69 @@ import { fixture, html, expect, elementUpdated } from '@open-wc/testing';
 import '../index.js';
 
 describe('auro-checkbox-group', () => {
-  it('has the expected properties', async () => {
-    const expectedError = "Expected error message";
-
+  it('has the expected properties and validity in required state', async () => {
     const el = await fixture(html`
-      <auro-checkbox-group
-        horizontal
-        required
-        aria-invalid
-        aria-required
-        error=${expectedError}
-      >Checkbox option</auro-checkbox-group>
+      <auro-checkbox-group required>
+        <auro-checkbox
+          id="alaska"
+          name="states"
+          value="alaska"
+        ></auro-checkbox>
+
+        <auro-checkbox
+          id="washington"
+          name="states"
+          value="washington"
+        ></auro-checkbox>
+      </auro-checkbox-group>
     `);
 
-    const root = el.shadowRoot;
-    const error = root.querySelector('p');
-
-    expect(el.horizontal).to.be.true;
     expect(el.required).to.be.true;
     expect(el.ariaRequired).to.equal('true');
-    expect(el.ariaInvalid).to.equal('true');
-    expect(error.textContent).to.contain(expectedError);
 
-    expect(el).dom.to.equal(`
-    <auro-checkbox-group horizontal required error="${expectedError}" validity="customError" aria-required="true" aria-invalid="true">
-      Checkbox option
-    </auro-checkbox-group>`);
+    const alaskaCheckbox = el.querySelector("auro-checkbox[id=alaska]");
+
+    alaskaCheckbox.shadowRoot.querySelector('input').click();
+
+    await elementUpdated(el);
+
+    expect(el.validity).to.equal('valid');
+
+    alaskaCheckbox.shadowRoot.querySelector('input').click();
+
+    await elementUpdated(el);
+
+    expect(el.validity).to.equal('valueMissing');
+  });
+
+  it('has the expected properties and validity in error state', async () => {
+    const el = await fixture(html`
+      <auro-checkbox-group error="custom error message">
+        <auro-checkbox
+          id="alaska"
+          name="states"
+          value="alaska"
+        ></auro-checkbox>
+
+        <auro-checkbox
+          id="washington"
+          name="states"
+          value="washington"
+        ></auro-checkbox>
+      </auro-checkbox-group>
+    `);
+
+    expect(el.hasAttribute('error')).to.be.true;
+    expect(el.hasAttribute('aria-invalid')).to.be.true;
+    expect(el.validity).to.equal('customError');
+
+    el.removeAttribute('error');
+
+    await elementUpdated(el);
+
+    expect(el.hasAttribute('error')).to.be.false;
+    expect(el.hasAttribute('aria-invalid')).to.be.false;
+    expect(el.validity).to.equal('valid');
   });
 
   it('should fire a input event with correct data', async () => {
