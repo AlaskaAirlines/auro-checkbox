@@ -271,7 +271,7 @@ export class AuroCheckboxGroup extends LitElement {
         this.removeAttribute('aria-invalid');
       }
 
-      this.validation.validate(this);
+      this.validation.validate(this, true);
     }
   }
 
