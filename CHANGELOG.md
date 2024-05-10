@@ -1,5 +1,30 @@
 # Semantic Release Automated Changelog
 
+# [3.0.0](https://github.com/AlaskaAirlines/auro-checkbox/compare/v2.1.8...v3.0.0) (2024-05-10)
+
+
+### Bug Fixes
+
+* **border:** update focus border styles [#127](https://github.com/AlaskaAirlines/auro-checkbox/issues/127) ([9d10251](https://github.com/AlaskaAirlines/auro-checkbox/commit/9d10251f1e3f2e846bd6361a01ad69cdb12284b6))
+
+
+### Features
+
+* **library:** add auro-library functionality to repo ([99ee3c6](https://github.com/AlaskaAirlines/auro-checkbox/commit/99ee3c6911ba8bdae9ba8e4a62dd3a94986976d0))
+* **validation:** implement formvalidation repo [#129](https://github.com/AlaskaAirlines/auro-checkbox/issues/129) ([c8a45be](https://github.com/AlaskaAirlines/auro-checkbox/commit/c8a45be43b1c8b1739c69e23257ef25c570fb5f4))
+
+
+### Performance Improvements
+
+* **deps:** update dependencies ([88e0b3b](https://github.com/AlaskaAirlines/auro-checkbox/commit/88e0b3b240d55ec67eb823bc468e6008ea611991))
+* **validation:** update validation logic for checkbox border [#129](https://github.com/AlaskaAirlines/auro-checkbox/issues/129) ([4b85ab1](https://github.com/AlaskaAirlines/auro-checkbox/commit/4b85ab1f9068080e079edc51b09bed01d0340d80))
+* **validity:** update tests and validation for error and required [#129](https://github.com/AlaskaAirlines/auro-checkbox/issues/129) ([0b833e5](https://github.com/AlaskaAirlines/auro-checkbox/commit/0b833e56ac014cb6aafcd1af3012615017d07ad6))
+
+
+### BREAKING CHANGES
+
+* **validation:** The individual component validation, as well as support for individual checkboxes using the required attribute has been removed.
+
 ## [2.1.8](https://github.com/AlaskaAirlines/auro-checkbox/compare/v2.1.7...v2.1.8) (2024-02-20)
 
 
