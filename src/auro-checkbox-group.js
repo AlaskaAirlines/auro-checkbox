@@ -37,7 +37,7 @@ export class AuroCheckboxGroup extends LitElement {
 
     this.validity = undefined;
     this.value = undefined;
-    this.disabled = false;
+    this.disabled = undefined;
     this.required = false;
     this.horizontal = false;
 
@@ -223,27 +223,8 @@ export class AuroCheckboxGroup extends LitElement {
     this.items = Array.from(this.querySelectorAll(checkboxTagName));
 
     this.handlePreselectedItems();
-    this.handleCheckboxAttributes();
 
     this.validation.validate(this);
-  }
-
-  /**
-   * Updates checkbox attributes for each item (private method).
-   * Sets the 'error' attribute if there is an error, and adjusts 'disabled' property.
-   * @private
-   * @returns {void}
-   */
-  handleCheckboxAttributes() {
-    this.items.forEach((el) => {
-      if (this.validity && this.validity !== 'valid') {
-        el.setAttribute('error', '');
-      } else {
-        el.removeAttribute('error');
-      }
-
-      el.disabled = this.disabled;
-    });
   }
 
   /**
@@ -252,8 +233,24 @@ export class AuroCheckboxGroup extends LitElement {
    * @returns {void}
    */
   updated(changedProperties) {
-    if (changedProperties.has('disabled') || changedProperties.has('validity')) {
-      this.handleCheckboxAttributes();
+    if (changedProperties.has('disabled')) {
+      this.items.forEach((el) => {
+        if (this.disabled) {
+          el.setAttribute('disabled', true);
+        } else {
+          el.removeAttribute('disabled');
+        }
+      });
+    }
+
+    if (changedProperties.has('validity')) {
+      this.items.forEach((el) => {
+        if (this.validity && this.validity !== 'valid') {
+          el.setAttribute('error', true);
+        } else {
+          el.removeAttribute('error');
+        }
+      });
     }
 
     if (changedProperties.has('required')) {
