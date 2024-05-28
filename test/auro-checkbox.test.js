@@ -161,22 +161,19 @@ describe('auro-checkbox-group', () => {
 
   it('controls child state after slot change', async () => {
     const el = await fixture(html`
-      <auro-checkbox-group disabled required error="Test message"></auro-checkbox-group>
+      <auro-checkbox-group disabled required error="Test message">
+        <auro-checkbox
+          id="alaska"
+          name="states"
+          value="alaska"
+        ></auro-checkbox>
+        <auro-checkbox
+          id="washington"
+          name="states"
+          value="washington"
+        ></auro-checkbox>
+      </auro-checkbox-group>
     `);
-
-    // render children after the group has connected
-    await fixture(html`
-      <auro-checkbox
-        id="alaska"
-        name="states"
-        value="alaska"
-      ></auro-checkbox>
-      <auro-checkbox
-        id="washington"
-        name="states"
-        value="washington"
-      ></auro-checkbox>
-    `, { parentNode: el });
 
     const checkbox = el.querySelector('auro-checkbox');
 
@@ -235,6 +232,46 @@ describe('auro-checkbox-group', () => {
 
     expect(checkbox.disabled, "child disabled state was not updated").to.be.true;
     expect(checkbox.error, "child error state was not updated").to.be.true;
+  });
+
+  it('disabled state on checkboxes updates correctly', async () => {
+    const el = await fixture(html`
+      <auro-checkbox-group>
+        <auro-checkbox
+          id="alaska"
+          name="states"
+          value="alaska"
+          disabled
+        ></auro-checkbox>
+
+        <auro-checkbox
+          id="washington"
+          name="states"
+          type="radio"
+          value="washington"
+        ></auro-checkbox>
+      </auro-checkbox-group>
+    `);
+
+    const alaskaCheckbox = document.getElementById('alaska');
+    const washingtonCheckbox = document.getElementById('washington');
+
+    expect(alaskaCheckbox.disabled).to.be.true;
+    expect(washingtonCheckbox.disabled).to.be.false;
+
+    el.disabled = true;
+
+    await elementUpdated(el);
+
+    expect(alaskaCheckbox.disabled).to.be.true;
+    expect(washingtonCheckbox.disabled).to.be.true;
+
+    el.disabled = false;
+
+    await elementUpdated(el);
+
+    expect(alaskaCheckbox.disabled).to.be.false;
+    expect(washingtonCheckbox.disabled).to.be.false;
   });
 });
 
