@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [3.0.1](https://github.com/AlaskaAirlines/auro-checkbox/compare/v3.0.0...v3.0.1) (2024-05-29)
+
+
+### Bug Fixes
+
+* make individual checkboxes appear disabled [#133](https://github.com/AlaskaAirlines/auro-checkbox/issues/133) ([48c8aa3](https://github.com/AlaskaAirlines/auro-checkbox/commit/48c8aa33d4de75fb10418028af13fd340fb917a2))
+
 # [3.0.0](https://github.com/AlaskaAirlines/auro-checkbox/compare/v2.1.8...v3.0.0) (2024-05-10)
 
 

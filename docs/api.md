@@ -6,7 +6,7 @@ The auro-checkbox-group element is a wrapper for auro-checkbox element.
 
 | Property                        | Attribute                       | Type      | Default     | Description                                      |
 |---------------------------------|---------------------------------|-----------|-------------|--------------------------------------------------|
-| `disabled`                      | `disabled`                      | `boolean` | false       |                                                  |
+| `disabled`                      | `disabled`                      | `boolean` | "undefined" |                                                  |
 | `error`                         | `error`                         | `String`  |             | When defined, sets persistent validity to `customError` and sets `setCustomValidity` = attribute value. |
 | `horizontal`                    | `horizontal`                    | `Boolean` | false       | If set, checkboxes will be aligned horizontally. |
 | `noValidate`                    | `noValidate`                    | `Boolean` |             | If set, disables auto-validation on blur.        |
