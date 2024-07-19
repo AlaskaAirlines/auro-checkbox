@@ -7,8 +7,10 @@ import { LitElement, html } from "lit";
 import { classMap } from 'lit/directives/class-map.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
 
-// Import touch detection lib
 import styleCss from "./auro-checkbox-css.js";
+import colorCss from "./color-css.js";
+import tokensCss from "./tokens-css.js";
+
 import checkLg from '@alaskaairux/icons/dist/icons/interface/check-lg.mjs';
 
 import AuroLibraryRuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
@@ -42,7 +44,11 @@ export class AuroCheckbox extends LitElement {
   }
 
   static get styles() {
-    return [styleCss];
+    return [
+      styleCss,
+      colorCss,
+      tokensCss
+    ];
   }
 
   // function to define props used within the scope of this component

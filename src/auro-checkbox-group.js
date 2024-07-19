@@ -13,6 +13,8 @@ import AuroLibraryRuntimeUtils from '@aurodesignsystem/auro-library/scripts/util
 
 // Import the processed CSS file into the scope of the component
 import styleCss from "./auro-checkbox-group-css.js";
+import colorCss from "./colorGroup-css.js";
+import tokensCss from "./tokens-css.js";
 
 /**
  * The auro-checkbox-group element is a wrapper for auro-checkbox element.
@@ -63,7 +65,11 @@ export class AuroCheckboxGroup extends LitElement {
   }
 
   static get styles() {
-    return [styleCss];
+    return [
+      styleCss,
+      colorCss,
+      tokensCss
+    ];
   }
 
   static get properties() {
@@ -129,7 +135,7 @@ export class AuroCheckboxGroup extends LitElement {
       // remove if it is in the value list
       const index = this.value.indexOf(value);
 
-      this.value.splice(index, 1); // eslint-disable-line no-magic-numbers
+      this.value.splice(index, 1);
     }
 
     this.dispatchEvent(new CustomEvent('input', {

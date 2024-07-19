@@ -18,11 +18,6 @@
 :host {
   display: block;
   padding-bottom: var(--ds-size-150, $ds-size-150);
-  color: var(--ds-color-text-primary-default, $ds-color-text-primary-default);
-}
-
-:host([disabled]) {
-  color: var(--ds-color-text-disabled-default, $ds-color-text-disabled-default);
 }
 
 .displayFlex {
@@ -39,15 +34,5 @@ fieldset {
 
 legend {
   margin-bottom: var(--ds-size-150, $ds-size-150);
-}
-
-.checkboxGroupElement-helpText {
-  color: var(--ds-color-text-secondary-default, $ds-color-text-secondary-default);
-}
-
-:host([validity]:not([validity='valid'])) {
-  .checkboxGroupElement-helpText {
-    color: var(--ds-color-alert-error-default, $ds-color-alert-error-default);
-  }
 }
 
