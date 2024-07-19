@@ -31,26 +31,6 @@
   --cbxLocation: var(--ds-size-50, $ds-size-50);
 }
 
-:host(:focus-within) {
-  .label--cbx {
-    &:after {
-      border-color: var(--ds-color-border-active-default, $ds-color-border-active-default);
-      outline: var(--ds-color-border-active-default, $ds-color-border-active-default) solid 1px;
-    }
-  }
-}
-
-:host([checked]:focus-within) {
-  .label--cbx {
-    &:after {
-      border-color: var(--ds-color-base-white, $ds-color-base-white);
-    }
-  }
-}
-
-// layout styles - define any layout specifications for UI that is contained WITHIN the component
-// never define layout that would cause effect on element outside the scope of this component
-
 fieldset {
   all: unset;
 }
@@ -73,69 +53,8 @@ fieldset {
 .cbx--input {
   &:disabled {
     & + label {
-      color: var(--ds-color-text-disabled-default, $ds-color-text-disabled-default);
-
       &:hover {
         cursor: auto;
-
-        &:after {
-          background-color: var(--ds-color-background-lightest, $ds-color-background-lightest);
-        }
-      }
-    }
-
-    & + .label--cbx {
-      &:before {
-        border-color: var(--ds-color-base-white, $ds-color-base-white);
-      }
-
-      &:after {
-        border-color: var(--ds-color-text-disabled-default, $ds-color-text-disabled-default);
-      }
-    }
-  }
-
-  &:checked {
-    & + .label--cbx {
-      &:hover {
-        &:after {
-          background-color: var(--ds-color-ui-hover-default, $ds-color-ui-hover-default);
-        }
-      }
-
-      &:after {
-        opacity: 1;
-        background-color: var(--ds-color-ui-default-default, $ds-color-ui-default-default);
-        border-color: var(--ds-color-border-active-default, $ds-color-border-active-default);
-      }
-
-      &:before {
-        transition: background-color 0.2s cubic-bezier(.35,.9,.4,.9);
-        opacity: 1;
-      }
-    }
-
-    &:disabled {
-      & + .label--cbx {
-        &:after {
-          background-color: var(--ds-color-brand-gray-200, $ds-color-brand-gray-200);
-          border-color: var(--ds-color-text-disabled-default, $ds-color-text-disabled-default);
-        }
-      }
-    }
-
-    & + .errorBorder {
-      &:before {
-        border-color: var(--ds-color-base-white, $ds-color-base-white);
-      }
-      &:after {
-        border-color: var(--ds-color-border-error-default, $ds-color-border-error-default);
-        background-color: var(--ds-color-border-error-default, $ds-color-border-error-default);
-      }
-      &:hover {
-        &:after {
-          background-color: var(--ds-color-alert-error-default, $ds-color-alert-error-default);
-        }
       }
     }
   }
@@ -147,10 +66,6 @@ fieldset {
 
   &:hover {
     cursor: pointer;
-
-    &:after {
-      background-color: var(--ds-color-ui-bkg-hover-default, $ds-color-ui-bkg-hover-default);
-    }
   }
 }
 
@@ -166,18 +81,10 @@ fieldset {
     height: calc(var(--ds-size-200, $ds-size-200) + var(--ds-size-50, $ds-size-50));
     border-width: 1px;
     border-style: solid;
-    border-color: var(--ds-color-brand-gray-500, $ds-color-brand-gray-500);
     border-radius: var(--ds-border-radius, $ds-border-radius);
+    outline-style: solid;
+    outline-width: 1px;
     z-index: 0;
-    background-color: var(--ds-color-base-white, $ds-color-base-white);
-  }
-}
-
-.label--cbx {
-  &.errorBorder {
-    &:after {
-      border-color: var(--ds-color-border-error-default, $ds-color-border-error-default);
-    }
   }
 }
 
@@ -190,6 +97,4 @@ fieldset {
   padding-bottom: 3px;
 
   z-index: 1;
-
-  color: var(--ds-color-base-white, $ds-color-base-white);
 }
