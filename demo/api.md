@@ -248,3 +248,25 @@ The `error` attribute used to set error state on the entire `<auro-checkbox-grou
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
+
+### Theme Support
+
+The component may be restyled using the following code sample and changing the values of the following token(s).
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../src/tokens.scss) -->
+<!-- The below code snippet is automatically added from ./../../src/tokens.scss -->
+
+```scss
+@import "./../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables";
+
+:host {
+  --ds-auro-checkbox-border-color: var(--ds-color-border-primary-default, #{$ds-color-border-primary-default});
+  --ds-auro-checkbox-checkmark-color: var(--ds-color-icon-emphasis-inverse, #{$ds-color-icon-emphasis-inverse});
+  --ds-auro-checkbox-container-color: var(--ds-color-container-primary-default, #{$ds-color-container-primary-default});
+  --ds-auro-checkbox-label-color: var(--ds-color-text-primary-default, #{$ds-color-text-primary-default});
+  --ds-auro-checkbox-outline-color: transparent;
+  --ds-auro-checkbox-group-helptext-color: var(--ds-color-text-secondary-default, #{$ds-color-text-secondary-default});
+  --ds-auro-checkbox-group-text-color: var(--ds-color-text-primary-default, #{$ds-color-text-primary-default});
+}
+```
+<!-- AURO-GENERATED-CONTENT:END -->
