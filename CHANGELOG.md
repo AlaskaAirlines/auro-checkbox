@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [3.1.0-beta.1](https://github.com/AlaskaAirlines/auro-checkbox/compare/v3.0.1...v3.1.0-beta.1) (2024-07-20)
+
+
+### Features
+
+* add tier 3 tokens for theming capabilities [#128](https://github.com/AlaskaAirlines/auro-checkbox/issues/128) ([1a8246e](https://github.com/AlaskaAirlines/auro-checkbox/commit/1a8246e19e1e975d282fb01a81175ce02394e3f8))
+
 ## [3.0.1](https://github.com/AlaskaAirlines/auro-checkbox/compare/v3.0.0...v3.0.1) (2024-05-29)
 
 
