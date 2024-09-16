@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [3.1.0-beta.2](https://github.com/AlaskaAirlines/auro-checkbox/compare/v3.1.0-beta.1...v3.1.0-beta.2) (2024-09-16)
+
+
+### Bug Fixes
+
+* **color:** resolve color theming bugs [#128](https://github.com/AlaskaAirlines/auro-checkbox/issues/128) ([15a433e](https://github.com/AlaskaAirlines/auro-checkbox/commit/15a433e376277fcd0b794c59b32ebe2670f6e271))
+
 # [3.1.0-beta.1](https://github.com/AlaskaAirlines/auro-checkbox/compare/v3.0.1...v3.1.0-beta.1) (2024-07-20)
 
 
