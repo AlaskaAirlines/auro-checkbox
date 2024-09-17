@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [3.1.0-beta.4](https://github.com/AlaskaAirlines/auro-checkbox/compare/v3.1.0-beta.3...v3.1.0-beta.4) (2024-09-17)
+
+
+### Performance Improvements
+
+* refactor custom registration configuration ([ceed304](https://github.com/AlaskaAirlines/auro-checkbox/commit/ceed3049aa80232616bd7cc1b95664f352f644de))
+
 ## [3.0.1](https://github.com/AlaskaAirlines/auro-checkbox/compare/v3.0.0...v3.0.1) (2024-05-29)
 
 
