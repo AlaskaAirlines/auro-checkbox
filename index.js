@@ -1,22 +1,7 @@
 import { AuroCheckbox } from './src/auro-checkbox.js';
 import { AuroCheckboxGroup } from './src/auro-checkbox-group.js';
 
-/**
- * Register Custom Element.
- * @param {Object} name - Name to use for custom element.
- * @returns {void}
- */
- const registerComponent = (name = 'custom-checkbox') => {
-  const groupName = name + '-group';
+import * as RuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
 
-  // alias definition
-  if (!customElements.get(name)) {
-    customElements.define(name, class extends AuroCheckbox {});
-  }
-
-  if (!customElements.get(groupName)) {
-    customElements.define(groupName, class extends AuroCheckboxGroup {});
-  }
-}
-
-export { registerComponent }
+RuntimeUtils.default.prototype.registerComponent('custom-checkbox', AuroCheckbox);
+RuntimeUtils.default.prototype.registerComponent('custom-checkbox-group', AuroCheckboxGroup);

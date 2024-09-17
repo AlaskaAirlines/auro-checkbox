@@ -149,8 +149,13 @@ There are two important parts of every Auro component. The <a href="https://deve
 To protect from versioning conflicts with other instances of the component being loaded, it is recommended to use our `registerComponent(name)` method and pass in a unique name.
 
 ```js
-import './node_modules/@aurodesignsystem/auro-checkbox';
-registerComponent('custom-checkbox');
+import { AuroCheckbox } from './src/auro-checkbox.js';
+import { AuroCheckboxGroup } from './src/auro-checkbox-group.js';
+
+import * as RuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
+
+RuntimeUtils.default.prototype.registerComponent('custom-checkbox', AuroCheckbox);
+RuntimeUtils.default.prototype.registerComponent('custom-checkbox-group', AuroCheckboxGroup);
 ```
 
 This will create a new custom element that you can use in your HTML that will function identically to the `<auro-checkbox>` element.
