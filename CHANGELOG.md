@@ -1,24 +1,5 @@
 # Semantic Release Automated Changelog
 
-# [4.0.0-beta.1](https://github.com/AlaskaAirlines/auro-checkbox/compare/v3.1.0-beta.5...v4.0.0-beta.1) (2024-09-24)
-
-
-### Performance Improvements
-
-* update dependencies ([46fd4fb](https://github.com/AlaskaAirlines/auro-checkbox/commit/46fd4fb9e6565e36d92fae03fb8c2491f0df5435))
-
-
-### BREAKING CHANGES
-
-* trigger major releaes for theme support #128
-
-# [3.1.0-beta.5](https://github.com/AlaskaAirlines/auro-checkbox/compare/v3.1.0-beta.4...v3.1.0-beta.5) (2024-09-18)
-
-
-### Performance Improvements
-
-* point to library scripts for build process ([edbea22](https://github.com/AlaskaAirlines/auro-checkbox/commit/edbea2267b705d84a1de0cc221b6ac8d8b9b5fbf))
-
 ## [3.0.1](https://github.com/AlaskaAirlines/auro-checkbox/compare/v3.0.0...v3.0.1) (2024-05-29)
 
 
