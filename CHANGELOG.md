@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [4.0.1](https://github.com/AlaskaAirlines/auro-checkbox/compare/v4.0.0...v4.0.1) (2024-10-14)
+
+
+### Bug Fixes
+
+* make auro-library a normal dep instead of devDep ([46a5af0](https://github.com/AlaskaAirlines/auro-checkbox/commit/46a5af0907293aae31abafe2abd6e2594875f2e7))
+
 # [4.0.0](https://github.com/AlaskaAirlines/auro-checkbox/compare/v3.0.1...v4.0.0) (2024-09-24)
 
 
