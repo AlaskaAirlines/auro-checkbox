@@ -72,6 +72,18 @@ export class AuroCheckbox extends LitElement {
     };
   }
 
+  /**
+   * This will register this element with the browser.
+   * @param {string} [name="auro-checkbox"] - The name of element that you want to register to.
+   *
+   * @example
+   * AuroCheckbox.register("custom-checkbox") // this will register this element to <custom-checkbox/>
+   *
+   */
+  static register(name = "auro-checkbox") {
+    AuroLibraryRuntimeUtils.prototype.registerComponent(name, AuroCheckbox);
+  }
+
   // This custom event is only for the purpose of supporting IE
   // .addEventListener('change', function() { })
   handleChange(event) {
@@ -169,9 +181,4 @@ export class AuroCheckbox extends LitElement {
       </div>
     `;
   }
-}
-
-// default internal definition
-if (!customElements.get("auro-checkbox")) {
-  customElements.define("auro-checkbox", AuroCheckbox);
 }
