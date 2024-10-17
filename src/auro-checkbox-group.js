@@ -113,6 +113,18 @@ export class AuroCheckboxGroup extends LitElement {
     };
   }
 
+  /**
+   * This will register this element with the browser.
+   * @param {string} [name="auro-checkbox-group"] - The name of element that you want to register to.
+   *
+   * @example
+   * AuroCheckboxGroup.register("custom-checkbox-group") // this will register this element to <custom-checkbox-group/>
+   *
+   */
+  static register(name = "auro-checkbox-group") {
+    AuroLibraryRuntimeUtils.prototype.registerComponent(name, AuroCheckboxGroup);
+  }
+
   connectedCallback() {
     super.connectedCallback();
     this.handleItems();
@@ -304,9 +316,4 @@ export class AuroCheckboxGroup extends LitElement {
       }
     `;
   }
-}
-
-// default internal definition
-if (!customElements.get("auro-checkbox-group")) {
-  customElements.define("auro-checkbox-group", AuroCheckboxGroup);
 }
