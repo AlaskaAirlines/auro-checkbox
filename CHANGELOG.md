@@ -1,5 +1,22 @@
 # Semantic Release Automated Changelog
 
+# [4.1.0](https://github.com/AlaskaAirlines/auro-checkbox/compare/v4.0.1...v4.1.0) (2024-10-24)
+
+
+### Bug Fixes
+
+* make `demo/index.min.js` to load as a module, add `demo/api.js` into bundler ([865c334](https://github.com/AlaskaAirlines/auro-checkbox/commit/865c334b6217fe50b6af73be1fc566f248cb4c5e))
+
+
+### Features
+
+* **api:** add register static method [#148](https://github.com/AlaskaAirlines/auro-checkbox/issues/148) ([884b286](https://github.com/AlaskaAirlines/auro-checkbox/commit/884b286898019a118a06e4e1f2d77ab614405128))
+
+
+### Performance Improvements
+
+* update dependency versions ([f016f21](https://github.com/AlaskaAirlines/auro-checkbox/commit/f016f21540029aec11cee0857f20464136753a7e))
+
 ## [4.0.1](https://github.com/AlaskaAirlines/auro-checkbox/compare/v4.0.0...v4.0.1) (2024-10-14)
 
 
