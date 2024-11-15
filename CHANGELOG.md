@@ -1,5 +1,17 @@
 # Semantic Release Automated Changelog
 
+## [4.1.1](https://github.com/AlaskaAirlines/auro-checkbox/compare/v4.1.0...v4.1.1) (2024-11-15)
+
+
+### Bug Fixes
+
+* update markdown partial pathing to consume new auro lib [#150](https://github.com/AlaskaAirlines/auro-checkbox/issues/150) ([e1f2b3d](https://github.com/AlaskaAirlines/auro-checkbox/commit/e1f2b3dd5765732de1dfe839d68db889a27f7126))
+
+
+### Performance Improvements
+
+* update library to 3.0.2 ([6a464f9](https://github.com/AlaskaAirlines/auro-checkbox/commit/6a464f9a02e6cbd533a462c6ee390651329250e9))
+
 # [4.1.0](https://github.com/AlaskaAirlines/auro-checkbox/compare/v4.0.1...v4.1.0) (2024-10-24)
 
 
