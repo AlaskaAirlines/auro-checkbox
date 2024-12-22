@@ -83,7 +83,8 @@ export class AuroCheckboxGroup extends LitElement {
         reflect: true
       },
       value: {
-        type: Array
+        type: Array,
+        reflect: true
       },
       noValidate: {
         type: Boolean,
@@ -227,6 +228,17 @@ export class AuroCheckboxGroup extends LitElement {
         this.handleValueUpdate(item.getAttribute('value'), Boolean(item.hasAttribute('checked')));
       });
     }
+  }
+
+  /**
+   * Helper to reset checkboxes to their default state.
+   * @public
+   */
+  reset() {
+    this.value = [];
+    this.items.forEach((item) => {
+      item.checked = false;
+    });
   }
 
   /**
