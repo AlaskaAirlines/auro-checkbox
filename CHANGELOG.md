@@ -1,5 +1,15 @@
 # Semantic Release Automated Changelog
 
+## [4.1.2](https://github.com/AlaskaAirlines/auro-checkbox/compare/v4.1.1...v4.1.2) (2025-02-08)
+
+
+### Performance Improvements
+
+* correct issue with defined release branch ([4ccfdd9](https://github.com/AlaskaAirlines/auro-checkbox/commit/4ccfdd9e3ac75ae9c2171de601f2444a160112d4))
+* update dependencies ([adb456c](https://github.com/AlaskaAirlines/auro-checkbox/commit/adb456cee8a6ea9a4fa5392f5bd35adcd4368357))
+* update mixin per new WCSS spec ([6001b56](https://github.com/AlaskaAirlines/auro-checkbox/commit/6001b560547bc372a042aa3a1d713f3e55c2e267))
+* update node to version 22 ([e83ac01](https://github.com/AlaskaAirlines/auro-checkbox/commit/e83ac016de96af956c9de92760df16f4e704c4bf))
+
 ## [4.1.1](https://github.com/AlaskaAirlines/auro-checkbox/compare/v4.1.0...v4.1.1) (2024-11-15)
 
 
