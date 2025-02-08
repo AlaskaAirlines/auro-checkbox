@@ -37,7 +37,7 @@ fieldset {
 
 .displayFlex {
   slot {
-    @include auro_breakpoint--sm {
+    @include auro_grid-breakpoint--sm {
       display: flex;
     }
   }
