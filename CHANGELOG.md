@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [4.1.4](https://github.com/AlaskaAirlines/auro-checkbox/compare/v4.1.3...v4.1.4) (2025-03-06)
+
+
+### Performance Improvements
+
+* **deprecation:** add deprecation warning to this package ([4352214](https://github.com/AlaskaAirlines/auro-checkbox/commit/4352214402d03c6463cbd125f2b7d7a448bb2a14))
+
 ## [4.1.3](https://github.com/AlaskaAirlines/auro-checkbox/compare/v4.1.2...v4.1.3) (2025-03-06)
 
 
